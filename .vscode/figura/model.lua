@@ -2,7 +2,7 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
----A parent type that the part will rotate with if the part's mimic mode is enabled with `.setMimicMode()`.
+---A parent type that the part will rotate with.
 ---@alias ParentType
 ---| '"None"' #Rotate with the origin of the player.
 ---| '"WORLD"' #Rotate with the world.
@@ -142,7 +142,8 @@ function CustomModelPart.getColor() end
 ---@return boolean
 function CustomModelPart.getHidden() end
 
----Returns if the part is mimicing its parent part.
+---Returns if the part is only mimicing its parent part instead of having its origin connected to
+---the parent part's origin.
 ---@return boolean
 function CustomModelPart.getMimicMode() end
 
@@ -201,7 +202,8 @@ function CustomModelPart.partToWorldPos(pos) end
 function CustomModelPart.setColor(col) end
 
 ---Sets the mimic mode of the model.  
----If true, the model will mimic its parent as set by `.setParentType()`.
+---If true, the model will *mimic* its parent as set by `.setParentType()` instead of having its
+---origin connected to the parent part's origin.
 ---@param state boolean
 function CustomModelPart.setMimicMode(state) end
 
