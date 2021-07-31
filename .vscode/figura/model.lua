@@ -112,6 +112,7 @@ local CustomModelPartContainerProxy = {}
 ---If you want autocompletion for model paths, use
 ---[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
 ---If you use the above extension, guessed parts will have a different icon from parts found in the
+---model.
 ---@class CustomModelPartContainer : CustomModelPartContainerProxy
 local CustomModelPartContainer = {}
 
@@ -273,6 +274,7 @@ function CustomModelPart.worldToPartPos(pos) end
 ---If you want autocompletion for model paths, use
 ---[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
 ---If you use the above extension, guessed parts will have a different icon from parts found in the
+---model.
 ---@type CustomModelPartContainer
 ---model file.
 model = {}

@@ -1,4 +1,5 @@
 ### Contents
+[What's New?](#whats-new)  
 [What Is This?](#what-is-this)  
 [Why Is This Useful?](#why-is-this-useful)  
 [Using This Documentation](#using-this-documentation)  
@@ -9,6 +10,11 @@
 &emsp;[sumneko's Language Server](#sumnekos-language-server)  
 &emsp;[The Manual](#the-manual)
 ***
+# What's New?
+* Manuel_'s VSCode Figura extension now has the ability to automatically download this documentation
+and many of the compatibility issues have been fixed! Get the extension
+[here](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura)!
+
 # What Is This?  
 This documentation is meant to be used to help with Lua scripts made in the
 [Figura](https://modrinth.com/mod/figura) Minecraft mod.
@@ -131,22 +137,6 @@ behavior.
 * The Language server does not understand how math operations on `Vector` objects work, do not
 expect a `Vector` created with math to autocomplete properly. (This can be somewhat remedied by
 adding a `@type` [annotation](#emmylua-annotations) in the line before the expression.)
-
-* This documentation currently conflicts with
-[Manuel_'s Figura VSCode
-extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
-This currently causes:
-  * Certain functions, fields, and globals to appear twice in suggest.
-  * The base model table to lose its documentation in the suggest list, but not when hovered.
-  * Manuel_'s snippets to not show up unless suggest is explicitly triggered with its keybind.
-
-  There is work being done to have compatibility, but for now you will have several options to
-handle the conflict:
-  * You can just deal with the conflict.
-  * You can remove Manuel_'s extension.
-  * You can just not use this documentation and the Language Server.
-  * You can remove the model.lua file in .vscode\figura to fix some conflicts.
-**(THIS WILL REMOVE ALL DOCUMENTATION OF THE MODEL TYPES)**
 
 # Learn More
 ## EmmyLua Annotations
