@@ -6,7 +6,7 @@
 [Issues](#issues)  
 [Learn More](#learn-more)  
 &emsp;[EmmyLua Annotations](#emmylua-annotations)  
-&emsp;[sumneko's Language Server](#sumneko's-language-server)  
+&emsp;[sumneko's Language Server](#sumnekos-language-server)  
 &emsp;[The Manual](#the-manual)
 ***
 # What Is This?  
