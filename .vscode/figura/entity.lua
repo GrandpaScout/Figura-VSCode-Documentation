@@ -292,7 +292,7 @@ function Entity.getUUID() end
 ---Note: An empty slot will still return an `ItemStack` of air.
 ---@param slot EquipmentSlot
 ---@return ItemStack
-function Entity.getEquipmentSlot(slot) end
+function Entity.getEquipmentItem(slot) end
 
 ---Returns the entity identifier of this entity.
 ---@return EntityID string
