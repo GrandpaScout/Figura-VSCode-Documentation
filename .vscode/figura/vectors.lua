@@ -7,7 +7,7 @@
 ---
 ---The following accessors correspond to the following numbers:
 --->1: x, r, u, pitch  
---->2: y, g, v, yaw  
+--->2: y, g, v, yaw, volume  
 --->3: z, b, roll  
 --->4: w, a  
 --->5: t  
@@ -17,6 +17,28 @@
 ---The `table` can contain other `table`s to merge them.
 ---
 ---@class Vector
+---@field [1] number
+---@field [2] number
+---@field [3] number
+---@field [4] number
+---@field [5] number
+---@field [6] number
+---@field x number
+---@field y number
+---@field z number
+---@field w number
+---@field t number
+---@field h number
+---@field pitch number
+---@field yaw number
+---@field roll number
+---@field r number
+---@field g number
+---@field b number
+---@field a number
+---@field u number
+---@field v number
+---@field volume number
 local Vector = {}
 
 ---Gets the distance between this `Vector` and the given `Vector`.
@@ -26,7 +48,7 @@ function Vector.distanceTo(vec) end
 
 ---Gets the distance between `{0,0,0,0,0,0}` and this `Vector`.
 ---@return number
-function Vector.length() end
+function Vector.getLength() end
 
 ---Returns a `Vector` which is a copy of this `Vector` but resized to have a length of 1.
 ---@return Vector
@@ -65,21 +87,7 @@ function Vector.angleTo(vec) end
 ---The `table` can contain other `table`s to merge them.
 ---
 ---@class Vector6 : Vector
----@field x number
----@field y number
----@field z number
----@field w number
----@field t number
----@field h number
----@field pitch number
----@field yaw number
----@field roll number
----@field r number
----@field g number
----@field b number
----@field a number
----@field u number
----@field v number
+
 
 ---Vector5 ⇐ Vector
 ---***
@@ -97,20 +105,7 @@ function Vector.angleTo(vec) end
 ---The `table` can contain other `table`s to merge them.
 ---
 ---@class Vector5 : Vector
----@field x number
----@field y number
----@field z number
----@field w number
----@field t number
----@field pitch number
----@field yaw number
----@field roll number
----@field r number
----@field g number
----@field b number
----@field a number
----@field u number
----@field v number
+
 
 ---Vector4 ⇐ Vector
 ---***
@@ -129,19 +124,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 4 values in place of a `Vector4`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class Vector4 : Vector
----@field x number
----@field y number
----@field z number
----@field w number
----@field pitch number
----@field yaw number
----@field roll number
----@field r number
----@field g number
----@field b number
----@field a number
----@field u number
----@field v number
+
 
 ---Vector3 ⇐ Vector
 ---***
@@ -159,17 +142,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 3 values in place of a `Vector3`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class Vector3 : Vector
----@field x number
----@field y number
----@field z number
----@field pitch number
----@field yaw number
----@field roll number
----@field r number
----@field g number
----@field b number
----@field u number
----@field v number
+
 
 ---Vector2 ⇐ Vector
 ---***
@@ -186,14 +159,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 2 values in place of a `Vector2`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class Vector2 : Vector
----@field x number
----@field y number
----@field pitch number
----@field yaw number
----@field r number
----@field g number
----@field u number
----@field v number
+
 
 ---VectorPos ⇐ Vector
 ---***
@@ -211,9 +177,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 3 values in place of a `VectorPos`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class VectorPos : Vector
----@field x number
----@field y number
----@field z number
+
 
 ---VectorAng ⇐ Vector
 ---***
@@ -230,9 +194,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 3 values in place of a `VectorAng`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class VectorAng : Vector
----@field pitch number
----@field yaw number
----@field roll number
+
 
 ---VectorColor ⇐ Vector
 ---***
@@ -255,10 +217,7 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 4 values in place of a `VectorColor`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class VectorColor : Vector
----@field r number
----@field g number
----@field b number
----@field a number
+
 
 ---VectorHSV ⇐ VectorColor ⇐ Vector
 ---***
@@ -283,6 +242,7 @@ function Vector.angleTo(vec) end
 ---The `table` can contain other `table`s to merge them.
 ---@class VectorHSV : VectorColor
 
+
 ---VectorUV ⇐ Vector
 ---***
 ---A UV position offset.  
@@ -300,8 +260,6 @@ function Vector.angleTo(vec) end
 ---You can use a `table` with up to 2 values in place of a `VectorUV`.  
 ---The `table` can contain other `table`s to merge them.
 ---@class VectorUV : Vector
----@field u number
----@field v number
 
 
 --================================================================================================--
