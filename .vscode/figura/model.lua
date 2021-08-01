@@ -134,7 +134,6 @@ local CustomModelPart = {}
 
 ---Returns the current color of the part.
 ---The default color is `0,0,0`.
----@type function
 ---@return VectorColor
 function CustomModelPart.getColor() end
 
