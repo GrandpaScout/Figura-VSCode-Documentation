@@ -1499,7 +1499,7 @@ function World.getBlockLightLevel(pos) end
 ---
 ---Note: Always returns a valid block state, even if the block position is unloaded.
 ---@param pos VectorPos
----@return BlockStateProperties
+---@return BlockState
 function World.getBlockState(pos) end
 
 ---Returns the block tags containing the block at the given block position.
