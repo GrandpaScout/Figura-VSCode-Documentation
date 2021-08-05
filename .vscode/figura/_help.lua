@@ -57,6 +57,9 @@ help = {
     ---@return MinecraftKeybind string
     ["MinecraftKeybind"] = function() end,
 
+    ---@return ParentType
+    ["ParentType"] = function() end,
+
     ---@return RedstonePower number
     ["RedstonePower"] = function() end,
 

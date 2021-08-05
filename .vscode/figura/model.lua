@@ -183,14 +183,16 @@ function CustomModelPart.getShader() end
 ---@return VectorUV
 function CustomModelPart.getUV() end
 
----Takes a `Vector` with a direction relative to the base part and
----returns a `Vector` with the direction in world-space.
+---Takes a `Vector` with a direction relative to the part and returns a `Vector` with the direction
+---in world-space.
 ---@param dir VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldDir(dir) end
 
----Takes a `Vector` with a position relative to the base part and
----returns a `Vector` with the position in world-space.
+---Takes a `Vector` with a blockbench position which is then rotated around the pivot of the part
+---and returns a `Vector` with the position in world-space.
+---
+---The blockbench is absolute and is centered around the model's neck.
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
@@ -241,12 +243,14 @@ function CustomModelPart.setUV(uv) end
 
 ---Takes a `Vector` with a direction in world-space and
 ---returns a `Vector` with the direction relative to the part.
+---
+---Seems to act similar to `.partToWorldDir()`.
 ---@param dir VectorPos
 ---@return VectorPos
 function CustomModelPart.worldToPartDir(dir) end
 
----Takes a `Vector` with a position in world-space and
----returns a `Vector` with the position relative to the part.
+---Takes a `Vector` with a a blockbench position and returns a `Vector` with the world position
+---relative to the player rotated by the part's rotation.
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.worldToPartPos(pos) end

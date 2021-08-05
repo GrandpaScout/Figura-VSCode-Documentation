@@ -116,7 +116,7 @@ nameplate = {
   CHAT = {},
 
   ---@type EntityNameplate
-  ENITTY = {},
+  ENTITY = {},
 
   ---@type Nameplate
   LIST = {}
