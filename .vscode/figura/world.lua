@@ -1007,14 +1007,14 @@
 ---> | `0..7` | minecraft:carrots, minecraft:melon_stem, minecraft:pumpkin_stem, minecraft:potatoes, minecraft:wheat |
 ---> | `0..15` | minecraft:cactus, minecraft:fire, minecraft:soul_fire, minecraft:sugar_cane |
 ---> | `0..25` | minecraft:kelp |
----@field age "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|"16"|"17"|"18"|"19"|"20"|"21"|"22"|"23"|"24"|"25"
+---@field age  ''"0"''|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'|'"16"'|'"17"'|'"18"'|'"19"'|'"20"'|'"21"'|'"22"'|'"23"'|'"24"'|'"25"'
 ---
 ---Determines if the block is part of a complete tripwire circuit.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:tripwire, minecraft:tripwire_hook |
----@field attached boolean
+---@field attached '"false"'|'"true"'
 ---
 ---How this block is attached to the surrounding blocks
 ---***
@@ -1036,41 +1036,41 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..6` | minecraft:cake |
----@field bites "0"|"1"|"2"|"3"|"4"|"5"|"6"
+---@field bites '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'
 ---
 ---Whether this block is floating.
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `true` `false` | minecraft:scaffolding |
----@field bottom boolean
+---@field bottom '"false"'|'"true"'
 ---
 ---The remaining uses of this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..4` | minecraft:respawn_anchor |
----@field charges "0"|"1"|"2"|"3"|"4"
+---@field charges '"0"'|'"1"'|'"2"'|'"3"'|'"4"'
 ---
 ---Whether this block is conditional.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:chain_command_block, minecraft:command_block, minecraft:repeating_command_block |
----@field conditional boolean
+---@field conditional '"false"'|'"true"'
 ---
 ---The amount of redstone ticks to delay the incoming signal.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `1..4` | minecraft:repeater |
----@field delay "1"|"2"|"3"|"4"
+---@field delay '"1"'|'"2"'|'"3"'|'"4"'
 ---
 ---If this block is part of a tripwire circuit that was disarmed by shears.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:tripwire |
----@field disarmed boolean
+---@field disarmed '"false"'|'"true"'
 ---
 ---The distance this block is from a base block.
 ---***
@@ -1078,21 +1078,21 @@
 ---> | :---- | :----------- |
 ---> | `0..7` | minecraft:scaffolding |
 ---> | `1..7` | minecraft:acacia_leaves, minecraft:azalea_leaves, minecraft:birch_leaves, minecraft:dark_oak_leaves, minecraft:flowering_azalea_leaves, minecraft:jungle_leaves, minecraft:oak_leaves, minecraft:spruce_leaves |
----@field distance "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"
+---@field distance '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'
 ---
 ---Determines if something is connected below this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:brown_mushroom_block, minecraft:chorus_plant, minecraft:mushroom_stem, minecraft:red_mushroom_block |
----@field down boolean
+---@field down '"false"'|'"true"'
 ---
 ---Determines if this block drags downwards instead.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:bubble_column |
----@field drag boolean
+---@field drag '"false"'|'"true"'
 ---
 ---Determines if something is connected on the east side of this block.
 ---***
@@ -1100,35 +1100,35 @@
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:andesite_wall, minecraft:black_stained_glass_pane, minecraft:blackstone_wall, minecraft:brick_wall, minecraft:brown_mushroom_block, minecraft:brown_stained_glass_pane, minecraft:chorus_plant, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_wall, minecraft:cyan_stained_glass_pane, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_wall, minecraft:diorite_wall, minecraft:end_stone_brick_wall, minecraft:fire, minecraft:glass_pane, minecraft:granite_wall, minecraft:gray_stained_glass_pane, minecraft:green_stained_glass_pane, minecraft:iron_bars, minecraft:light_blue_stained_glass_pane, minecraft:light_gray_stained_glass_pane, minecraft:lime_stained_glass_pane, minecraft:magenta_stained_glass_pane, minecraft:acacia_fence, minecraft:birch_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:jungle_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:spruce_fence, minecraft:warped_fence, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_wall, minecraft:mushroom_stem, minecraft:nether_brick_wall, minecraft:orange_stained_glass_pane, minecraft:pink_stained_glass_pane, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_wall, minecraft:prismarine_wall, minecraft:purple_stained_glass_pane, minecraft:red_mushroom_block, minecraft:red_nether_brick_wall, minecraft:red_sandstone_wall, minecraft:red_stained_glass_pane, minecraft:sandstone_wall, minecraft:soul_fire, minecraft:stone_brick_wall, minecraft:tripwire, minecraft:vines, minecraft:white_stained_glass_pane, minecraft:yellow_stained_glass_pane |
 ---> | `"none"` `"side"` `"up"` | minecraft:redstone_wire |
----@field east boolean|'"none"'|'"side"'|'"up"'
+---@field east '"false"'|'"true"'|'"none"'|'"side"'|'"up"'
 ---
 ---The amount of eggs in this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `1..4` | minecraft:turtle_egg |
----@field eggs "1"|"2"|"3"|"4"
+---@field eggs '"1"'|'"2"'|'"3"'|'"4"'
 ---
 ---Determines if this block is able to collect and transfer items.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:hopper |
----@field enabled boolean
+---@field enabled '"false"'|'"true"'
 ---
 ---Determines if the block is extended.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:piston, minecraft:sticky_piston |
----@field extended boolean
+---@field extended '"false"'|'"true"'
 ---
 ---Determines if the block has an eye in it.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:end_portal_frame |
----@field eye boolean
+---@field eye '"false"'|'"true"'
 ---
 ---The side of a block this block is attached to.
 ---***
@@ -1160,49 +1160,49 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:lantern, minecraft:soul_lantern |
----@field hanging boolean
+---@field hanging '"false"'|'"true"'
 ---
 ---Determines if this block has a book.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:lectern |
----@field has_book boolean
+---@field has_book '"false"'|'"true"'
 ---
 ---Determines if bottle 1 is placed on this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:brewing_stand |
----@field has_bottle_0 boolean
+---@field has_bottle_0 '"false"'|'"true"'
 ---
 ---Determines if bottle 2 is placed on this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:brewing_stand |
----@field has_bottle_1 boolean
+---@field has_bottle_1 '"false"'|'"true"'
 ---
 ---Determines if bottle 3 is placed on this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:brewing_stand |
----@field has_bottle_2 boolean
+---@field has_bottle_2 '"false"'|'"true"'
 ---
 ---Determines if this block contains a record.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:jukebox |
----@field has_record boolean
+---@field has_record '"false"'|'"true"'
 ---
 ---Determines how close this block is to hatching.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..2` | minecraft:turtle_egg |
----@field hatch "0"|"1"|"2"
+---@field hatch '"0"'|'"1"'|'"2"'
 ---
 ---Identifier where the hinge is on this block.
 ---***
@@ -1216,7 +1216,7 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:acacia_fence_gate, minecraft:birch_fence_gate, minecraft:crimson_fence_gate, minecraft:dark_oak_fence_gate, minecraft:jungle_fence_gate, minecraft:oak_fence_gate, minecraft:spruce_fence_gate, minecraft:warped_fence_gate |
----@field in_wall boolean
+---@field in_wall '"false"'|'"true"'
 ---
 ---The instrument this block plays.
 ---***
@@ -1230,14 +1230,14 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:daylight_detector |
----@field inverted boolean
+---@field inverted '"false"'|'"true"'
 ---
 ---The amount of layers this block has.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `1..8` | minecraft:snow |
----@field layers "1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"
+---@field layers '"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'
 ---
 ---Determines the size of the leaves on this block.
 ---***
@@ -1253,21 +1253,21 @@
 ---> | `0..3` | minecraft:cauldron |
 ---> | `0..8` | minecraft:composter |
 ---> | `0..15` | minecraft:flowing_lava, minecraft:flowing_water, minecraft:lava, minecraft:water |
----@field level "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"
+---@field level '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'
 ---
 ---Determines if this block is lit.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:blast_furnace, minecraft:campfire, minecraft:furnace, minecraft:redstone_ore, minecraft:redstone_wall_torch, minecraft:redstone_torch, minecraft:redstone_lamp, minecraft:smoker, minecraft:soul_campfire |
----@field lit boolean
+---@field lit '"false"'|'"true"'
 ---
 ---Determines if this block is locked.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:repeater |
----@field locked boolean
+---@field locked '"false"'|'"true"'
 ---
 ---Determines the setting of this block.
 ---***
@@ -1282,7 +1282,7 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..7` | minecraft:farmland |
----@field moisture "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"
+---@field moisture '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'
 ---
 ---Determines if something is connected on the north side of this block.
 ---***
@@ -1290,28 +1290,28 @@
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:andesite_wall, minecraft:black_stained_glass_pane, minecraft:blackstone_wall, minecraft:brick_wall, minecraft:brown_mushroom_block, minecraft:brown_stained_glass_pane, minecraft:chorus_plant, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_wall, minecraft:cyan_stained_glass_pane, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_wall, minecraft:diorite_wall, minecraft:end_stone_brick_wall, minecraft:fire, minecraft:glass_pane, minecraft:granite_wall, minecraft:gray_stained_glass_pane, minecraft:green_stained_glass_pane, minecraft:iron_bars, minecraft:light_blue_stained_glass_pane, minecraft:light_gray_stained_glass_pane, minecraft:lime_stained_glass_pane, minecraft:magenta_stained_glass_pane, minecraft:acacia_fence, minecraft:birch_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:jungle_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:spruce_fence, minecraft:warped_fence, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_wall, minecraft:mushroom_stem, minecraft:nether_brick_wall, minecraft:orange_stained_glass_pane, minecraft:pink_stained_glass_pane, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_wall, minecraft:prismarine_wall, minecraft:purple_stained_glass_pane, minecraft:red_mushroom_block, minecraft:red_nether_brick_wall, minecraft:red_sandstone_wall, minecraft:red_stained_glass_pane, minecraft:sandstone_wall, minecraft:soul_fire, minecraft:stone_brick_wall, minecraft:tripwire, minecraft:vines, minecraft:white_stained_glass_pane, minecraft:yellow_stained_glass_pane |
 ---> | `"none"` `"side"` `"up"` | minecraft:redstone_wire |
----@field north boolean|'"none"'|'"side"'|'"up"'
+---@field north '"false"'|'"true"'|'"none"'|'"side"'|'"up"'
 ---
 ---Determines the pitch of the note this block will play.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..24` | minecraft:note_block |
----@field note "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"|"16"|"17"|"18"|"19"|"20"|"21"|"22"|"23"|"24"
+---@field note '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'|'"16"'|'"17"'|'"18"'|'"19"'|'"20"'|'"21"'|'"22"'|'"23"'|'"24"'
 ---
 ---Determines if this block is occupied by something.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:black_bed, minecraft:brown_bed, minecraft:cyan_bed, minecraft:gray_bed, minecraft:green_bed, minecraft:light_blue_bed, minecraft:light_gray_bed, minecraft:lime_bed, minecraft:magenta_bed, minecraft:orange_bed, minecraft:pink_bed, minecraft:purple_bed, minecraft:red_bed, minecraft:white_bed, minecraft:yellow_bed |
----@field occupied boolean
+---@field occupied '"false"'|'"true"'
 ---
 ---Determines if this block is open.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:acacia_door, minecraft:acacia_fence_gate, minecraft:acacia_trapdoor, minecraft:barrel, minecraft:birch_door, minecraft:birch_fence_gate, minecraft:birch_trapdoor, minecraft:crimson_door, minecraft:dark_oak_door, minecraft:dark_oak_fence_gate, minecraft:dark_oak_trapdoor, minecraft:iron_door, minecraft:iron_trapdoor, minecraft:jungle_door, minecraft:jungle_fence_gate, minecraft:jungle_trapdoor, minecraft:oak_door, minecraft:oak_fence_gate, minecraft:oak_trapdoor, minecraft:spruce_door, minecraft:spruce_fence_gate, minecraft:spruce_trapdoor, minecraft:warped_door |
----@field open boolean
+---@field open '"false"'|'"true"'
 ---
 ---The direction this block is facing.
 ---***
@@ -1332,35 +1332,35 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:acacia_leaves, minecraft:birch_leaves, minecraft:dark_oak_leaves, minecraft:jungle_leaves, minecraft:oak_leaves, minecraft:spruce_leaves |
----@field persistent boolean
+---@field persistent '"false"'|'"true"'
 ---
 ---The amount of sea pickes in this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `1..4` | minecraft:sea_pickle |
----@field pickles "1"|"2"|"3"|"4"
+---@field pickles '"1"'|'"2"'|'"3"'|'"4"'
 ---
 ---The amount of redstone power this block emits.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..15` | mincraft:daylight_detector, minecraft:heavy_weighted_pressure_plate, minecraft:light_weighted_pressure_plate, minecraft:redstone_wire |
----@field power "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"
+---@field power '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'
 ---
 ---Determines if this block sending (if a powering device) or receiving (if a powered device) restone power.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:acacia_button, minecraft:acacia_door, minecraft:acacia_fence_gate, minecraft:acacia_pressure_plate, minecraft:acacia_trapdoor, minecraft:activator_rail, minecraft:birch_button, minecraft:birch_door, minecraft:birch_fence_gate, minecraft:birch_pressure_plate, minecraft:birch_trapdoor, minecraft:comparator, minecraft:crimson_button, minecraft:crimson_pressure_plate, minecraft:dark_oak_button, minecraft:dark_oak_door, minecraft:dark_oak_fence_gate, minecraft:dark_oak_pressure_plate, minecraft:dark_oak_trapdoor, minecraft:detector_rail, minecraft:iron_door, minecraft:iron_trapdoor, minecraft:jungle_button, minecraft:jungle_door, minecraft:jungle_fence_gate, minecraft:jungle_pressure_plate, minecraft:jungle_trapdoor, minecraft:lectern, minecraft:lever, minecraft:note_block, minecraft:oak_button, minecraft:oak_door, minecraft:oak_fence_gate, minecraft:oak_pressure_plate, minecraft:oak_trapdoor, minecraft:observer, minecraft:polished_blackstone_button, minecraft:polished_blackstone_pressure_plate, minecraft:powered_rail, minecraft:repeater, minecraft:spruce_button, minecraft:spruce_door, minecraft:spruce_fence_gate, minecraft:spruce_pressure_plate, minecraft:spruce_trapdoor, minecraft:stone_button, minecraft:stone_pressure_plate, minecraft:tripwire, minecraft:tripwire_hook, minecraft:warped_button, minecraft:warped_pressure_plate |
----@field powered boolean
+---@field powered '"false"'|'"true"'
 ---
 ---The angle of this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..15` | minecraft:acacia_sign, minecraft:birch_sign, minecraft:black_banner, minecraft:brown_banner, minecraft:creeper_head, minecraft:crimson_sign, minecraft:cyan_banner, minecraft:dark_oak_sign, minecraft:dragon_head, minecraft:gray_banner, minecraft:green_banner, minecraft:jungle_sign, minecraft:light_blue_banner, minecraft:light_gray_banner, minecraft:lime_banner, minecraft:magenta_banner, minecraft:oak_sign,minecraft:orange_banner, minecraft:pink_banner, minecraft:player_head, minecraft:purple_banner, minecraft:red_banner, minecraft:skeleton_skull, minecraft:spruce_sign, minecraft:warped_sign, minecraft:white_banner, minecraft:wither_skeleton_skull, minecraft:yellow_banner, minecraft:zombie_head |
----@field rotation "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"10"|"11"|"12"|"13"|"14"|"15"
+---@field rotation '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'
 ---
 ---The form this block takes to connect to other blocks.
 ---***
@@ -1376,21 +1376,21 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:piston_head
----@field short boolean
+---@field short '"false"'|'"true"'
 ---
 ---Determines if this block's smoke reaches higher up.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:campfire, minecraft:soul_campfire
----@field signal_fire boolean
+---@field signal_fire '"false"'|'"true"'
 ---
 ---Determines if this block is snow-covered.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:grass_block, minecraft:mycelium, minecraft:podzol |
----@field snowy boolean
+---@field snowy '"false"'|'"true"'
 ---
 ---Determines if something is connected on the south side of this block.
 ---***
@@ -1398,21 +1398,21 @@
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:andesite_wall, minecraft:black_stained_glass_pane, minecraft:blackstone_wall, minecraft:brick_wall, minecraft:brown_mushroom_block, minecraft:brown_stained_glass_pane, minecraft:chorus_plant, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_wall, minecraft:cyan_stained_glass_pane, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_wall, minecraft:diorite_wall, minecraft:end_stone_brick_wall, minecraft:fire, minecraft:glass_pane, minecraft:granite_wall, minecraft:gray_stained_glass_pane, minecraft:green_stained_glass_pane, minecraft:iron_bars, minecraft:light_blue_stained_glass_pane, minecraft:light_gray_stained_glass_pane, minecraft:lime_stained_glass_pane, minecraft:magenta_stained_glass_pane, minecraft:acacia_fence, minecraft:birch_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:jungle_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:spruce_fence, minecraft:warped_fence, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_wall, minecraft:mushroom_stem, minecraft:nether_brick_wall, minecraft:orange_stained_glass_pane, minecraft:pink_stained_glass_pane, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_wall, minecraft:prismarine_wall, minecraft:purple_stained_glass_pane, minecraft:red_mushroom_block, minecraft:red_nether_brick_wall, minecraft:red_sandstone_wall, minecraft:red_stained_glass_pane, minecraft:sandstone_wall, minecraft:soul_fire, minecraft:stone_brick_wall, minecraft:tripwire, minecraft:vines, minecraft:white_stained_glass_pane, minecraft:yellow_stained_glass_pane |
 ---> | `"none"` `"side"` `"up"` | minecraft:redstone_wire |
----@field south boolean|'"none"'|'"side"'|'"up"'
+---@field south '"false"'|'"true"'|'"none"'|'"side"'|'"up"'
 ---
 ---Determines if this block is ready to grow.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `0..1` | minecraft:acacia_sapling, minecraft:bamboo, minecraft:bamboo_sapling, minecraft:birch_sapling, minecraft:dark_oak_sapling, minecraft:jungle_sapling, minecraft:oak_sapling, minecraft:spruce_sapling |
----@field stage "0"|"1"
+---@field stage '"0"'|'"1"'
 ---
 ---Determines if this block has been activated.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:dispenser, minecraft:dropper |
----@field triggered boolean
+---@field triggered '"false"'|'"true"'
 ---
 ---The variant of this block.
 ---***
@@ -1428,21 +1428,21 @@
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:tnt |
----@field unstable boolean
+---@field unstable '"false"'|'"true"'
 ---
 ---Determines if something is connected on the east side of this block.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:andesite_wall, minecraft:blackstone_wall, minecraft:brick_wall, minecraft:brown_mushroom_block, minecraft:chorus_plant, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_wall, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_wall, minecraft:diorite_wall, minecraft:end_stone_brick_wall, minecraft:fire, minecraft:granite_wall, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_wall, minecraft:mushroom_stem, minecraft:nether_brick_wall, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_wall, minecraft:prismarine_wall, minecraft:red_mushroom_block, minecraft:red_nether_brick_wall, minecraft:red_sandstone_wall, minecraft:sandstone_wall, minecraft:soul_fire, minecraft:stone_brick_wall, minecraft:vines |
----@field up boolean
+---@field up '"false"'|'"true"'
 ---
 ---Determines if this block contains a water source.
 ---***
 ---> | State | Valid Blocks |
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:acacia_fence, minecraft:acacia_sign, minecraft:acacia_slab, minecraft:acacia_stairs, minecraft:acacia_trapdoor, minecraft:acacia_wall_sign, minecraft:andesite_slab, minecraft:andesite_stairs, minecraft:andesite_wall, minecraft:birch_fence, minecraft:birch_sign, minecraft:birch_slab, minecraft:birch_stairs, minecraft:birch_trapdoor, minecraft:birch_wall_sign, minecraft:black_stained_glass_pane, minecraft:blackstone_slab, minecraft:blackstone_stairs, minecraft:blackstone_wall, minecraft:brain_coral, minecraft:brain_coral_fan, minecraft:brain_coral_wall_fan, minecraft:brick_slab, minecraft:brick_stairs, minecraft:brick_wall, minecraft:brown_stained_glass_pane, minecraft:bubble_coral, minecraft:bubble_coral_fan, minecraft:bubble_coral_wall_fan, minecraft:campfire, minecraft:chain, minecraft:chest, minecraft:cobbled_deepslate_slab, minecraft:cobbled_deepslate_stairs, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_slab, minecraft:cobblestone_stairs, minecraft:cobblestone_wall, minecraft:conduit, minecraft:crimson_fence, minecraft:crimson_slab, minecraft:crimson_stairs, minecraft:crimson_trapdoor, minecraft:cut_copper_slab, minecraft:cut_copper_stairs, minecraft:cut_red_sandstone_slab, minecraft:cut_sandstone_slab, minecraft:cyan_stained_glass_pane, minecraft:dark_oak_fence, minecraft:dark_oak_sign, minecraft:dark_oak_slab, minecraft:dark_oak_stairs, minecraft:dark_oak_trapdoor, minecraft:dark_oak_wall_sign, minecraft:dark_prismarine_slab, minecraft:dark_prismarine_stairs, minecraft:dead_brain_coral, minecraft:dead_brain_coral_fan, minecraft:dead_brain_coral_wall_fan, minecraft:dead_bubble_coral, minecraft:dead_bubble_coral_fan, minecraft:dead_bubble_coral_wall_fan, minecraft:dead_fire_coral, minecraft:dead_fire_coral_fan, minecraft:dead_fire_coral_wall_fan, minecraft:dead_horn_coral, minecraft:dead_horn_coral_fan, minecraft:dead_horn_coral_wall_fan, minecraft:dead_tube_coral, minecraft:dead_tube_coral_fan, minecraft:dead_tube_coral_wall_fan, minecraft:deepslate_brick_slab, minecraft:deepslate_brick_stairs, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_slab, minecraft:deepslate_tile_stairs, minecraft:deepslate_tile_wall, minecraft:diorite_slab, minecraft:diorite_stairs, minecraft:diorite_wall, minecraft:end_stone_brick_slab, minecraft:end_stone_brick_stairs, minecraft:end_stone_brick_wall, minecraft:ender_chest, minecraft:exposed_cut_copper_slab, minecraft:exposed_cut_copper_stairs, minecraft:fire_coral, minecraft:fire_coral_fan, minecraft:fire_coral_wall_fan, minecraft:glass_pane, minecraft:granite_slab, minecraft:granite_stairs, minecraft:granite_wall, minecraft:gray_stained_glass_pane, minecraft:green_stained_glass_pane, minecraft:horn_coral, minecraft:horn_coral_fan, minecraft:horn_coral_wall_fan, minecraft:iron_bars, minecraft:iron_trapdoor, minecraft:jungle_fence, minecraft:jungle_sign, minecraft:jungle_slab, minecraft:jungle_stairs, minecraft:jungle_trapdoor, minecraft:jungle_wall_sign, minecraft:ladder, minecraft:lantern, minecraft:light_blue_stained_glass_pane, minecraft:light_gray_stained_glass_pane, minecraft:lime_stained_glass_pane, minecraft:magenta_stained_glass_pane, minecraft:mossy_cobblestone_slab, minecraft:mossy_cobblestone_stairs, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_slab, minecraft:mossy_stone_brick_stairs, minecraft:mossy_stone_brick_wall, minecraft:nether_brick_fence, minecraft:nether_brick_slab, minecraft:nether_brick_stairs, minecraft:nether_brick_wall, minecraft:oak_fence, minecraft:oak_sign, minecraft:oak_slab, minecraft:oak_stairs, minecraft:oak_trapdoor, minecraft:oak_wall_sign, minecraft:orange_stained_glass_pane, minecraft:oxidized_cut_copper_slab, minecraft:oxidized_cut_copper_stairs, minecraft:petrified_oak_slab, minecraft:pink_stained_glass_pane, minecraft:polished_andesite_slab, minecraft:polished_andesite_stairs, minecraft:polished_blackstone_brick_slab, minecraft:polished_blackstone_brick_stairs, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_slab, minecraft:polished_blackstone_stairs, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_slab, minecraft:polished_deepslate_stairs, minecraft:polished_deepslate_wall, minecraft:polished_diorite_slab, minecraft:polished_diorite_stairs, minecraft:polished_granite_slab, minecraft:polished_granite_stairs, minecraft:prismarine_brick_slab, minecraft:prismarine_brick_slab, minecraft:prismarine_brick_stairs, minecraft:prismarine_slab, minecraft:prismarine_stairs, minecraft:prismarine_wall, minecraft:purple_stained_glass_pane, minecraft:purpur_slab, minecraft:purpur_stairs, minecraft:quartz_slab, minecraft:quartz_stairs, minecraft:red_nether_brick_slab, minecraft:red_nether_brick_stairs, minecraft:red_nether_brick_wall, minecraft:red_sandstone_slab, minecraft:red_sandstone_stairs, minecraft:red_sandstone_wall, minecraft:red_stained_glass_pane, minecraft:sandstone_slab, minecraft:sandstone_stairs, minecraft:sandstone_wall, minecraft:scaffolding, minecraft:sea_pickle, minecraft:smooth_quartz_slab, minecraft:smooth_quartz_stairs, minecraft:smooth_red_sandstone_slab, minecraft:smooth_red_sandstone_stairs, minecraft:smooth_sandstone_slab, minecraft:smooth_sandstone_stairs, minecraft:smooth_stone_slab, minecraft:soul_campfire, minecraft:soul_lantern, minecraft:spruce_fence, minecraft:spruce_sign, minecraft:spruce_slab, minecraft:spruce_stairs, minecraft:spruce_trapdoor, minecraft:spruce_wall_sign, minecraft:stone_brick_slab, minecraft:stone_brick_stairs, minecraft:stone_brick_wall, minecraft:stone_slab, minecraft:stone_stairs, minecraft:trapped_chest, minecraft:tube_coral, minecraft:tube_coral_fan, minecraft:tube_coral_wall_fan, minecraft:warped_fence, minecraft:warped_slab, minecraft:warped_stairs, minecraft:warped_trapdoor, minecraft:waxed_cut_copper_slab, minecraft:waxed_cut_copper_stairs, minecraft:waxed_exposed_cut_copper_slab, minecraft:waxed_oxidized_cut_copper_slab, minecraft:waxed_oxidized_cut_copper_stairs, minecraft:waxed_weathered_cut_copper_slab, minecraft:waxed_weathered_cut_copper_stairs, minecraft:weathered_cut_copper_slab, minecraft:weathered_cut_copper_stairs, minecraft:weathered_cut_copper_stairs, minecraft:white_stained_glass_pane, minecraft:yellow_stained_glass_pane |
----@field waterlogged boolean
+---@field waterlogged '"false"'|'"true"'
 ---
 ---Determines if something is connected on the west side of this block.
 ---***
@@ -1450,7 +1450,7 @@
 ---> | :---- | :----------- |
 ---> | `false` `true` | minecraft:andesite_wall, minecraft:black_stained_glass_pane, minecraft:blackstone_wall, minecraft:brick_wall, minecraft:brown_mushroom_block, minecraft:brown_stained_glass_pane, minecraft:chorus_plant, minecraft:cobbled_deepslate_wall, minecraft:cobblestone_wall, minecraft:cyan_stained_glass_pane, minecraft:deepslate_brick_wall, minecraft:deepslate_tile_wall, minecraft:diorite_wall, minecraft:end_stone_brick_wall, minecraft:fire, minecraft:glass_pane, minecraft:granite_wall, minecraft:gray_stained_glass_pane, minecraft:green_stained_glass_pane, minecraft:iron_bars, minecraft:light_blue_stained_glass_pane, minecraft:light_gray_stained_glass_pane, minecraft:lime_stained_glass_pane, minecraft:magenta_stained_glass_pane, minecraft:acacia_fence, minecraft:birch_fence, minecraft:crimson_fence, minecraft:dark_oak_fence, minecraft:jungle_fence, minecraft:nether_brick_fence, minecraft:oak_fence, minecraft:spruce_fence, minecraft:warped_fence, minecraft:mossy_cobblestone_wall, minecraft:mossy_stone_brick_wall, minecraft:mushroom_stem, minecraft:nether_brick_wall, minecraft:orange_stained_glass_pane, minecraft:pink_stained_glass_pane, minecraft:polished_blackstone_brick_wall, minecraft:polished_blackstone_wall, minecraft:polished_deepslate_wall, minecraft:prismarine_wall, minecraft:purple_stained_glass_pane, minecraft:red_mushroom_block, minecraft:red_nether_brick_wall, minecraft:red_sandstone_wall, minecraft:red_stained_glass_pane, minecraft:sandstone_wall, minecraft:soul_fire, minecraft:stone_brick_wall, minecraft:tripwire, minecraft:vines, minecraft:white_stained_glass_pane, minecraft:yellow_stained_glass_pane |
 ---> | `"none"` `"side"` `"up"` | minecraft:redstone_wire |
----@field west boolean|'"none"'|'"side"'|'"up"'
+---@field west '"false"'|'"true"'|'"none"'|'"side"'|'"up"'
 
 ---A `table` containing the blockstate of a block.
 ---@class BlockState

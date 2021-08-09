@@ -10,11 +10,6 @@
 &emsp;[sumneko's Language Server](#sumnekos-language-server)  
 &emsp;[The Manual](#the-manual)
 ***
-# What's New?
-* Manuel_'s VSCode Figura extension now has the ability to automatically download this documentation
-and many of the compatibility issues have been fixed! Get the extension
-[here](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura)!
-
 # What Is This?  
 This documentation is meant to be used to help with Lua scripts made in the
 [Figura](https://modrinth.com/mod/figura) Minecraft mod.
@@ -36,6 +31,11 @@ having to switch to a wiki page every time you want to look at a function or the
 This documentation uses EmmyLua Annotations to document everything, so you should use a Lua Language
 Server that supports it. (Such as
 [sumneko's Language Server](#sumnekos-language-server).)
+
+**(If you use Manuel_'s
+[Figura Extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura),
+you will not need to manually install it. Just enable the `figura.checkForNewDocumentationVersion`
+and `figura.useLanguageServer` settings to have this documentation downloaded automatically.)**
 
 The `.vscode` folder supplied should be placed in `<minecraft>\figura\model_files\` and the
 workspace should have the `model_files` folder be the root.  
@@ -86,7 +86,8 @@ Stops other files in the workspace from attempting to update if an unrelated fil
   "Lua.diagnostics.disable": [
     "lowercase-global",
     "trailing-space",
-    "unbalanced-assignments"
+    "unbalanced-assignments",
+    "duplicate-doc-class"
   ]
   ```
   Disables diagnostics that do not affect Figura scripts. Specifically:
@@ -96,6 +97,7 @@ with an uppercase character or be all caps and to make local variables lowercase
 causing errors.
   * An unbalanced assignment will almost *never* happen in Figura unless you make your own
 function with more than one return.
+  * Stops custom classes from multiple different files from conflicting with eachother.
 
 * 
   ```json

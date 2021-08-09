@@ -33,7 +33,8 @@
   "Lua.diagnostics.disable": [
     "lowercase-global",
     "trailing-space",
-    "unbalanced-assignments"
+    "unbalanced-assignments",
+    "duplicate-doc-class"
   ],
 
   //Changes the severity of some diagnostics to reflect their actual severity in Figura.

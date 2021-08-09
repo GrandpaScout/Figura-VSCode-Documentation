@@ -2,6 +2,343 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
+---A Minecraft item identifier.
+---
+---Only the default Minecraft items are auto-completed.  
+---You can use any item from any mod, even if it does not auto-complete.
+---@alias ItemID
+---| '"minecraft:acacia_boat"' #Acacia Boat
+---| '"minecraft:amethyst_shard"' #Amethyst Shard
+---| '"minecraft:apple"' #Apple
+---| '"minecraft:armor_stand"' #Armor Stand
+---| '"minecraft:arrow"' #Arrow
+---| '"minecraft:axolotl_bucket"' #Bucket of Axolotl
+---| '"minecraft:axolotl_spawn_egg"' #Axolotl Spawn Egg
+---| '"minecraft:baked_potato"' #Baked Potato
+---| '"minecraft:bat_spawn_egg"' #Bat Spawn Egg
+---| '"minecraft:bee_spawn_egg"' #Bee Spawn Egg
+---| '"minecraft:beef"' #Raw Beef
+---| '"minecraft:beetroot"' #Beetroot
+---| '"minecraft:beetroot_seeds"' #Beetroot Seeds
+---| '"minecraft:beetroot_soup"' #Beetroot Soup
+---| '"minecraft:birch_boat"' #Birch Boat
+---| '"minecraft:black_dye"' #Black Dye
+---| '"minecraft:blaze_powder"' #Blaze Powder
+---| '"minecraft:blaze_rod"' #Blaze Rod
+---| '"minecraft:blaze_spawn_egg"' #Blaze Spawn Egg
+---| '"minecraft:blue_dye"' #Blue Dye
+---| '"minecraft:bone"' #Bone
+---| '"minecraft:bone_meal"' #Bone Meal
+---| '"minecraft:book"' #Book
+---| '"minecraft:bow"' #Bow
+---| '"minecraft:bowl"' #Bowl
+---| '"minecraft:bread"' #Bread
+---| '"minecraft:brick"' #Brick
+---| '"minecraft:brown_dye"' #Brown Dye
+---| '"minecraft:bucket"' #Bucket
+---| '"minecraft:bundle"' #Bundle
+---| '"minecraft:carrot"' #Carrot
+---| '"minecraft:carrot_on_a_stick"' #Carrot on a Stick
+---| '"minecraft:cat_spawn_egg"' #Cat Spawn Egg
+---| '"minecraft:cave_spider_spawn_egg"' #Cave Spider Spawn Egg
+---| '"minecraft:chainmail_boots"' #Chainmail Boots
+---| '"minecraft:chainmail_chestplate"' #Chainmail Chestplate
+---| '"minecraft:chainmail_helmet"' #Chainmail Helmet
+---| '"minecraft:chainmail_leggings"' #Chainmail Leggings
+---| '"minecraft:charcoal"' #Charcoal
+---| '"minecraft:chest_minecart"' #Minecart with Chest
+---| '"minecraft:chicken"' #Raw Chicken
+---| '"minecraft:chicken_spawn_egg"' #Chicken Spawn Egg
+---| '"minecraft:chorus_fruit"' #Chorus Fruit
+---| '"minecraft:clay_ball"' #Clay Ball
+---| '"minecraft:clock"' #Clock
+---| '"minecraft:coal"' #Coal
+---| '"minecraft:cocoa_beans"' #Cocoa Beans
+---| '"minecraft:cod"' #Raw Cod
+---| '"minecraft:cod_bucket"' #Bucket of Cod
+---| '"minecraft:cod_spawn_egg"' #Cod Spawn Egg
+---| '"minecraft:command_block_minecart"' #Minecart with Command Block
+---| '"minecraft:compass"' #Compass
+---| '"minecraft:cooked_beef"' #Steak
+---| '"minecraft:cooked_chicken"' #Cooked Chicken
+---| '"minecraft:cooked_cod"' #Cooked Cod
+---| '"minecraft:cooked_mutton"' #Cooked Mutton
+---| '"minecraft:cooked_porkchop"' #Cooked Porkchop
+---| '"minecraft:cooked_rabbit"' #Cooked Rabbit
+---| '"minecraft:cooked_salmon"' #Cooked Salmon
+---| '"minecraft:cookie"' #Cookie
+---| '"minecraft:copper_ingot"' #Copper Ingot
+---| '"minecraft:cow_spawn_egg"' #Cow Spawn Egg
+---| '"minecraft:creeper_banner_pattern"' #Banner Pattern (Creeper Charge)
+---| '"minecraft:creeper_spawn_egg"' #Creeper Spawn Egg
+---| '"minecraft:crossbow"' #Crossbow
+---| '"minecraft:cyan_dye"' #Cyan Dye
+---| '"minecraft:dark_oak_boat"' #Dark Oak Boat
+---| '"minecraft:debug_stick"' #Debug Stick
+---| '"minecraft:diamond"' #Diamond
+---| '"minecraft:diamond_axe"' #Diamond Axe
+---| '"minecraft:diamond_boots"' #Diamond Boots
+---| '"minecraft:diamond_chestplate"' #Diamond Chestplate
+---| '"minecraft:diamond_helmet"' #Diamond Helmet
+---| '"minecraft:diamond_hoe"' #Diamond Hoe
+---| '"minecraft:diamond_horse_armor"' #Diamond Horse Armor
+---| '"minecraft:diamond_leggings"' #Diamond Leggings
+---| '"minecraft:diamond_pickaxe"' #Diamond Pickaxe
+---| '"minecraft:diamond_shovel"' #Diamond Shovel
+---| '"minecraft:diamond_sword"' #Diamond Sword
+---| '"minecraft:dolphin_spawn_egg"' #Dolphin Spawn Egg
+---| '"minecraft:donkey_spawn_egg"' #Donkey Spawn Egg
+---| '"minecraft:dragon_breath"' #Dragon's Breath
+---| '"minecraft:dried_kelp"' #Dried Kelp
+---| '"minecraft:drowned_spawn_egg"' #Drowned Spawn Egg
+---| '"minecraft:egg"' #Egg
+---| '"minecraft:elder_guardian_spawn_egg"' #Elder Guardian Spawn Egg
+---| '"minecraft:elytra"' #Elytra
+---| '"minecraft:emerald"' #Emerald
+---| '"minecraft:enchanted_book"' #Enchanted Book
+---| '"minecraft:enchanted_golden_apple"' #Enchanted Golden Apple
+---| '"minecraft:end_crystal"' #End Crystal
+---| '"minecraft:ender_eye"' #Eye of Ender
+---| '"minecraft:ender_pearl"' #Ender Pearl
+---| '"minecraft:enderman_spawn_egg"' #Enderman Spawn Egg
+---| '"minecraft:endermite_spawn_egg"' #Endermite Spawn Egg
+---| '"minecraft:evoker_spawn_egg"' #Evoker Spawn Egg
+---| '"minecraft:experience_bottle"' #Bottle o' Enchanting
+---| '"minecraft:feather"' #Feather
+---| '"minecraft:fermented_spider_eye"' #Fermented Spider Eye
+---| '"minecraft:filled_map"' #Map or Explorer Map
+---| '"minecraft:fire_charge"' #Fire Charge
+---| '"minecraft:firework_rocket"' #Firework Rocket
+---| '"minecraft:firework_star"' #Firework Star
+---| '"minecraft:fishing_rod"' #Fishing Rod
+---| '"minecraft:flint"' #Flint
+---| '"minecraft:flint_and_steel"' #Flint and Steel
+---| '"minecraft:flower_banner_pattern"' #Banner Pattern (Flower Charge)
+---| '"minecraft:fox_spawn_egg"' #Fox Spawn Egg
+---| '"minecraft:furnace_minecart"' #Minecart with Furnace
+---| '"minecraft:ghast_spawn_egg"' #Ghast Spawn Egg
+---| '"minecraft:ghast_tear"' #Ghast Tear
+---| '"minecraft:glass_bottle"' #Glass Bottle
+---| '"minecraft:glistering_melon_slice"' #Glistering Melon Slice
+---| '"minecraft:globe_banner_pattern"' #Banner Pattern (Globe)
+---| '"minecraft:glow_berries"' #Glow Berries
+---| '"minecraft:glow_ink_sac"' #Glow Ink Sac
+---| '"minecraft:glow_item_frame"' #Glow Item Frame
+---| '"minecraft:glow_squid_spawn_egg"' #Glow Squid Spawn Egg
+---| '"minecraft:glowstone_dust"' #Glowstone Dust
+---| '"minecraft:goat_spawn_egg"' #Goat Spawn Egg
+---| '"minecraft:gold_ingot"' #Gold Ingot
+---| '"minecraft:gold_nugget"' #Gold Nugget
+---| '"minecraft:golden_apple"' #Golden Apple
+---| '"minecraft:golden_axe"' #Golden Axe
+---| '"minecraft:golden_boots"' #Golden Boots
+---| '"minecraft:golden_carrot"' #Golden Carrot
+---| '"minecraft:golden_chestplate"' #Golden Chestplate
+---| '"minecraft:golden_helmet"' #Golden Helmet
+---| '"minecraft:golden_hoe"' #Golden Hoe
+---| '"minecraft:golden_horse_armor"' #Golden Horse Armor
+---| '"minecraft:golden_leggings"' #Golden Leggings
+---| '"minecraft:golden_pickaxe"' #Golden Pickaxe
+---| '"minecraft:golden_shovel"' #Golden Shovel
+---| '"minecraft:golden_sword"' #Golden Sword
+---| '"minecraft:gray_dye"' #Gray Dye
+---| '"minecraft:green_dye"' #Green Dye
+---| '"minecraft:guardian_spawn_egg"' #Guardian Spawn Egg
+---| '"minecraft:gunpowder"' #Gunpowder
+---| '"minecraft:heart_of_the_sea"' #Heart of the Sea
+---| '"minecraft:hoglin_spawn_egg"' #Hoglin Spawn Egg
+---| '"minecraft:honey_bottle"' #Honey Bottle
+---| '"minecraft:honeycomb"' #Honeycomb
+---| '"minecraft:hopper_minecart"' #Minecart with Hopper
+---| '"minecraft:horse_spawn_egg"' #Horse Spawn Egg
+---| '"minecraft:husk_spawn_egg"' #Husk Spawn Egg
+---| '"minecraft:ink_sac"' #Ink Sac
+---| '"minecraft:iron_axe"' #Iron Axe
+---| '"minecraft:iron_boots"' #Iron Boots
+---| '"minecraft:iron_chestplate"' #Iron Chestplate
+---| '"minecraft:iron_helmet"' #Iron Helmet
+---| '"minecraft:iron_hoe"' #Iron Hoe
+---| '"minecraft:iron_horse_armor"' #Iron Horse Armor
+---| '"minecraft:iron_ingot"' #Iron Ingot
+---| '"minecraft:iron_leggings"' #Iron Leggings
+---| '"minecraft:iron_nugget"' #Iron Nugget
+---| '"minecraft:iron_pickaxe"' #Iron Pickaxe
+---| '"minecraft:iron_shovel"' #Iron Shovel
+---| '"minecraft:iron_sword"' #Iron Sword
+---| '"minecraft:item_frame"' #Item Frame
+---| '"minecraft:jungle_boat"' #Jungle Boat
+---| '"minecraft:knowledge_book"' #Knowledge Book
+---| '"minecraft:lapis_lazuli"' #Lapis Lazuli
+---| '"minecraft:lava_bucket"' #Lava Bucket
+---| '"minecraft:lead"' #Lead
+---| '"minecraft:leather"' #Leather
+---| '"minecraft:leather_boots"' #Leather Boots
+---| '"minecraft:leather_chestplate"' #Leather Tunic
+---| '"minecraft:leather_helmet"' #Leather Cap
+---| '"minecraft:leather_horse_armor"' #Leather Horse Armor
+---| '"minecraft:leather_leggings"' #Leather Pants
+---| '"minecraft:light_blue_dye"' #Light Blue Dye
+---| '"minecraft:light_gray_dye"' #Light Gray Dye
+---| '"minecraft:lime_dye"' #Lime Dye
+---| '"minecraft:lingering_potion"' #Lingering Potions
+---| '"minecraft:llama_spawn_egg"' #Llama Spawn Egg
+---| '"minecraft:magenta_dye"' #Magenta Dye
+---| '"minecraft:magma_cream"' #Magma Cream
+---| '"minecraft:magma_cube_spawn_egg"' #Magma Cube Spawn Egg
+---| '"minecraft:map"' #Empty Map
+---| '"minecraft:melon_seeds"' #Melon Seeds
+---| '"minecraft:melon_slice"' #Melon Slice
+---| '"minecraft:milk_bucket"' #Milk Bucket
+---| '"minecraft:minecart"' #Minecart
+---| '"minecraft:mojang_banner_pattern"' #Banner Pattern (Thing)
+---| '"minecraft:mooshroom_spawn_egg"' #Mooshroom Spawn Egg
+---| '"minecraft:mule_spawn_egg"' #Mule Spawn Egg
+---| '"minecraft:mushroom_stew"' #Mushroom Stew
+---| '"minecraft:music_disc_11"' #Music Disc (11)
+---| '"minecraft:music_disc_13"' #Music Disc (13)
+---| '"minecraft:music_disc_blocks"' #Music Disc (blocks)
+---| '"minecraft:music_disc_cat"' #Music Disc (cat)
+---| '"minecraft:music_disc_chirp"' #Music Disc (chirp)
+---| '"minecraft:music_disc_far"' #Music Disc (far)
+---| '"minecraft:music_disc_mall"' #Music Disc (mall)
+---| '"minecraft:music_disc_mellohi"' #Music Disc (mellohi)
+---| '"minecraft:music_disc_pigstep"' #Music Disc (Pigstep)
+---| '"minecraft:music_disc_stal"' #Music Disc (stal)
+---| '"minecraft:music_disc_strad"' #Music Disc (strad)
+---| '"minecraft:music_disc_wait"' #Music Disc (wait)
+---| '"minecraft:music_disc_ward"' #Music Disc (ward)
+---| '"minecraft:mutton"' #Raw Mutton
+---| '"minecraft:name_tag"' #Name Tag
+---| '"minecraft:nautilus_shell"' #Nautilus Shell
+---| '"minecraft:nether_brick"' #Nether Brick
+---| '"minecraft:nether_star"' #Nether Star
+---| '"minecraft:nether_wart"' #Nether Wart
+---| '"minecraft:netherite_axe"' #Netherite Axe
+---| '"minecraft:netherite_boots"' #Netherite Boots
+---| '"minecraft:netherite_chestplate"' #Netherite Chestplate
+---| '"minecraft:netherite_helmet"' #Netherite Helmet
+---| '"minecraft:netherite_hoe"' #Netherite Hoe
+---| '"minecraft:netherite_ingot"' #Netherite Ingot
+---| '"minecraft:netherite_leggings"' #Netherite Leggings
+---| '"minecraft:netherite_pickaxe"' #Netherite Pickaxe
+---| '"minecraft:netherite_scrap"' #Netherite Scrap
+---| '"minecraft:netherite_shovel"' #Netherite Shovel
+---| '"minecraft:netherite_sword"' #Netherite Sword
+---| '"minecraft:oak_boat"' #Oak Boat
+---| '"minecraft:ocelot_spawn_egg"' #Ocelot Spawn Egg
+---| '"minecraft:orange_dye"' #Orange Dye
+---| '"minecraft:painting"' #Painting
+---| '"minecraft:panda_spawn_egg"' #Panda Spawn Egg
+---| '"minecraft:paper"' #Paper
+---| '"minecraft:parrot_spawn_egg"' #Parrot Spawn Egg
+---| '"minecraft:phantom_membrane"' #Phantom Membrane
+---| '"minecraft:phantom_spawn_egg"' #Phantom Spawn Egg
+---| '"minecraft:pig_spawn_egg"' #Pig Spawn Egg
+---| '"minecraft:piglin_banner_pattern"' #Banner Pattern (Snout)
+---| '"minecraft:piglin_brute_spawn_egg"' #Piglin Brute Spawn Egg
+---| '"minecraft:piglin_spawn_egg"' #Piglin Spawn Egg
+---| '"minecraft:pillager_spawn_egg"' #Pillager Spawn Egg
+---| '"minecraft:pink_dye"' #Pink Dye
+---| '"minecraft:poisonous_potato"' #Poisonous Potato
+---| '"minecraft:polar_bear_spawn_egg"' #Polar Bear Spawn Egg
+---| '"minecraft:popped_chorus_fruit"' #Popped Chorus Fruit
+---| '"minecraft:porkchop"' #Raw Porkchop
+---| '"minecraft:potato"' #Potato
+---| '"minecraft:potion"' #Potions
+---| '"minecraft:powder_snow_bucket"' #Powder Snow Bucket
+---| '"minecraft:prismarine_crystals"' #Prismarine Crystals
+---| '"minecraft:prismarine_shard"' #Prismarine Shard
+---| '"minecraft:pufferfish"' #Pufferfish
+---| '"minecraft:pufferfish_bucket"' #Bucket of Pufferfish
+---| '"minecraft:pufferfish_spawn_egg"' #Pufferfish Spawn Egg
+---| '"minecraft:pumpkin_pie"' #Pumpkin Pie
+---| '"minecraft:pumpkin_seeds"' #Pumpkin Seeds
+---| '"minecraft:purple_dye"' #Purple Dye
+---| '"minecraft:quartz"' #Nether Quartz
+---| '"minecraft:rabbit"' #Raw Rabbit
+---| '"minecraft:rabbit_foot"' #Rabbit's Foot
+---| '"minecraft:rabbit_hide"' #Rabbit Hide
+---| '"minecraft:rabbit_spawn_egg"' #Rabbit Spawn Egg
+---| '"minecraft:rabbit_stew"' #Rabbit Stew
+---| '"minecraft:ravager_spawn_egg"' #Ravager Spawn Egg
+---| '"minecraft:raw_copper"' #Raw Copper
+---| '"minecraft:raw_gold"' #Raw Gold
+---| '"minecraft:raw_iron"' #Raw Iron
+---| '"minecraft:red_dye"' #Red Dye
+---| '"minecraft:redstone"' #Redstone Dust
+---| '"minecraft:rotten_flesh"' #Rotten Flesh
+---| '"minecraft:saddle"' #Saddle
+---| '"minecraft:salmon"' #Raw Salmon
+---| '"minecraft:salmon_bucket"' #Bucket of Salmon
+---| '"minecraft:salmon_spawn_egg"' #Salmon Spawn Egg
+---| '"minecraft:scute"' #Scute
+---| '"minecraft:shears"' #Shears
+---| '"minecraft:sheep_spawn_egg"' #Sheep Spawn Egg
+---| '"minecraft:shield"' #Shield
+---| '"minecraft:shulker_shell"' #Shulker Shell
+---| '"minecraft:shulker_spawn_egg"' #Shulker Spawn Egg
+---| '"minecraft:silverfish_spawn_egg"' #Silverfish Spawn Egg
+---| '"minecraft:skeleton_horse_spawn_egg"' #Skeleton Horse Spawn Egg
+---| '"minecraft:skeleton_spawn_egg"' #Skeleton Spawn Egg
+---| '"minecraft:skull_banner_pattern"' #Banner Pattern (Skull Charge)
+---| '"minecraft:slime_ball"' #Slimeball
+---| '"minecraft:slime_spawn_egg"' #Slime Spawn Egg
+---| '"minecraft:snowball"' #Snowball
+---| '"minecraft:spectral_arrow"' #Spectral Arrow
+---| '"minecraft:spider_eye"' #Spider Eye
+---| '"minecraft:spider_spawn_egg"' #Spider Spawn Egg
+---| '"minecraft:splash_potion"' #Splash Potions
+---| '"minecraft:spruce_boat"' #Spruce Boat
+---| '"minecraft:spyglass"' #Spyglass
+---| '"minecraft:squid_spawn_egg"' #Squid Spawn Egg
+---| '"minecraft:stick"' #Stick
+---| '"minecraft:stone_axe"' #Stone Axe
+---| '"minecraft:stone_hoe"' #Stone Hoe
+---| '"minecraft:stone_pickaxe"' #Stone Pickaxe
+---| '"minecraft:stone_shovel"' #Stone Shovel
+---| '"minecraft:stone_sword"' #Stone Sword
+---| '"minecraft:stray_spawn_egg"' #Stray Spawn Egg
+---| '"minecraft:strider_spawn_egg"' #Strider Spawn Egg
+---| '"minecraft:string"' #String
+---| '"minecraft:sugar"' #Sugar
+---| '"minecraft:suspicious_stew"' #Suspicious Stew
+---| '"minecraft:sweet_berries"' #Sweet Berries
+---| '"minecraft:tipped_arrow"' #Tipped Arrows
+---| '"minecraft:tnt_minecart"' #Minecart with TNT
+---| '"minecraft:totem_of_undying"' #Totem of Undying
+---| '"minecraft:trader_llama_spawn_egg"' #Trader Llama Spawn Egg
+---| '"minecraft:trident"' #Trident
+---| '"minecraft:tropical_fish"' #Tropical Fish
+---| '"minecraft:tropical_fish_bucket"' #Bucket of Tropical Fish
+---| '"minecraft:tropical_fish_spawn_egg"' #Tropical Fish Spawn Egg
+---| '"minecraft:turtle_helmet"' #Turtle Shell
+---| '"minecraft:turtle_spawn_egg"' #Turtle Spawn Egg
+---| '"minecraft:vex_spawn_egg"' #Vex Spawn Egg
+---| '"minecraft:villager_spawn_egg"' #Villager Spawn Egg
+---| '"minecraft:vindicator_spawn_egg"' #Vindicator Spawn Egg
+---| '"minecraft:wandering_trader_spawn_egg"' #Wandering Trader Spawn Egg
+---| '"minecraft:warped_fungus_on_a_stick"' #Warped Fungus on a Stick
+---| '"minecraft:water_bucket"' #Water Bucket
+---| '"minecraft:wheat"' #Wheat
+---| '"minecraft:wheat_seeds"' #Wheat Seeds
+---| '"minecraft:white_dye"' #White Dye
+---| '"minecraft:witch_spawn_egg"' #Witch Spawn Egg
+---| '"minecraft:wither_skeleton_spawn_egg"' #Wither Skeleton Spawn Egg
+---| '"minecraft:wolf_spawn_egg"' #Wolf Spawn Egg
+---| '"minecraft:wooden_axe"' #Wooden Axe
+---| '"minecraft:wooden_hoe"' #Wooden Hoe
+---| '"minecraft:wooden_pickaxe"' #Wooden Pickaxe
+---| '"minecraft:wooden_shovel"' #Wooden Shovel
+---| '"minecraft:wooden_sword"' #Wooden Sword
+---| '"minecraft:writable_book"' #Book and Quill
+---| '"minecraft:written_book"' #Written Book
+---| '"minecraft:yellow_dye"' #Yellow Dye
+---| '"minecraft:zoglin_spawn_egg"' #Zoglin Spawn Egg
+---| '"minecraft:zombie_horse_spawn_egg"' #Zombie Horse Spawn Egg
+---| '"minecraft:zombie_spawn_egg"' #Zombie Spawn Egg
+---| '"minecraft:zombie_villager_spawn_egg"' #Zombie Villager Spawn Egg
+---| '"minecraft:zombified_piglin_spawn_egg"' #Zombified Piglin Spawn Egg
+
 ---An Item Stack.
 ---
 ---See `item_stack.createItem` for more info.
@@ -17,9 +354,8 @@ function ItemStack.setTag(snbt) end
 
 ---Returns a list of item tags that contain this item.  
 ---Item tags are assigned by datapacks.
----@param item string
 ---@return string[]
-function ItemStack.getItemTags(item) end
+function ItemStack.getItemTags() end
 
 ---Returns the item's NBT tag as a Lua `table`, returns `nil` if there is no tag.  
 ---All keys are in lowercase.
@@ -69,7 +405,7 @@ item_stack = {}
 ---Creates an item stack.
 ---
 ---Note: NBT is in [SNBT format](https://minecraft.fandom.com/wiki/NBT_format#SNBT_format).
----@param item string
+---@param item ItemID
 ---@param snbt? string
 ---@return ItemStack
 function item_stack.createItem(item, snbt) end

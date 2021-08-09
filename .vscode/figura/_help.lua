@@ -60,6 +60,9 @@ help = {
     ---@return ParentType
     ["ParentType"] = function() end,
 
+    ---@return PingSupported
+    ["PingSupported"] = function() end,
+
     ---@return RedstonePower number
     ["RedstonePower"] = function() end,
 

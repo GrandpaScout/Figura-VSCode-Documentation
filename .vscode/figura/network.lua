@@ -2,6 +2,8 @@
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
 
+---@alias PingSupported boolean|number|string|table
+
 ---Contains functions that handle pings.
 network = {}
 
@@ -47,5 +49,5 @@ function network.registerPing(ping) end
 ---
 ---Note: Pings are also sent to yourself.
 ---@param ping string
----@param value? any
+---@param value? PingSupported
 function network.ping(ping, value) end
