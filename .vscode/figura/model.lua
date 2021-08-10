@@ -189,10 +189,16 @@ function CustomModelPart.getUV() end
 ---@return VectorPos
 function CustomModelPart.partToWorldDir(dir) end
 
----Takes a `Vector` with a blockbench position which is then rotated around the pivot of the part
----and returns a `Vector` with the position in world-space.
+---*Just a word of caution, this function is very complicated. Do not expect to get how it works
+---right from the start.*
 ---
----The blockbench is absolute and is centered around the model's neck.
+---Takes a `Vector` with a blockbench position, then:  
+---* Makes a pivot `x` (which is *not* this part's pivot) at the center of the player's neck.
+---* Offsets pivot `x` by this part's Lua position offset,
+---* Rotates pivot `x`'s position around this part's (Lua position offset + Lua pivot offset),
+---* Adds the given blockbench position to the position of pivot `x`,
+---* Rotates the new blockbench position around pivot `x` by the absolute rotation of this part.
+---* Converts to an absolute world position and returns that position.
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end

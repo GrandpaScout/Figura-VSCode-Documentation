@@ -38,12 +38,12 @@ function network.registerPing(ping) end
 ---
 ---A ping may also contain a value to send with the ping. This adds 1 byte to the ping along with
 ---the following based on the type of value:
----> Nil: 0 bytes (`nil`)
----> Boolean: 1 byte (`true/false`)
----> Integer: 4 bytes (`-32768..32767`)
----> Float: 4 bytes (`-65504.0..65504.0`)
----> String: 2 bytes + (1000 characters) bytes
----> Table: 2 bytes + (Table contents) bytes
+---* Nil: 0 bytes (`nil`)
+---* Boolean: 1 byte (`true/false`)
+---* Integer: 4 bytes (`-2147483648`..`2147483647`)
+---* Float: 4 bytes (`-3.4028236692094e+38`..`3.4028236692094e+38`)
+---* String: 2 bytes + (1000 characters) bytes
+---* Table: 2 bytes + (Table contents) bytes
 ---
 ---You may only send up to 1024 bytes of pings a second, and only up to 32 pings a tick.
 ---

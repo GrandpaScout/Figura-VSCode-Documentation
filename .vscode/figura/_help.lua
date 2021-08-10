@@ -45,6 +45,9 @@ help = {
     ---@return HandSlot number
     ["HandSlot"] = function() end,
 
+    ---@return ItemID string
+    ["ItemID"] = function() end,
+
     ---@return Key string
     ["Key"] = function() end,
 
@@ -57,10 +60,10 @@ help = {
     ---@return MinecraftKeybind string
     ["MinecraftKeybind"] = function() end,
 
-    ---@return ParentType
+    ---@return ParentType string
     ["ParentType"] = function() end,
 
-    ---@return PingSupported
+    ---@return PingSupported type
     ["PingSupported"] = function() end,
 
     ---@return RedstonePower number
@@ -369,6 +372,9 @@ help = {
       multiple_types = {}
     }
   },
+
+  ---A table that libraries can put help topics in.
+  ["library"] = {},
 
   ---Do you want to add your own documentation that other users can use?
   ---
