@@ -391,7 +391,7 @@ help = {
     ---and will support (mostly) anything that Markdown does.
     ---
     ---Note: Code blocks will automatically be formatted in Lua, you do not need to specify this.
-    ["1: Descriptions"] = {},
+    ["s1_Descriptions"] = {},
 
     ---You can add a specific type to your variable by using the `@type type` comment:
     ---```
@@ -404,7 +404,7 @@ help = {
     ---> local string_varaible: string = "Hello, World!"
     ---> ```
     ---> ***
-    ["2: Typing"] = {},
+    ["s2_Typing"] = {},
 
     ---Functions can also be documented using `@param name type`, `@vararg type`, and
     ---`@return type`.  
@@ -433,11 +433,11 @@ help = {
     ---> ***
     ---> This function does a thing with `a` and `b` specifically, then an infinite amount of
     ---> numbers after that and then returns two values.
-    ["3: Functions"] = {},
+    ["s3_Functions"] = {},
 
     ---You can view more information on the EmmyLua annotation style used in this documentation
     ---[**here**](https://github.com/sumneko/lua-language-server/wiki/EmmyLua-Annotations).
-    ["4: More..."] = {}
+    ["s4_More"] = {}
   },
 
   ---This documentation comes packaged with a .vscode file that edits some of the settings in
@@ -499,8 +499,7 @@ help = {
         ---**Set to `true` by the settings.json**
         ---
         ---```json
-        ---//Enables hint types, these show up next to a variable if the type of a variable is set
-        ---or able to  
+        ---//Enables hint types, these show up next to a variable if the type of a variable is set or able to
         ---//be guessed by the language server.
         ---```
         ---***
@@ -515,8 +514,7 @@ help = {
         ---**Set to `true` by the settings.json**
         ---
         ---```json
-        ---//Enables hint types, these show up next to a variable if the type of a variable is set
-        ---or able to
+        ---//Enables hint types, these show up next to a variable if the type of a variable is set or able to
         ---//be guessed by the language server.
         ---```
         ---***
@@ -557,8 +555,7 @@ help = {
         ---**Set to `-1` by the settings.json**
         ---
         ---```json
-        ---//Stops the language server from re-diagnosing the whole model_files folder when you add
-        ---or remove
+        ---//Stops the language server from re-diagnosing the whole model_files folder when you add or remove
         ---//a character in an unrelated file.
         ---```
         ---***
@@ -577,7 +574,7 @@ help = {
         ---```
         ---
         ---```json
-        ---//Disables some unneeded diagnostics that many will not care about.  
+        ---//Disables some unneeded diagnostics that many will not care about.
         ---//Do not touch unless you know what you are doing.
         ---```
         ---***
@@ -600,7 +597,7 @@ help = {
         ---```
         ---
         ---```json
-        ---//Changes the severity of some diagnostics to reflect their actual severity in Figura.  
+        ---//Changes the severity of some diagnostics to reflect their actual severity in Figura.
         ---//Do not touch unless you know what you are doing.
         ---```
         ---***

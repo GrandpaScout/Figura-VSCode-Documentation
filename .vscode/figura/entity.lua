@@ -396,7 +396,7 @@ function Player.getExperienceProgress() end
 function Player.getSaturation() end
 
 ---Returns the last source of damage this entity has taken.
----@return DamageSource
+---@return DamageSource string
 function Player.lastDamageSource() end
 
 ---Returns the current level of this entity.

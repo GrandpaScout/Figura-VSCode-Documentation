@@ -9,12 +9,32 @@ sound = {}
 ---@return string[]
 function sound.getSounds() end
 
+---`pos: number[]`  
+---&emsp;Three numbers that represent a position in the world.
+---
+---`vol: number[]`  
+---&emsp;Two numbers that represent the volume and pitch of the sound.
+---***
 ---Plays a sound event for this client.  
 ---Sounds are played on the `player` channel.
 ---
----The first three values of `pos_vol` are used as the block position.  
----The fourth value is a number `0..2` that sets volume.  
----The fifth value is a number `0.5..2` that sets pitch.
+---Note: This function does not support vector `vol`s.
 ---@param name string
----@param pos_vol table
+---@param pos VectorPos
+---@param vol number[]
+function sound.playSound(name, pos, vol) end
+
+---`pos_vol: number[]`  
+---&emsp;Three numbers that represent a position in the world followed by two numbers that represent
+---the volume and pitch of the sound.
+---***
+---Plays a sound event for this client.  
+---Sounds are played on the `player` channel.
+---
+---This version of the function is deprecated and should not be used when possible.
+---
+---Note: This function does not support vectors.
+---@param name string
+---@param pos_vol number[]
+---@deprecated
 function sound.playSound(name, pos_vol) end

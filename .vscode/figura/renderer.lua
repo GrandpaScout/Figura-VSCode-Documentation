@@ -11,7 +11,8 @@ renderer = {}
 ---@return number|nil
 function renderer.getShadowSize() end
 
----Returns if this client is in first person view.
+---Returns if the model is being viewed in first-person.  
+---This will always return false for other clients since they cannot see your first-person model.
 ---@return boolean
 function renderer.isFirstPerson() end
 
