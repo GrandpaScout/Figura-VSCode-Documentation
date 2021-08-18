@@ -9,7 +9,7 @@ sound = {}
 ---@return string[]
 function sound.getSounds() end
 
----`pos: number[]`  
+---`pos: VectorPos`  
 ---&emsp;Three numbers that represent a position in the world.
 ---
 ---`vol: number[]`  
