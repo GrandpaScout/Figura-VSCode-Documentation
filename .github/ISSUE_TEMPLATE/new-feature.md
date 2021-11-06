@@ -9,10 +9,10 @@ assignees: ''
 
 ---
 
-#### Figura Version: 0.0.X *The version these features were added in.*
+#### Figura Version: 0.0.X //*The version these features were added in.*
 # Features:
-[ ] Feature "Foo"
-[ ] Feature "Bar"
+* [ ] Feature "Foo"
+* [ ] Feature "Bar"
 
-Additional Info:
-*Whatever extra info you want to add. If you don't need this section, remove it.*
+# Additional Info:
+//*Whatever extra info you want to add. If you don't need this section, remove it.*

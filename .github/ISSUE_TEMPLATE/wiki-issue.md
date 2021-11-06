@@ -8,9 +8,9 @@ assignees: ''
 
 ---
 
-#### Wiki Page: *page link here*
+#### Wiki Page: //*page link here*
 # Describe:
-*Describe the issue with this page.*
+//*Describe the issue with this page.*
 
 # Additional Info:
-*Whatever extra info you want to add. If you don't need this section, remove it.*
+//*Whatever extra info you want to add. If you don't need this section, remove it.*
