@@ -93,6 +93,20 @@ function render(delta) end
 ---
 ---Use the below code to create this function:
 ---```
+---function world_render()
+---  --code here
+---end
+---```
+---***
+---This function runs every render tick, but will continue to run even if your model is not rendering.
+---@param delta number
+function world_render(delta) end
+
+---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
+---You should not run this function, Figura will run it for you.
+---
+---Use the below code to create this function:
+---```
 ---function player_init()
 ---  --code here
 ---end
