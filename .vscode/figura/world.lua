@@ -89,6 +89,11 @@
 ---| '"minecraft:end_barrens"' #End Barrens
 ---| '"minecraft:the_void"' #The Void
 
+---@alias BiomePrecipitationType
+---| '"NONE"'
+---| '"RAIN"'
+---| '"SNOW"'
+
 ---A Minecraft block identifier.
 ---
 ---Only the default Minecraft blocks are auto-completed.  
@@ -1488,6 +1493,16 @@ local World = {}
 ---@return BiomeID string
 function World.getBiomeID(pos) end
 
+---Returns "NONE", "RAIN" or "SNOW", depending on the biome weather type.
+---@param pos Vector3
+---@return BiomePrecipitationType
+function World.getBiomePrecipitation(pos) end
+
+---Returns a float of the biome temperature.
+---@param pos Vector3
+---@return number
+function World.getBiomeTemperature(pos) end
+
 ---Returns the block-light level at the given block position.
 ---
 ---Note: Returns `15` if the block position is not loaded.
@@ -1567,6 +1582,11 @@ function World.getTimeOfDay() end
 ---Returns if the current weather is thunder.
 ---@return boolean
 function World.isLightning() end
+
+---Returns if the given position has sky access.
+---@param pos Vector3
+---@return boolean
+function World.isOpenSky(pos) end
 
 
 --================================================================================================--
