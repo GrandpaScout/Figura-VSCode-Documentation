@@ -370,6 +370,10 @@ function LivingEntity.isLeftHanded() end
 ---@return boolean
 function LivingEntity.isSneaky() end
 
+---Returns if this entity is using an item.
+---@return boolean
+function LivingEntity.isUsingItem() end
+
 
 ---Player ⇐ LivingEntity ⇐ Entity
 ---***
