@@ -6,6 +6,11 @@
 ---current count of certain things.
 meta = {}
 
+---Returns a number based on the current status of the Backend
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getBackendStatus() end
+
 ---Returns if the nameplate can be modified in this client's instance of the script.
 ---
 ---This is affected by the "Nameplate/Chat Name Changes" trust setting.
@@ -70,6 +75,11 @@ function meta.getFiguraVersion() end
 ---@return number
 function meta.getInitLimit() end
 
+---Returns a number based on the current status of the Model
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getModelStatus() end
+
 ---Returns the particles-per-second limit in this client's instance of the script.
 ---
 ---This is affected by the "Maximum Particles Per Second" trust setting.
@@ -82,11 +92,21 @@ function meta.getParticleLimit() end
 ---@return number
 function meta.getRenderLimit() end
 
+---Returns a number based on the current status of the Script
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getScriptStatus() end
+
 ---Returns the sounds-per-second limit in this client's instance of the script.
 ---
 ---This is affected by the "Maximum Sounds Per Second" trust setting.
 ---@return number
 function meta.getSoundLimit() end
+
+---Returns a number based on the current status of the Texture
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getTextureStatus() end
 
 ---Returns the tick instruction limit in this client's instance of the script.
 ---
