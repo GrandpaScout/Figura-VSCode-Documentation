@@ -21,6 +21,7 @@
 ---| '"RightParrotOrigin"' #Rotate with the player's right parrot spot.
 ---| '"LeftElytra"' #Rotate with the player's left elytra wing.
 ---| '"RightElytra"' #Rotate with the player's right elytra wing.
+---| '"Camera"' #Rotate to always face the camera.
 
 ---@alias Shader
 ---| '"None"' #Do not use a shader.
