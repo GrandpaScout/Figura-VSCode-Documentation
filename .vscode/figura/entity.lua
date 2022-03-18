@@ -334,6 +334,10 @@ function LivingEntity.getArmor() end
 ---@return HandString | nil
 function LivingEntity.getActiveHand() end
 
+---Returns the item that is currently being used.
+---@return ItemStack
+function LivingEntity.getActiveItem() end
+
 ---Returns the yaw of this entity's body.
 ---@return number
 function LivingEntity.getBodyYaw() end
