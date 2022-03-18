@@ -418,6 +418,11 @@ function Player.getHeldItem(slot) end
 ---@return number
 function Player.getSaturation() end
 
+---Returns the cross-script value stored in the player at the specified key.
+---@param key string
+---@return any
+function Player.getStoredValue(key) end
+
 ---Returns the last source of damage this entity has taken.
 ---@return DamageSource string
 function Player.lastDamageSource() end
