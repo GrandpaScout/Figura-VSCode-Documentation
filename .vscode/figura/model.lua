@@ -38,11 +38,11 @@
 ---| '"Glint"' #Use the enchantment glint.
 
 ---@alias TextureType
----| "Custom" #The custom texture suplied with the avatar.
----| "Skin" #Your Minecraft skin.
----| "Cape" #Your cape, or Steve if you dont have a cape.
----| "Elytra" #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
----| "Resource" #Any loaded texture including resource packs! or missing texture if not found.
+---| '"Custom"' #The custom texture suplied with the avatar.
+---| '"Skin"' #Your Minecraft skin.
+---| '"Cape"' #Your cape, or Steve if you dont have a cape.
+---| '"Elytra"' #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
+---| '"Resource"' #Any loaded texture including resource packs! or missing texture if not found.
 
 ---A basic model part with very few options for modifying it.
 ---@class BasicModelPart
