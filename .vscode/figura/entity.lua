@@ -201,6 +201,11 @@
 ---| "1" #Main Hand
 ---| "2" #Off Hand
 
+---String literal of Hand
+---@alias HandString
+---| "MAIN_HAND"
+---| "OFF_HAND"
+
 ---A non-living entity.
 ---@class Entity
 local Entity = {}
@@ -322,6 +327,12 @@ local LivingEntity = {}
 ---Note: Some entities have natural armor that is added on top of the armor they are wearing.
 ---@return number
 function LivingEntity.getArmor() end
+
+---Returns which hand is active.
+---Active hand is determined by the last hand to use an item.
+---Returns nil if no item has been used.
+---@return HandString | nil
+function LivingEntity.getActiveHand() end
 
 ---Returns the yaw of this entity's body.
 ---@return number
