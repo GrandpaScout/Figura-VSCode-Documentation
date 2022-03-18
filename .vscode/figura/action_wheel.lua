@@ -118,3 +118,7 @@ function action_wheel.setLeftSize(size) end
 ---Sets the amount of slots on the right side of the action wheel.
 ---@param size SlotSideNumber
 function action_wheel.setRightSize(size) end
+
+---Returns if the action wheel is currently open or not
+---@return boolean
+function isOpen() end
