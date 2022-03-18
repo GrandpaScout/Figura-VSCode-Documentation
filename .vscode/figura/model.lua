@@ -51,6 +51,10 @@ function BasicModelPart.getPos() end
 ---@return VectorAng|nil
 function BasicModelPart.getRot() end
 
+---Returns the scale of the part set by `.setScale()`.
+---@return VectorPos
+function BasicModelPart.getScale() end
+
 ---Sets the visibility of the part.
 ---@param state boolean
 function BasicModelPart.setEnabled(state) end
@@ -62,6 +66,10 @@ function BasicModelPart.setPos(pos) end
 ---Sets the rotation offset of the part.
 ---@param ang VectorAng
 function BasicModelPart.setRot(ang) end
+
+---Sets the scale of the part.
+---@param pos VectorPos
+function BasicModelPart.setScale(pos) end
 
 
 ---VanillaModelPart ⇐ BasicModelPart
@@ -170,10 +178,6 @@ function CustomModelPart.getPivot() end
 ---@return VectorAng
 function CustomModelPart.getRot() end
 
----Returns the scale of the part set by `.setScale()`.
----@return VectorPos
-function CustomModelPart.getScale() end
-
 ---Returns the shader of the part.
 ---@return Shader Shader
 function CustomModelPart.getShader() end
@@ -233,10 +237,6 @@ function CustomModelPart.setParentType(parent) end
 ---Note: This does *not* set the rotation offset.
 ---@param ang VectorAng
 function CustomModelPart.setRot(ang) end
-
----Sets the scale of the part.
----@param pos VectorPos
-function CustomModelPart.setScale(pos) end
 
 ---Sets the shader of the part.
 ---@param shader Shader
