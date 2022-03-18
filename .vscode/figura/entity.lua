@@ -437,3 +437,8 @@ function Player.lastDamageSource() end
 ---Note: This table is unreadable until `player_init()` has run.
 ---@type Player
 player = {}
+
+---Stores the value in the player executing the script at the specified key.
+---@param key string
+---@param value any
+function storeValue(key, value) end

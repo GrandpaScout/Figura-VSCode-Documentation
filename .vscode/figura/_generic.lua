@@ -132,9 +132,3 @@ function player_init() end
 ---different scripts easier.
 ---@param cmd string
 function onCommand(cmd) end
-
----idk where to put this so I'll keep it in _generic.lua for now.
----Stores the value in the player executing the script at the specified key.
----@param key string
----@param value any
-function storeValue(key, value) end
