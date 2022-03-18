@@ -221,6 +221,10 @@ function CustomModelPart.partToWorldPos(pos) end
 ---@param col VectorColor
 function CustomModelPart.setColor(col) end
 
+---Enable/disable extra texture rendering (ie emissive textures)
+---@param boolean boolean
+function CustomModelPart.setExtraTexEnabled(boolean) end
+
 ---Sets the mimic mode of the model.  
 ---If true, the model will *mimic* its parent as set by `.setParentType()` instead of having its
 ---origin connected to the parent part's origin.
