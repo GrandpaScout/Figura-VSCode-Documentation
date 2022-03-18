@@ -28,6 +28,13 @@
 ---| '"EndPortal"' #Use the end portal shader.
 ---| '"Glint"' #Use the enchantment glint.
 
+---@alias TextureType
+---| "Custom" #The custom texture suplied with the avatar.
+---| "Skin" #Your Minecraft skin.
+---| "Cape" #Your cape, or Steve if you dont have a cape.
+---| "Elytra" #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
+---| "Resource" #Any loaded texture including resource packs! or missing texture if not found.
+
 ---A basic model part with very few options for modifying it.
 ---@class BasicModelPart
 local BasicModelPart = {}
@@ -241,6 +248,12 @@ function CustomModelPart.setRot(ang) end
 ---Sets the shader of the part.
 ---@param shader Shader
 function CustomModelPart.setShader(shader) end
+
+---Changes which texture is applied to the part.
+---ID is only needed with "Resource" type.
+---@param textureType TextureType
+---@param ID? string ex: "minecraft:textures/item/apple.png"
+function setTexture(textureType, ID) end
 
 ---Sets the UV offset of the part.
 ---
