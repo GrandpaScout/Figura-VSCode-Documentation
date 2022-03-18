@@ -253,7 +253,7 @@ function CustomModelPart.setShader(shader) end
 ---ID is only needed with "Resource" type.
 ---@param textureType TextureType
 ---@param ID? string ex: "minecraft:textures/item/apple.png"
-function setTexture(textureType, ID) end
+function CustomModelPart.setTexture(textureType, ID) end
 
 ---Sets the UV offset of the part.
 ---
