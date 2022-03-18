@@ -29,15 +29,14 @@ renderer = {}
 ---@return number|nil
 function renderer.getShadowSize() end
 
+---Returns the lengh, in pixels, of a text/json
+---@param text string
+function renderer.getTextWidth(text) end
+
 ---Returns if the model is being viewed in first-person.  
 ---This will always return false for other clients since they cannot see your first-person model.
 ---@return boolean
 function renderer.isFirstPerson() end
-
----Sets the radius of the player's shadow.  
----Set the radius to `nil` to reset the shadow.
----@param radius number|nil
-function renderer.setShadowSize(radius) end
 
 ---Renders a block with the given parameters.
 ---@param blockstate string Same syntax as a vanilla blockstate
@@ -75,6 +74,7 @@ function renderer.setMountEnabled(boolean) end
 ---@param boolean boolean
 function renderer.setMountShadowEnabled(boolean) end
 
----Returns the lengh, in pixels, of a text/json
----@param text string
-function renderer.getTextWidth(text) end
+---Sets the radius of the player's shadow.  
+---Set the radius to `nil` to reset the shadow.
+---@param radius number|nil
+function renderer.setShadowSize(radius) end
