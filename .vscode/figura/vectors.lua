@@ -322,6 +322,11 @@ function vectors.rgbToHSV(vec) end
 ---@return number
 function vectors.rgbToINT(vec) end
 
+---Rotate a vector, by the rotation, using quaternions.
+---@param init Vector3
+---@param rotation Vector3
+function vectors.quaternionRotation(init, rotation) end
+
 ---Creates a Position Vector from a block coordinate.
 ---
 ---You can use this function to place a `NO_PARENT` part at an exact block coordinate.
