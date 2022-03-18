@@ -205,40 +205,37 @@
 ---@class Entity
 local Entity = {}
 
----Returns the rotation of this entity.
----
----Note: When used on the local player, the yaw will build up past the normal limits when in first
----person.
----@return VectorAng
-function Entity.getRot() end
+---Returns the ticks of air this entity has left.
+---@return number
+function Entity.getAir() end
 
----Returns if this entity is being rained on or in water.
----@return boolean
-function Entity.isWet() end
+---Returns the remaining air of this entity as a percentage. (`0..1`)
+---@return number
+function Entity.getAirPercentage() end
 
----Returns the entity that this entity is riding.
----@return Entity|LivingEntity|Player|nil
-function Entity.getVehicle() end
+---Returns the currently playing animation of this entity.
+---@return EntityAnimation string
+function Entity.getAnimation() end
 
----Returns the normalized direction that this entity is looking in.
+---Returns the size of this entity's bounding box in blocks.
 ---@return VectorPos
-function Entity.getLookDir() end
+function Entity.getBoundingBox() end
+
+---Returns the item in this entity's given equipment slot.
+---
+---Note: An empty slot will still return an `ItemStack` of air.
+---@param slot EquipmentSlot
+---@return ItemStack
+function Entity.getEquipmentItem(slot) end
 
 ---Returns the height from the base of this entity to their eye level in blocks.
 ---@return number
 function Entity.getEyeHeight() end
 
----Returns the ticks of air this entity has left.
+---Returns how long this entity will be on fire for.  
+---If this number is negative, it is how long the entity is immune to being set on fire.
 ---@return number
-function Entity.getAir() end
-
----Returns the dimension identifier of the world this entity is in.
----@return DimensionID string
-function Entity.getWorldName() end
-
----Returns the maximum air this entity can have.
----@return number
-function Entity.getMaxAir() end
+function Entity.getFireTicks() end
 
 ---Returns the amount of ticks this entity has been frozen in deep snow for.
 ---
@@ -246,15 +243,19 @@ function Entity.getMaxAir() end
 ---@return number
 function Entity.getFrozenTicks() end
 
----Returns how long this entity will be on fire for.  
----If this number is negative, it is how long the entity is immune to being set on fire.
----@return number
-function Entity.getFireTicks() end
+---Returns the normalized direction that this entity is looking in.
+---@return VectorPos
+function Entity.getLookDir() end
 
----Returns the position of the block this entity is looking at.  
----Returns `nil` if not looking at any blocks.
----@return VectorPos|nil
-function Entity.getTargetedBlockPos() end
+---Returns the maximum air this entity can have.
+---@return number
+function Entity.getMaxAir() end
+
+---Returns this entity's display name.
+---
+---Note: Returns the entity's translated name if it has no custom name.
+---@return string
+function Entity.getName() end
 
 ---Returns an NBT value from this entity using the given SNBT path.
 ---
@@ -265,50 +266,49 @@ function Entity.getTargetedBlockPos() end
 ---@return any
 function Entity.getNbtValue(nbtpath) end
 
----Returns the remaining air of this entity as a percentage. (`0..1`)
----@return number
-function Entity.getAirPercentage() end
-
 ---Returns the position of this entity.
 ---@return VectorPos
 function Entity.getPos() end
 
----Returns the size of this entity's bounding box in blocks.
----@return VectorPos
-function Entity.getBoundingBox() end
-
----Returns this entity's display name.
+---Returns the rotation of this entity.
 ---
----Note: Returns the entity's translated name if it has no custom name.
----@return string
-function Entity.getName() end
+---Note: When used on the local player, the yaw will build up past the normal limits when in first
+---person.
+---@return VectorAng
+function Entity.getRot() end
 
----Returns the UUID4 of this entity.
----@return string
-function Entity.getUUID() end
-
----Returns the item in this entity's given equipment slot.
----
----Note: An empty slot will still return an `ItemStack` of air.
----@param slot EquipmentSlot
----@return ItemStack
-function Entity.getEquipmentItem(slot) end
+---Returns the position of the block this entity is looking at.  
+---Returns `nil` if not looking at any blocks.
+---@return VectorPos|nil
+function Entity.getTargetedBlockPos() end
 
 ---Returns the entity identifier of this entity.
 ---@return EntityID string
 function Entity.getType() end
 
----Returns if this entity is standing on solid ground.
----@return boolean
-function Entity.isGrounded() end
+---Returns the UUID4 of this entity.
+---@return string
+function Entity.getUUID() end
 
----Returns the currently playing animation of this entity.
----@return EntityAnimation string
-function Entity.getAnimation() end
+---Returns the entity that this entity is riding.
+---@return Entity|LivingEntity|Player|nil
+function Entity.getVehicle() end
 
 ---Returns the velocity of this entity.
 ---@returns VectorPos
 function Entity.getVelocity() end
+
+---Returns the dimension identifier of the world this entity is in.
+---@return DimensionID string
+function Entity.getWorldName() end
+
+---Returns if this entity is standing on solid ground.
+---@return boolean
+function Entity.isGrounded() end
+
+---Returns if this entity is being rained on or in water.
+---@return boolean
+function Entity.isWet() end
 
 
 ---LivingEntity ⇐ Entity
@@ -317,32 +317,24 @@ function Entity.getVelocity() end
 ---@class LivingEntity : Entity
 local LivingEntity = {}
 
+---Returns the total armor value of this entity.
+---
+---Note: Some entities have natural armor that is added on top of the armor they are wearing.
+---@return number
+function LivingEntity.getArmor() end
+
 ---Returns the yaw of this entity's body.
 ---@return number
 function LivingEntity.getBodyYaw() end
-
----Returns if this entity is left-handed.
----@return boolean
-function LivingEntity.isLeftHanded() end
 
 ---Returns how long this entity has been dead for in ticks.  
 ---An entity is deleted after being dead for 20 ticks.
 ---@return number
 function LivingEntity.getDeathTime() end
 
----Returns if this entity is sneaking.
----@return boolean
-function LivingEntity.isSneaky() end
-
----Returns the amount of stingers stuck in this entity.
+---Returns the current health of this entity.
 ---@return number
-function LivingEntity.getStingerCount() end
-
----Returns the total armor value of this entity.
----
----Note: Some entities have natural armor that is added on top of the armor they are wearing.
----@return number
-function LivingEntity.getArmor() end
+function LivingEntity.getHealth() end
 
 ---Returns the current health of this entity as a percentage. (`0..1`)
 ---@return number
@@ -351,14 +343,6 @@ function LivingEntity.getHealthPercentage() end
 ---Returns the max health of this entity.
 ---@return number
 function LivingEntity.getMaxHealth() end
-
----Returns the current health of this entity.
----@return number
-function LivingEntity.getHealth() end
-
----Returns the amount of arrows stuck in this entity.
----@return number
-function LivingEntity.getStuckArrowCount() end
 
 ---Returns the duration and amplifier of the given status effect on this entity.  
 ---Returns `nil` if the given status effect does not exist on this entity.
@@ -370,12 +354,36 @@ function LivingEntity.getStatusEffect(effect) end
 ---@return StatusEffectID[]
 function LivingEntity.getStatusEffectTypes() end
 
+---Returns the amount of stingers stuck in this entity.
+---@return number
+function LivingEntity.getStingerCount() end
+
+---Returns the amount of arrows stuck in this entity.
+---@return number
+function LivingEntity.getStuckArrowCount() end
+
+---Returns if this entity is left-handed.
+---@return boolean
+function LivingEntity.isLeftHanded() end
+
+---Returns if this entity is sneaking.
+---@return boolean
+function LivingEntity.isSneaky() end
+
 
 ---Player ⇐ LivingEntity ⇐ Entity
 ---***
 ---A player entity.
 ---@class Player : LivingEntity
 local Player = {}
+
+---Returns the current level of this entity.
+---@return number
+function Player.getExperienceLevel() end
+
+---Returns the progress between this entity's current level and next level as a percentage. (`0..1`)
+---@return number
+function Player.getExperienceProgress() end
 
 ---Returns the amount of hunger this entity has.
 ---@return number
@@ -387,10 +395,6 @@ function Player.getFood() end
 ---@return ItemStack|nil
 function Player.getHeldItem(slot) end
 
----Returns the progress between this entity's current level and next level as a percentage. (`0..1`)
----@return number
-function Player.getExperienceProgress() end
-
 ---Returns the amount of saturation this entity has.
 ---@return number
 function Player.getSaturation() end
@@ -398,10 +402,6 @@ function Player.getSaturation() end
 ---Returns the last source of damage this entity has taken.
 ---@return DamageSource string
 function Player.lastDamageSource() end
-
----Returns the current level of this entity.
----@return number
-function Player.getExperienceLevel() end
 
 
 --================================================================================================--
