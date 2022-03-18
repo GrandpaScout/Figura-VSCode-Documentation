@@ -23,10 +23,6 @@ function client.clearTitle() end
 ---@return string
 function client.getActionBar() end
 
----Sets the text of the actionbar and shows it.
----@param text string
-function client.setActionbar(text) end
-
 ---Returns the namespace of the currently active shader. Returns nil none are applied. ex: "minecraft:shaders/post/creeper.json"
 ---@return string
 function client.getActiveShader() end
@@ -43,17 +39,9 @@ function client.getChunksCount() end
 ---@return boolean
 function client.getCrosshairEnabled() end
 
----Setting to false will force the crosshair to stop rendering, similar to spectator mode.
----@param bool boolean
-function client.setCrosshairEnabled(bool) end
-
 ---Returns the offset of the crosshair. Returns nil if it hasn't been set yet.
 ---@return Vector2
 function client.getCrosshairPos() end
-
----Moves the crosshair by the given offset. Change is only visual, does not effect place/break location.
----@param offset Vector2
-function client.setCrosshairPos(offset) end
 
 ---Returns 5th line of the left side debug screen (in singleplayer world). ex: "E: 17/83, B: 0, SD: 12"
 ---@return string
@@ -123,10 +111,6 @@ function client.getSoundCount() end
 ---@return string
 function client.getSubtitle() end
 
----Sets the subtitle of the title. Does not show the title or subtitle.
----@param text string
-function client.setSubtitle(text) end
-
 ---Returns the amount of miliseconds since the Unix Epoch.
 ---@return number
 function client.getSystemTime() end
@@ -134,10 +118,6 @@ function client.getSystemTime() end
 ---Returns the last shown title overlay message.
 ---@return string
 function client.getTitle() end
-
----Set the text of the title, and then show the title and subtitle.
----@param text string
-function client.setTitle(text) end
 
 ---Returns the version number of Minecraft as a string.
 ---@return string
@@ -167,9 +147,29 @@ function client.isPaused() end
 ---@return boolean
 function client.isWindowFocused() end
 
+---Sets the text of the actionbar and shows it.
+---@param text string
+function client.setActionbar(text) end
+
+---Setting to false will force the crosshair to stop rendering, similar to spectator mode.
+---@param bool boolean
+function client.setCrosshairEnabled(bool) end
+
+---Moves the crosshair by the given offset. Change is only visual, does not effect place/break location.
+---@param offset Vector2
+function client.setCrosshairPos(offset) end
+
 ---Setting to true will force the mouse to be unlocked in the normal game camera. Has no effect on GUIs.
 ---@param bool boolean
 function client.setMouseUnlocked(bool) end
+
+---Sets the subtitle of the title. Does not show the title or subtitle.
+---@param text string
+function client.setSubtitle(text) end
+
+---Set the text of the title, and then show the title and subtitle.
+---@param text string
+function client.setTitle(text) end
 
 ---Sets the fade durations for the title/subtitle.
 ---@param fadeInDur number
