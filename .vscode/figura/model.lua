@@ -343,6 +343,9 @@ vanilla_model = {
   HAT = {},
 
   ---@type VanillaModelPart
+  CAPE = {},
+
+  ---@type VanillaModelPart
   TORSO = {},
 
   ---@type VanillaModelPart
@@ -370,7 +373,13 @@ vanilla_model = {
   RIGHT_LEG = {},
 
   ---@type VanillaModelPart
-  RIGHT_PANTS_LEG = {}
+  RIGHT_PANTS_LEG = {},
+
+  ---@type VanillaModelPart
+  LEFT_EAR = {},
+
+  ---@type VanillaModelPart
+  RIGHT_EAR = {}
 }
 
 ---A `table` containing the armor model.
