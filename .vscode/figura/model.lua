@@ -2,6 +2,15 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
+---The sides of a cube.
+---@alias CubeSide
+---| '"NORTH"'
+---| '"SOUTH"'
+---| '"EAST"'
+---| '"WEST"'
+---| '"UP"'
+---| '"DOWN"'
+
 ---A parent type that the part will rotate with.
 ---@alias ParentType
 ---| '"None"' #Rotate with the origin of the player.
@@ -177,6 +186,11 @@ function CustomModelPart.getParentType() end
 ---@return VectorPos
 function CustomModelPart.getPivot() end
 
+---Returns the UV values of the specified face.
+---@param face CubeSide
+---@return Vector4
+function CustomModelPart.getRebuiltUV(face) end
+
 ---*This function uses the `CustomModelPart` definition.*
 ---***
 ---Returns the *absolute* rotation of the part.
@@ -188,6 +202,10 @@ function CustomModelPart.getRot() end
 ---Returns the shader of the part.
 ---@return Shader Shader
 function CustomModelPart.getShader() end
+
+---Returns the size of the part's texture.
+---@return Vector2
+function CustomModelPart.getTextureSize() end
 
 ---Returns the UV offset of the part.
 ---
@@ -214,6 +232,12 @@ function CustomModelPart.partToWorldDir(dir) end
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
+
+---Remap the UV's of the given side.
+---UV's must be in BlockBench format.
+---@param face CubeSide
+---@param vector Vector4
+function CustomModelPart.rebuildUV(face, vector) end
 
 ---Sets the color of the model.
 ---
@@ -258,6 +282,10 @@ function CustomModelPart.setShader(shader) end
 ---@param textureType TextureType
 ---@param ID? string ex: "minecraft:textures/item/apple.png"
 function CustomModelPart.setTexture(textureType, ID) end
+
+---Set the size of the part's texture.
+---@param vector Vector2
+function CustomModelPart.setTextureSize(vector) end
 
 ---Sets the UV offset of the part.
 ---
