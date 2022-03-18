@@ -311,6 +311,22 @@ function Entity.getWorldName() end
 ---@return boolean
 function Entity.isGrounded() end
 
+---Returns if the entity is touching lava.
+---@return boolean
+function Entity.isInLava() end
+
+---Returns if the entity has contact with rain.
+---@return boolean
+function Entity.isInRain() end
+
+---Returns if the entity has contact with water or waterlogged blocks.
+---@return boolean
+function Entity.isTouchingWater() end
+
+---Returns if the entity is fully submerged in water.
+---@return boolean
+function Entity.isUnderwater() end
+
 ---Returns if this entity is being rained on or in water.
 ---@return boolean
 function Entity.isWet() end
