@@ -145,6 +145,9 @@ function action_wheel.getRightSize() end
 ---@return SlotNumber number
 function action_wheel.getSelectedSlot() end
 
+---Executes the function of the hovered over actionwheel
+function action_wheel.runAction() end
+
 ---Sets the amount of slots on the left side of the action wheel.
 ---@param size SlotSideNumber
 function action_wheel.setLeftSize(size) end
