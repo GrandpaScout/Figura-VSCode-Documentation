@@ -159,4 +159,5 @@ function onCommand(cmd) end
 ---***
 ---Runs every time you take damage.
 ---@param amount number The amount of damage you would have taken before armor/resistance calculations.
-function onDamage(amount) end
+---@param source string
+function onDamage(amount, source) end
