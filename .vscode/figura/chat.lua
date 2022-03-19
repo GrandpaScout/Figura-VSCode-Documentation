@@ -11,6 +11,10 @@ chat = {}
 ---@return string
 function chat.getMessage(num) end
 
+---Returns if the chat is currently open.
+---@return boolean
+function chat.isOpen() end
+
 ---Sends a message as yourself.
 ---@param str string
 function chat.sendMessage(str) end
