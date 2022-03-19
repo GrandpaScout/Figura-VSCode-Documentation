@@ -348,3 +348,7 @@ function vectors.worldToPart(vec) end
 ---@param offset VectorPos
 ---@return VectorPos
 function vectors.worldToCameraPos(offset) end
+
+---@param pos VectorPos
+---@return Vector4
+function vectors.worldToScreenSpace(pos) end
