@@ -20,6 +20,9 @@
 ---| "7"
 ---| "8"
 
+---@alias ActionWheelTextureType TextureType
+---| '"None"' #Nothing, uses an item instead.
+
 ---A slot on the action wheel.
 ---@class ActionWheelSlot
 local ActionWheelSlot = {}
@@ -52,10 +55,25 @@ function ActionWheelSlot.getHoverItem() end
 ---@return ItemStack|nil
 function ActionWheelSlot.getItem() end
 
+---Returns the type of texture used.
+---@return ActionWheelTextureType
+function ActionWheelSlot.getTexture() end
+
+---Returns the scale of the texture set by setTextureScale
+---@return Vector2
+function ActionWheelSlot.getTextureScale() end
+
 ---Returns the current title of the slot.
 ---
 ---Note: Causes a VM Error if the title has not been set by `.setTitle()`.
 function ActionWheelSlot.getTitle() end
+
+---Returns the UV used for rendering the texture as well as the texture size.
+---First two numbers are the offset
+---Next two numbers are the size of the UV
+---Last two numbers are the size of the texture itself
+---@return Vector6
+function ActionWheelSlot.getUV() end
 
 ---Sets the color that the slot should be when idle.
 ---@param col VectorColor
@@ -77,9 +95,25 @@ function ActionWheelSlot.setHoverItem(item) end
 ---@param item ItemStack
 function ActionWheelSlot.setItem(item) end
 
+---Sets the action wheel custom texture.
+---ID is only needed if type or "Resource"
+---@param type ActionWheelTextureType
+---@param ID string
+function ActionWheelSlot.setTexture(type, ID) end
+
+---Sets the scale of the texture.
+---@param vector Vector2
+function ActionWheelSlot.setTextureScale(vector) end
+
 ---Sets the title of the slot.
 ---@param str string
 function ActionWheelSlot.setTitle(str) end
+
+---Sets the UV and the texture size
+---@param uvOffset Vector2
+---@param uvSize Vector2
+---@param textureSize Vector2
+function ActionWheelSlot.setUV(uvOffset, uvSize, textureSize) end
 
 
 --================================================================================================--
