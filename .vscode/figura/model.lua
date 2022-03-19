@@ -196,10 +196,10 @@ function CustomModelPart.getParentType() end
 ---@return VectorPos
 function CustomModelPart.getPivot() end
 
----Returns the UV values of the specified face.
+---Returns the UV data of the specified face.
 ---@param face CubeSide
 ---@return Vector4
-function CustomModelPart.getRebuiltUV(face) end
+function CustomModelPart.getUVData(face) end
 
 ---*This function uses the `CustomModelPart` definition.*
 ---***
@@ -247,11 +247,11 @@ function CustomModelPart.partToWorldDir(dir) end
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
 
----Remap the UV's of the given side.
+---Sets the UV data of the given side.
 ---UV's must be in BlockBench format.
 ---@param face CubeSide
 ---@param vector Vector4
-function CustomModelPart.rebuildUV(face, vector) end
+function CustomModelPart.setUVData(face, vector) end
 
 ---Sets the color of the model.
 ---
