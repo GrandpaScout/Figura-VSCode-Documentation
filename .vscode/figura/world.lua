@@ -240,7 +240,7 @@ function World.isOpenSky(pos) end
 ---@param endPos VectorPos
 ---@param shapeHandling RaycastShapeHandling
 ---@param fluidHandling RaycastFluidHandling
----@param predicate? fun(blockState:BlockState,pos:VectorPos):boolean
+---@param predicate? fun(blockState:BlockState|string,pos:VectorPos):boolean
 ---@return RaycastBlockResult
 function World.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
 
