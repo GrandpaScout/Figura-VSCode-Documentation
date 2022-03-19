@@ -333,3 +333,8 @@ function vectors.quaternionRotation(init, rotation) end
 ---@param vec VectorPos
 ---@return VectorPos
 function vectors.worldToPart(vec) end
+
+---Same as worldToPartPos but tied with the camera instead.
+---@param offset VectorPos
+---@return VectorPos
+function vectors.worldToCameraPos(offset) end
