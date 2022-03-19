@@ -1148,6 +1148,10 @@ function ItemStack.getType() end
 ---@return boolean
 function ItemStack.hasGlint() end
 
+---Returns if the item has a block form.
+---@return boolean
+function ItemStack.isBlockItem() end
+
 ---Returns if the item is edible
 ---@return boolean
 function ItemStack.isFood() end
