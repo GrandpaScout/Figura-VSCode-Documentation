@@ -1,0 +1,20 @@
+renderlayers class cannot be found
+
+# RenderLayer API
+* renderlayers.registerShader(name, format, vertexSource, fragmentSource, numSamplers, customUniforms)
+  → Registers a new custom shader with the given name
+  → If format is nil, uses the default of "POSITION_COLOR_TEXTURE_OVERLAY_LIGHT_NORMAL"
+  → Code for the shader is contained in strings, vertexSource and fragmentSource
+_
+* renderlayers.registerRenderLayer(name, params, startFunction, endFunction)
+  → Registers a new render layer with the given name
+  → params is a table where you can set certain keys
+    → vertexFormat - needs to match with the format of any shader you want to use. Same default as in registerShader()
+    → hasCrumbling - don't know what this does, but it's true by default
+    → translucent - also don't know this one, but true by default
+  → startFunction and endFunction are two lua functions, called when you start rendering and when you stop rendering this layer. Functions which interact with openGL can only be called inside these
+
+* renderlayers.setUniform(shaderName, uniformName, value) - Sets the value of the specified uniform in the specified shader. If the shader does not exist yet, does nothing
+* renderlayers.setPriority(renderLayerName, value) - Sets the priority of a render layer. Layers with lower priorities are rendered first. By default, all priorities are 0
+* renderlayers.getPriority(renderLayerName) - Gets the priority of the chosen render layer, or nil if it doesn't exist
+* renderlayers.isShaderReady(shaderName) - Returns true or false depending on if the shader exists yet
