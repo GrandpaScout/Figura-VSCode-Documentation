@@ -146,3 +146,17 @@ function player_init() end
 ---different scripts easier.
 ---@param cmd string
 function onCommand(cmd) end
+
+---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
+---You should not run this function, Figura will run it for you.
+---
+---Use the below code to create this function:
+---```
+---function onDamage(amount)
+---  --code here
+---end
+---```
+---***
+---Runs every time you take damage.
+---@param amount number The amount of damage you would have taken before armor/resistance calculations.
+function onDamage(amount) end
