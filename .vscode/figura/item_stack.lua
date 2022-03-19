@@ -1148,6 +1148,10 @@ function ItemStack.getTag() end
 ---@return string
 function ItemStack.getType() end
 
+---Returns if the item is edible
+---@return boolean
+function ItemStack.isFood() end
+
 ---Sets the amount of items in the stack.
 ---@param x number
 function ItemStack.setCount(x) end
