@@ -18,3 +18,39 @@ _
 * renderlayers.setPriority(renderLayerName, value) - Sets the priority of a render layer. Layers with lower priorities are rendered first. By default, all priorities are 0
 * renderlayers.getPriority(renderLayerName) - Gets the priority of the chosen render layer, or nil if it doesn't exist
 * renderlayers.isShaderReady(shaderName) - Returns true or false depending on if the shader exists yet
+
+# GL Functions
+* These can only be called inside one of the functions sent to a registered render layer!
+
+* useShader(shaderName): Uses the designated shader
+* setTexture(index, textureName): Sets the designated texture based on the name
+  → Special values include "MY_TEXTURE", "MAIN_FRAMEBUFFER", and "LAST_FRAMEBUFFER"
+  → MY_TEXTURE uses your figura avatar texture
+  → MAIN_FRAMEBUFFER uses what is currently drawn on the screen
+  → LAST_FRAMEBUFFER uses what was drawn on the screen last frame
+  → Otherwise, the name is treated as an identifier, so you can get game textures like "textures/block/bee_nest_top.png", for example
+* enableLightmap() and disableLightmap(): Enables/disables lightmap testing
+* enableOverlay() and disableOverlay(): Enables/disables overlay
+* enableCull() and disableCull(): Enables/disables culling
+* enableDepthTest() and disableDepthTest(): Enables/disables depth testing
+* enableBlend() and disableBlend(): Enables/disables blending
+* enableColorLogicOp() and disableColorLogicOp(): Enables/disables color logic operations
+* enableStencil() and disableStencil(): Enables/disables stencil testing
+* depthFunc(func): Sets the GL depth function
+* depthMask(boolean): Enables/disables the GL depth mask
+* blendFunc(src, dst): Sets the GL blend function
+* blendFuncSeparate(srcRGB, dstRGB, srcAlpha, dstAlpha): Sets the GL blend function
+* defaultBlendFunc(): A minecraft→specific function, resets the GL blend function to default
+* blendEquation(equation): Sets the GL blend equation
+* logicOp(operation): Sets the GL color logic operation
+* colorMask(boolean): Enables/disables the GL color mask
+* stencilMask(number): Sets the GL stencil mask
+* stencilFunc(func, ref, mask): Sets the GL stencil function
+* stencilOp(sfail, dpfail, dppass): Sets the GL stencil operations
+* enableScissors(x, y, width, height): Enables GL scissors with those values
+* disableScissors(): Disables GL scissors
+* lineWidth(): Sets the shader line width
+
+# GL Constants
+* The API has a good number of the GL constants; it should have everything you need for the GL functions above. It has GL_NEVER, GL_FUNC_ADD, GL_ONE_MINUS_SRC_ALPHA, among many others_
+* If figura doesn't have the value you need, for whatever reason, find the decimal value at https://javagl.github.io/GLConstantsTranslator/GLConstantsTranslator.html and use that
