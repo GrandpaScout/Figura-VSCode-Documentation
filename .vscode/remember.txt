@@ -54,3 +54,7 @@ _
 # GL Constants
 * The API has a good number of the GL constants; it should have everything you need for the GL functions above. It has GL_NEVER, GL_FUNC_ADD, GL_ONE_MINUS_SRC_ALPHA, among many others_
 * If figura doesn't have the value you need, for whatever reason, find the decimal value at https://javagl.github.io/GLConstantsTranslator/GLConstantsTranslator.html and use that
+
+### Renderlayer API ###
+* added renderlayers.restoreDefaults(), which resets the rendering to default state
+* can now access the emissive texture in setTexture() using the key "MY_TEXTURE_EMISSIVE"
