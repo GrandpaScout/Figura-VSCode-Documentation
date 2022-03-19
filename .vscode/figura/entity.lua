@@ -430,7 +430,7 @@ function Player.getFood() end
 ---Returns an item held in this entity's hands.
 ---Returns `nil` if the slot is empty.
 ---@param slot HandSlot
----@return ItemStack|nil
+---@return ItemStack
 function Player.getHeldItem(slot) end
 
 ---Returns the amount of saturation this entity has.
