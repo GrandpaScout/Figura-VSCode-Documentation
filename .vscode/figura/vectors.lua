@@ -327,6 +327,16 @@ function vectors.rgbToINT(vec) end
 ---@param rotation Vector3
 function vectors.quaternionRotation(init, rotation) end
 
+---Returns a quaternion from the given XYZ Euler rotation
+---@param vector Vector3
+---@return Vector4
+function vectors.toQuaternion(vector) end
+
+---Returns the XYZ Euler rotation from the given quaternion
+---@param quaternion Vector4
+---@return Vector3
+function vectors.fromQuaternion(quaternion) end
+
 ---Creates a Position Vector from a block coordinate.
 ---
 ---You can use this function to place a `NO_PARENT` part at an exact block coordinate.
