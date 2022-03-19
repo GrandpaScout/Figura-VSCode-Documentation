@@ -196,11 +196,6 @@ function CustomModelPart.getParentType() end
 ---@return VectorPos
 function CustomModelPart.getPivot() end
 
----Returns the UV data of the specified face.
----@param face CubeSide
----@return Vector4
-function CustomModelPart.getUVData(face) end
-
 ---*This function uses the `CustomModelPart` definition.*
 ---***
 ---Returns the *absolute* rotation of the part.
@@ -227,6 +222,11 @@ function CustomModelPart.getType() end
 ---@return VectorUV
 function CustomModelPart.getUV() end
 
+---Returns the UV data of the specified face.
+---@param face CubeSide
+---@return Vector4
+function CustomModelPart.getUVData(face) end
+
 ---Takes a `Vector` with a direction relative to the part and returns a `Vector` with the direction
 ---in world-space.
 ---@param dir VectorPos
@@ -246,12 +246,6 @@ function CustomModelPart.partToWorldDir(dir) end
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
-
----Sets the UV data of the given side.
----UV's must be in BlockBench format.
----@param face CubeSide
----@param vector Vector4
-function CustomModelPart.setUVData(face, vector) end
 
 ---Sets the color of the model.
 ---
@@ -306,6 +300,12 @@ function CustomModelPart.setTextureSize(vector) end
 ---Note: This does *not* set the actual UV of the part.
 ---@param uv VectorUV
 function CustomModelPart.setUV(uv) end
+
+---Sets the UV data of the given side.
+---UV's must be in BlockBench format.
+---@param face CubeSide
+---@param vector Vector4
+function CustomModelPart.setUVData(face, vector) end
 
 ---Takes a `Vector` with a direction in world-space and
 ---returns a `Vector` with the direction relative to the part.
