@@ -69,6 +69,10 @@ function meta.getDoesRenderOffscreen() end
 ---@return string
 function meta.getFiguraVersion() end
 
+---Returns if the player can use custom render layers (shaders).
+---@return boolean
+function meta.getCanHaveCustomRenderLayer() end
+
 ---Returns the init instruction limit in this client's instance of the script.
 ---
 ---This is affected by the "Max Init Instructions" trust setting.
