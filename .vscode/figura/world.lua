@@ -100,20 +100,6 @@
 ---A light level.
 ---@alias LightLevel NibbleInt
 
----@alias RaycastShapeHandling
----|'"COLLIDER"'
----|'"OUTLINE"'
----|'"VISUAL"'
-
----@alias RaycastFluidHandling
----|'"NONE"'
----|'"SOURCE_ONLY"'
----|'"ANY"'
-
----@class RaycastBlockResult
----@field state BlockState
----@field pos VectorPos
-
 ---A redstone power level.
 ---@alias RedstonePower NibbleInt
 
@@ -233,24 +219,6 @@ function World.isLightning() end
 ---@param pos Vector3
 ---@return boolean
 function World.isOpenSky(pos) end
-
----Casts a ray from startPos to endPos, looking at the blocks on the way.
----If the ray never hits anything, then the function returns nil.
----@param startPos VectorPos
----@param endPos VectorPos
----@param shapeHandling RaycastShapeHandling
----@param fluidHandling RaycastFluidHandling
----@param predicate? fun(blockState:BlockState|string,pos:VectorPos):boolean
----@return RaycastBlockResult
-function World.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
-
----Casts a ray from startPos to endPos, returning the first entity it sees on the way.
----If the ray never hits anything, then the function returns nil.
----@param startPos VectorPos
----@param endPos VectorPos
----@param predicate? fun(entity:Entity|LivingEntity|Player):boolean
----@return Entity|LivingEntity|Player
-function World.raycastEntities(startPos, endPos, predicate) end
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--

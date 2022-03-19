@@ -2,6 +2,20 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
+---@alias RaycastShapeHandling
+---|'"COLLIDER"'
+---|'"OUTLINE"'
+---|'"VISUAL"'
+
+---@alias RaycastFluidHandling
+---|'"NONE"'
+---|'"SOURCE_ONLY"'
+---|'"ANY"'
+
+---@class RaycastBlockResult
+---@field state BlockState
+---@field pos VectorPos
+
 ---Transformation modes for rendering items.
 ---
 ---@alias RendererTransformationModes
@@ -49,6 +63,24 @@ function renderer.isCameraBackwards() end
 ---This will always return false for other clients since they cannot see your first-person model.
 ---@return boolean
 function renderer.isFirstPerson() end
+
+---Casts a ray from startPos to endPos, looking at the blocks on the way.
+---If the ray never hits anything, then the function returns nil.
+---@param startPos VectorPos
+---@param endPos VectorPos
+---@param shapeHandling RaycastShapeHandling
+---@param fluidHandling RaycastFluidHandling
+---@param predicate? fun(blockState:BlockState|string,pos:VectorPos):boolean
+---@return RaycastBlockResult
+function renderer.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
+
+---Casts a ray from startPos to endPos, returning the first entity it sees on the way.
+---If the ray never hits anything, then the function returns nil.
+---@param startPos VectorPos
+---@param endPos VectorPos
+---@param predicate? fun(entity:Entity|LivingEntity|Player):boolean
+---@return Entity|LivingEntity|Player
+function renderer.raycastEntities(startPos, endPos, predicate) end
 
 ---Renders a block with the given parameters.
 ---@param blockstate BlockState|string Block State table or a valid block ID+NBT
