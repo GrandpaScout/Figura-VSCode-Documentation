@@ -69,6 +69,14 @@ function Vector.cross(vec) end
 ---@return number
 function Vector.angleTo(vec) end
 
+---Returns the vector converted into degrees.
+---@return Vector
+function Vector.toDeg() end
+
+---Returns the vector converted into radians.
+---@return Vector
+function Vector.toRad() end
+
 
 ---Vector6 ⇐ Vector
 ---***
