@@ -32,6 +32,12 @@
 ---| '"RightElytra"' #Rotate with the player's right elytra wing.
 ---| '"Camera"' #Rotate to always face the camera.
 
+---The possible types of a CustomModelPart
+---@alias CustomModelPartType
+---| '"CUBE"'
+---| '"GROUP"'
+---| '"MESH"'
+
 ---@alias Shader
 ---| '"None"' #Do not use a shader.
 ---| '"EndPortal"' #Use the end portal shader.
@@ -172,6 +178,10 @@ function CustomModelPart.getHidden() end
 ---@return boolean
 function CustomModelPart.getMimicMode() end
 
+---Returns the name assigned in BlockBench of this part.
+---@return string
+function CustomModelPart.getName() end
+
 ---Returns the opacity of a part.
 ---
 ---Note: Opacity is a value from 0 to 1.
@@ -206,6 +216,10 @@ function CustomModelPart.getShader() end
 ---Returns the size of the part's texture.
 ---@return Vector2
 function CustomModelPart.getTextureSize() end
+
+---Returns the type of the part.
+---@return CustomModelPartType
+function CustomModelPart.getType() end
 
 ---Returns the UV offset of the part.
 ---
