@@ -28,6 +28,10 @@ renderer = {}
 ---@return VectorPos
 function renderer.getCameraPos() end
 
+---Returns if fire can be rendered on the avatar
+---@return boolean
+function renderer.getRenderFire() end
+
 ---Returns the radius of the player's shadow.  
 ---Returns `nil` if the size has not been set by `.setShadowSize()`.
 ---@return number|nil
@@ -47,13 +51,14 @@ function renderer.isCameraBackwards() end
 function renderer.isFirstPerson() end
 
 ---Renders a block with the given parameters.
----@param blockstate string Same syntax as a vanilla blockstate
+---@param blockstate BlockState|string Block State table or a valid block ID+NBT
 ---@param modelPart BasicModelPart Parent part that this extra render gonna be attached to
 ---@param emissive boolean A boolean flag if its emissive or not
 ---@param pos Vector3
 ---@param rot? Vector3
 ---@param scale? Vector3
-function renderer.renderBlock(blockstate, modelPart, emissive, pos, rot, scale) end
+---@param renderLayer? string
+function renderer.renderBlock(blockstate, modelPart, emissive, pos, rot, scale,renderLayer) end
 
 ---Renders an item with the given parameters
 ---@param itemStack ItemStack|string Item stack table, from the item stack API, or a valid item ID+NBT
@@ -63,7 +68,8 @@ function renderer.renderBlock(blockstate, modelPart, emissive, pos, rot, scale) 
 ---@param pos Vector3
 ---@param rot? Vector3
 ---@param scale? Vector3
-function renderer.renderItem(itemStack, modelPart, transformMode, emissive, pos, rot, scale) end
+---@param renderLayer? string
+function renderer.renderItem(itemStack, modelPart, transformMode, emissive, pos, rot, scale,renderLayer) end
 
 ---Renders text with the given parameters
 ---@param text string JSON formatted (or legacy) string
@@ -81,6 +87,10 @@ function renderer.setMountEnabled(boolean) end
 ---Toggle the shadow of the entity youre riding
 ---@param boolean boolean
 function renderer.setMountShadowEnabled(boolean) end
+
+---Toggle the rendering of fire on your avatar
+---@param boolean boolean
+function renderer.setRenderFire(boolean) end
 
 ---Sets the radius of the player's shadow.  
 ---Set the radius to `nil` to reset the shadow.
