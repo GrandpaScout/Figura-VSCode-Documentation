@@ -56,7 +56,7 @@ function renderer.isFirstPerson() end
 function renderer.renderBlock(blockstate, modelPart, emissive, pos, rot, scale) end
 
 ---Renders an item with the given parameters
----@param itemStack ItemStack Item stack table, from the item stack API
+---@param itemStack ItemStack|string Item stack table, from the item stack API, or a valid item ID+NBT
 ---@param modelPart BasicModelPart Parent part that this extra render gonna be attached to
 ---@param transformMode RendererTransformationModes Mode that the ItemStack gonna be rendered
 ---@param emissive boolean A boolean flag if its emissive or not

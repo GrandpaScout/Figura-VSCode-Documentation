@@ -88,11 +88,11 @@ function ActionWheelSlot.setFunction(func) end
 function ActionWheelSlot.setHoverColor(col) end
 
 ---Sets the item that should appear when the slot is hovered over.
----@param item ItemStack
+---@param item ItemStack|string
 function ActionWheelSlot.setHoverItem(item) end
 
 ---Sets the item that should appear when the slot is idle.
----@param item ItemStack
+---@param item ItemStack|string
 function ActionWheelSlot.setItem(item) end
 
 ---Sets the action wheel custom texture.
