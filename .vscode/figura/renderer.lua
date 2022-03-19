@@ -24,6 +24,10 @@
 ---first person.
 renderer = {}
 
+---Returns the camera position of the player executing the script.
+---@return VectorPos
+function renderer.getCameraPos() end
+
 ---Returns the radius of the player's shadow.  
 ---Returns `nil` if the size has not been set by `.setShadowSize()`.
 ---@return number|nil
@@ -32,6 +36,10 @@ function renderer.getShadowSize() end
 ---Returns the lengh, in pixels, of a text/json
 ---@param text string
 function renderer.getTextWidth(text) end
+
+---Returns if the camera is in front of or behind the player
+---@return boolean
+function renderer.isCameraBackwards() end
 
 ---Returns if the model is being viewed in first-person.  
 ---This will always return false for other clients since they cannot see your first-person model.
@@ -78,3 +86,10 @@ function renderer.setMountShadowEnabled(boolean) end
 ---Set the radius to `nil` to reset the shadow.
 ---@param radius number|nil
 function renderer.setShadowSize(radius) end
+
+---"Custom shader stuff"
+---Sorry thats all I have
+---@param layer string
+---@param uniform string
+---@param value number|table
+function setUniform(layer, uniform, value) end
