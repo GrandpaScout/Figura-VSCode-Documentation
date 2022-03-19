@@ -272,15 +272,17 @@ function Entity.getName() end
 function Entity.getNbtValue(nbtpath) end
 
 ---Returns the position of this entity.
+---@param delta number
 ---@return VectorPos
-function Entity.getPos() end
+function Entity.getPos(delta) end
 
 ---Returns the rotation of this entity.
 ---
 ---Note: When used on the local player, the yaw will build up past the normal limits when in first
 ---person.
+---@param delta number
 ---@return VectorAng
-function Entity.getRot() end
+function Entity.getRot(delta) end
 
 ---Returns the position of the block this entity is looking at.  
 ---Returns `nil` if not looking at any blocks.
@@ -355,8 +357,9 @@ function LivingEntity.getActiveHand() end
 function LivingEntity.getActiveItem() end
 
 ---Returns the yaw of this entity's body.
+---@param delta number
 ---@return number
-function LivingEntity.getBodyYaw() end
+function LivingEntity.getBodyYaw(delta) end
 
 ---Returns how long this entity has been dead for in ticks.  
 ---An entity is deleted after being dead for 20 ticks.
