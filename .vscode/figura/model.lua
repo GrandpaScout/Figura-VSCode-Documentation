@@ -168,6 +168,10 @@ local CustomModelPart = {}
 ---@return VectorColor
 function CustomModelPart.getColor() end
 
+---Returns if culling is enabled on the part.
+---@return boolean
+function CustomModelPart.getCullEnabled() end
+
 ---Returns if the part is hidden in blockbench.  
 ---A part that is hidden in blockbench cannot be unhidden.
 ---@return boolean
@@ -252,6 +256,10 @@ function CustomModelPart.partToWorldPos(pos) end
 ---Note: The color is set by *tinting* the model, use grayscale textures for best results.
 ---@param col VectorColor
 function CustomModelPart.setColor(col) end
+
+---Enable/disable culling.
+---@param boolean boolean
+function CustomModelPart.setCullEnabled(boolean) end
 
 ---Enable/disable extra texture rendering (ie emissive textures)
 ---@param boolean boolean
