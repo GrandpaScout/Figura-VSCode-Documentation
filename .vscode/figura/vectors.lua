@@ -275,6 +275,11 @@ vectors = {}
 ---@return number[]
 function vectors.asTable(vec) end
 
+---Returns the XYZ Euler rotation from the given quaternion
+---@param quaternion Vector4
+---@return Vector3
+function vectors.fromQuaternion(quaternion) end
+
 ---Creates a Vector with `x` amount of numbers.
 ---@param x "1"|"2"|"3"|"4"|"5"|"6"
 ---@return Vector
@@ -331,11 +336,6 @@ function vectors.quaternionRotation(init, rotation) end
 ---@param vector Vector3
 ---@return Vector4
 function vectors.toQuaternion(vector) end
-
----Returns the XYZ Euler rotation from the given quaternion
----@param quaternion Vector4
----@return Vector3
-function vectors.fromQuaternion(quaternion) end
 
 ---Creates a Position Vector from a block coordinate.
 ---
