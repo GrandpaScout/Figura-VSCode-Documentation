@@ -1114,10 +1114,6 @@
 ---@field stack userdata
 local ItemStack = {}
 
----Returns if the item has an enchantment glint.
----@return boolean
-function ItemStack.hasGlint() end
-
 ---Returns the item's cooldown.
 ---@return number
 function ItemStack.getCooldown() end
@@ -1147,6 +1143,10 @@ function ItemStack.getTag() end
 ---Returns the item's ID.
 ---@return string
 function ItemStack.getType() end
+
+---Returns if the item has an enchantment glint.
+---@return boolean
+function ItemStack.hasGlint() end
 
 ---Returns if the item is edible
 ---@return boolean
