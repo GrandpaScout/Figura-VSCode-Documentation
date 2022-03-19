@@ -1,3 +1,7 @@
+--================================================================================================--
+--=====  CLASSES  ================================================================================--
+--================================================================================================--
+
 ---A Minecraft block identifier.
 ---
 ---Only the default Minecraft blocks are auto-completed.  
@@ -1361,16 +1365,118 @@
 ---> | `"none"` `"side"` `"up"` | minecraft:redstone_wire |
 ---@field west '"false"'|'"true"'|'"none"'|'"side"'|'"up"'
 
+---A `table` containing sound group properties
+---@class BlockStateSoundGroup
+---@field pitch number
+---@field volume number
+---@field hit string
+---@field fall string
+---@field plate string
+---@field step string
+---@field break string
+
 ---A `table` containing the blockstate of a block.
 ---@class BlockState
 ---@field name BlockID
 ---@field properties BlockStateProperties
 local BlockState = {}
 
+---@return boolean
+function BlockState.emitsRedstonePower() end
+
+---@return number
+function BlockState.getBlastResistance() end
+
 ---Returns a table with all the block tags this block is included in. eg: "#minecraft:flowers"
 ---@return string[]
 function BlockState.getBlockTags() end
 
+---Returns a table of vectors, each vector corrisponding to a "box" of the block's collision
+---(format: minX, minY, minZ, maxX, maxY, maxZ)
+---@return Vector6[]
+function BlockState.getCollisionShape() end
+
+---@return NibbleInt
+function BlockState.getComparatorOutput() end
+
+---@return number
+function BlockState.getHardness() end
+
+---@return number
+function BlockState.getJumpVelocityMultiplier() end
+
+---Returns the light level this block produces
+---@return NibbleInt
+function BlockState.getLuminance() end
+
+---Returns the map color of the block's material as an integear.
+---@return number
+function BlockState.getMapColor() end
+
+---Returns the name of the block material.
+---As of 0.0.8, this doesn't return a human readable string,
+---but "field_####" with a seemingly random number combination for each material.
+---@return string
+function BlockState.getMaterial() end
+
+---@return NibbleInt
+function BlockState.getOpacity() end
+
+---Same as getCollisionShape, but for the visual hitbox of the block (when you try to mine/use it)
+---@return Vector6[]
+function BlockState.getOutlineShape() end
+
+---@return number
+function BlockState.getSlipperiness() end
+
+---#eturns a table, listing each sound a blockstate may make, also includes base pitch and volume
+---@return BlockStateSoundGroup
+function BlockState.getSoundGroup() end
+
+---@return number
+function BlockState.getVelocityMultiplier() end
+
+---Returns if the block is a block entity, ie blocks like chests and furnaces, but not crafting tables.
+---@return boolean
+function BlockState.hasBlockEntity() end
+
+---@return boolean
+function BlockState.hasEmissiveLighting() end
+
+---@return boolean
+function BlockState.isCollidable() end
+
+---Returns if the block's collision is a single 1x1x1 cube or not.
+---@return boolean
+function BlockState.isFullCube() end
+
+---@return boolean
+function BlockState.isOpaque() end
+
+---Returns if the block is considered solid, ie mobs can spawn on it and can suffocate.
+---@return boolean
+function BlockState.isSolidBlock() end
+
+---@return boolean
+function BlockState.isTranslucent() end
+
 ---Sets the position of the block.
 ---@param pos VectorPos
 function BlockState.setPos(pos) end
+
+---Returns a string of this blockstate with the same syntax as /setblock
+---@return string
+function BlockState.toStateString() end
+
+--================================================================================================--
+--=====  FUNCTIONS  ==============================================================================--
+--================================================================================================--
+
+---Contains function related to creating blockstates
+block_state = {}
+
+---Returns a blockstate using /setblock syntax
+---@param block_string string
+---@param pos? VectorPos
+---@return BlockState
+function block_state.createBlock(block_string, pos) end
