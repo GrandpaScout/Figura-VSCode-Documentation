@@ -22,7 +22,7 @@ function data.loadall() end
 
 ---Removes the value from the file.
 ---@param key string
-function remove(key) end
+function data.remove(key) end
 
 ---Completely removes the file from existence.
-function deleteFile() end
+function data.deleteFile() end
