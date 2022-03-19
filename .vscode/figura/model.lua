@@ -273,6 +273,10 @@ function CustomModelPart.setOpacity(num) end
 ---@param parent ParentType
 function CustomModelPart.setParentType(parent) end
 
+---Sets the render layer (custom shader) of the part.
+---@param string string
+function CustomModelPart.setRenderLayers(string) end
+
 ---*This function uses the `CustomModelPart` definition.*
 ---***
 ---Sets the *absolute* rotation of the part.
