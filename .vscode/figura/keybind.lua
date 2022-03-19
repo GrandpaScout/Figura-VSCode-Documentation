@@ -222,6 +222,14 @@ function Keybind.getName() end
 ---Contains functions for working with keybinds.
 keybind = {}
 
+---Returns a list of all valid keys.
+---@return Key[]
+function keybind.getKeyList() end
+
+---Returns a list of all keybinds.
+---@return Keybind[]
+function keybind.getRegisteredKeyList() end
+
 ---Returns a value that represents a registered keybind.
 ---
 ---Any registered keybind by both Minecraft and mods can be used.
@@ -232,5 +240,6 @@ function keybind.getRegisteredKeybind(bind) end
 ---Returns a new named keybind that can be tracked.
 ---@param name string
 ---@param key Key
+---@param persistent? boolean If set to true, keybind will be detected even if a gui is open such as chat/inventory.
 ---@return FiguraKeybind
-function keybind.newKey(name, key) end
+function keybind.newKey(name, key, persistent) end
