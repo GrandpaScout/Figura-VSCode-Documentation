@@ -37,6 +37,10 @@ function meta.getCanModifyVanilla() end
 ---@return number
 function meta.getComplexityLimit() end
 
+---Returns the current animation complexity.
+---@return number
+function meta.getCurrentAnimationCount() end
+
 ---Returns the current complexity of the avatar in this client's instance of the script.
 ---
 ---The complexity is the amount of faces being rendered on the client's screen.
