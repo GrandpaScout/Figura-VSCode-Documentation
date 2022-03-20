@@ -191,6 +191,12 @@
 ---| '"minecraft:weakness"' #Weakness
 ---| '"minecraft:wither"' #Wither
 
+---@alias PlayerGamemode
+---|'"SURVIVAL"'
+---|'"CREATIVE"'
+---|'"ADVENTURE"'
+---|'"SPECTATOR"'
+
 ---A `table` containing the duration and amplifier of a status effect.
 ---@class StatusEffect
 ---@field amplifier number #The effect's level.
@@ -236,6 +242,10 @@ function Entity.getEquipmentItem(slot) end
 ---Returns the height from the base of this entity to their eye level in blocks.
 ---@return number
 function Entity.getEyeHeight() end
+
+---Returns the world coords of the entity's eyes.
+---@return VectorPos
+function Entity.getEyeY() end
 
 ---Returns how long this entity will be on fire for.  
 ---If this number is negative, it is how long the entity is immune to being set on fire.
@@ -313,9 +323,13 @@ function Entity.getWorldName() end
 ---@return boolean
 function Entity.hasAvatar() end
 
+---Returns if the entity is glowing.
+---@return boolean
+function Entity.isGlowing() end
+
 ---Returns if this entity is standing on solid ground.
 ---@return boolean
-function Entity.isGrounded() end
+function Entity.isOnGround() end
 
 ---Returns if the entity is touching lava.
 ---@return boolean
@@ -324,6 +338,26 @@ function Entity.isInLava() end
 ---Returns if the entity has contact with rain.
 ---@return boolean
 function Entity.isInRain() end
+
+---Returns if the entity is invisible.
+---@return boolean
+function Entity.isInvisible() end
+
+---Returns if the entity has the silent nbt tag.
+---@return boolean
+function Entity.isSilent() end
+
+---Returns if the entity is sneaking.
+---@return boolean
+function Entity.isSneaking() end
+
+---Returns if this entity is sneaking.
+---@return boolean
+function Entity.isSneaky() end
+
+---Returns is the entity is sprinting.
+---@return boolean
+function Entity.isSprinting() end
 
 ---Returns if the entity has contact with water or waterlogged blocks.
 ---@return boolean
@@ -400,13 +434,13 @@ function LivingEntity.getStingerCount() end
 ---@return number
 function LivingEntity.getStuckArrowCount() end
 
+---Returns if the entity is climbing.
+---@return boolean
+function LivingEntity.isClimbing() end
+
 ---Returns if this entity is left-handed.
 ---@return boolean
 function LivingEntity.isLeftHanded() end
-
----Returns if this entity is sneaking.
----@return boolean
-function LivingEntity.isSneaky() end
 
 ---Returns if this entity is using an item.
 ---@return boolean
@@ -431,6 +465,10 @@ function Player.getExperienceProgress() end
 ---@return number
 function Player.getFood() end
 
+---Returns the player's gamemode as a string.
+---@return PlayerGamemode
+function Player.getGamemode() end
+
 ---Returns an item held in this entity's hands.
 ---Returns `nil` if the slot is empty.
 ---@param slot HandSlot
@@ -449,6 +487,10 @@ function Player.getStoredValue(key) end
 ---Returns the vanilla model type, either "default" or "slim".
 ---@return '"default"'|'"slim"'
 function Player.getModelType() end
+
+---Returns if the player is flying via creative flight.
+---@return boolean
+function Player.isFlying() end
 
 ---Returns the last source of damage this entity has taken.
 ---@return DamageSource string
