@@ -93,13 +93,6 @@ function renderer.setRenderPlayerHead(boolean) end
 ---@param radius number|nil
 function renderer.setShadowSize(radius) end
 
----"Custom shader stuff"
----Sorry thats all I have
----@param layer string
----@param uniform string
----@param value number|table
-function renderer.setUniform(layer, uniform, value) end
-
 ---Shows the animation of you swinging your arm.
 ---@param offhand boolean #true to swing offhand instead of mainhand.
 function renderer.swingArm(offhand) end
