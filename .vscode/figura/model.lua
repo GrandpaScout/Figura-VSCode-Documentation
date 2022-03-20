@@ -193,6 +193,8 @@ local CustomModelPart = {}
 ---@param renderLayer? string
 ---@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
 ---@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
+---@return table
+---@todo Figure out what this function outputs, cause I'm only getting empty tables in testing.
 function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
 
 ---Remove ALL render tasks from this part.
