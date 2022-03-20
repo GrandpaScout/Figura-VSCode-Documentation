@@ -296,8 +296,9 @@ function Entity.getRot(delta) end
 
 ---Returns the position of the block this entity is looking at.  
 ---Returns `nil` if not looking at any blocks.
+---@param targetLiquid boolean
 ---@return VectorPos|nil
-function Entity.getTargetedBlockPos() end
+function Entity.getTargetedBlockPos(targetLiquid) end
 
 ---Returns the entity identifier of this entity.
 ---@return EntityID string
