@@ -111,3 +111,12 @@ _
 * set/getPos()
 * set/getRot()
 * set/getScale()
+
+# RenderTasks API
+* text now supports new lines
+* for text tasks, added setLineSpacing() - changes the space in between lines
+* some functions are now only accessible in their corresponding tasks
+→ setText() - text tasks
+→ setBlock() - block tasks
+→ setItemMode() and setItem() - item tasks
+→ setRenderLayer() - block and item tasks
