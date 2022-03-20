@@ -186,10 +186,6 @@ local Keybind = {}
 ---@return boolean
 function Keybind.wasPressed() end
 
----Rebinds the keybind to the given key.
----@param str Key
-function Keybind.setKey(str) end
-
 ---Returns if the key is pressed this tick.
 ---@return boolean
 function Keybind.isPressed() end
@@ -207,6 +203,14 @@ function Keybind.getName() end
 ---A custom keybind created by the script.  
 ---These binds can be changed by the player later in Figura's keybind menu.
 ---@class FiguraKeybind : Keybind
+local FiguraKeybind = {}
+
+---Rebinds the keybind to the given key.
+---@param str Key
+function FiguraKeybind.setKey(str) end
+
+---Resets the half-second delay from wasPressed()
+function FiguraKeybind.reset() end
 
 ---RegisteredKeybind ⇐ Keybind
 ---***
