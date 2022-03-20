@@ -495,6 +495,10 @@ function Player.getSaturation() end
 ---@return any
 function Player.getStoredValue(key) end
 
+---Returns the table of the entity under the crosshair.
+---@return Entity|LivingEntity|Player
+function Player.getTargetedEntity() end
+
 ---Returns if the player is flying via creative flight.
 ---@return boolean
 function Player.isFlying() end
