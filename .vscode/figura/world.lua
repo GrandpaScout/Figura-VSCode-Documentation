@@ -107,6 +107,12 @@ function World.getTime() end
 ---@return number
 function World.getTimeOfDay() end
 
+---Returns if the world has a world. What?
+---Probably an old function from functionality long lost.
+---Should return true. If it ever returns false, something maybe be horribly wrong.
+---@return boolean
+function World.hasWorld() end
+
 ---Returns if the current weather is thunder.
 ---@return boolean
 function World.isLightning() end
