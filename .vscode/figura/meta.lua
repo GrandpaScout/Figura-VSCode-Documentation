@@ -27,6 +27,10 @@ function meta.getCanModifyNameplate() end
 ---@return boolean
 function meta.getCanModifyVanilla() end
 
+---Returns the animation limit in this client's instance of the script
+---@return number
+function meta.getAnimationLimit() end
+
 ---Returns the complexity limit in this client's instance of the script.
 ---
 ---This is affected by the "Max Complexity" trust setting.
