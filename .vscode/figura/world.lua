@@ -26,6 +26,11 @@
 ---@class World
 local World = {}
 
+---Returns a biome table of the biome at the specified world position.
+---@param pos VectorPos
+---@return Biome
+function World.getBiome(pos) end
+
 ---Returns the block-light level at the given block position.
 ---
 ---Note: Returns `15` if the block position is not loaded.
