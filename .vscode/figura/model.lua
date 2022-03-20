@@ -369,6 +369,10 @@ function CustomModelPart.setOverlay(vector) end
 ---@param parent ParentType
 function CustomModelPart.setParentType(parent) end
 
+---Sets the part's pivot point.
+---@param vector VectorPos
+function CustomModelPart.setPivot(vector) end
+
 ---Sets the render layer (custom shader) of the part.
 ---@param string string
 function CustomModelPart.setRenderLayers(string) end
