@@ -309,6 +309,10 @@ function Entity.getVelocity() end
 ---@return DimensionID string
 function Entity.getWorldName() end
 
+---Returns if the entity has an avatar.
+---@return boolean
+function Entity.hasAvatar() end
+
 ---Returns if this entity is standing on solid ground.
 ---@return boolean
 function Entity.isGrounded() end
