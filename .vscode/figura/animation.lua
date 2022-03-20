@@ -107,8 +107,7 @@ function Animation.setLoopMode(loopMode) end
 ---@param playstate PlayState
 function Animation.setPlayState(playstate) end
 
----A function that sets whether the animation overrides or not. 
----(Override is an option in blockbench animations, off only moves the part, on moves the part and its pivot).
+---With override enabled, the animation will use the pivots defined in the animation editor instead of the ones defined in the default editor.
 ---@param bool boolean
 function Animation.setOverride(bool) end
 
