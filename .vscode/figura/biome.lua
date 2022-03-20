@@ -21,6 +21,10 @@ function Biome.getFogColor() end
 ---@return VectorColor
 function Biome.getFoliageColor() end
 
+---Returns the biome grass color.
+---@return VectorColor
+function Biome.getGrassColor() end
+
 ---Returns the ID of the biome.
 ---@return BiomeID
 function Biome.getID() end
