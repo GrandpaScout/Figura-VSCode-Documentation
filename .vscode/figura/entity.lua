@@ -328,6 +328,12 @@ function Entity.hasAvatar() end
 ---@return boolean
 function Entity.isGlowing() end
 
+---Returns if the entity is a hamburger???. I don't know what this is.
+---It's in the Entity tables. Thats all I know.
+---@return ".something idk"|"probably a boolean?"|boolean
+---@todo HAMBURGER
+function Entity.isHamburger() end
+
 ---Returns if the entity is touching lava.
 ---@return boolean
 function Entity.isInLava() end
