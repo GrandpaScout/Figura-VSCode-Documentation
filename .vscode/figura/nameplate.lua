@@ -15,21 +15,10 @@
 ---@class Nameplate
 local Nameplate = {}
 
----Returns the color of the nameplate.
----
----Note: Causes a VM Error if the color has not been set by `.setColor()`.
----@return VectorColor
-function Nameplate.getColor() end
-
 ---Returns if the nameplate is visible.
----
----Note: Causes a VM Error if the state has not been set by `.setEnabled()`.
+---Returns `nil` if it has not been set by `.setEnabled()`.
 ---@return boolean
 function Nameplate.getEnabled() end
-
----Returns the formatting of the nameplate.
----@return FormatTable
-function Nameplate.getFormatting() end
 
 ---Returns the position offset of the nameplate in blocks.  
 ---Returns `nil` if the position offset has not been set by `.setPos()`.
@@ -44,22 +33,13 @@ function Nameplate.getPos() end
 function Nameplate.getScale() end
 
 ---Returns the text in the nameplate.
----
----Note: Causes a VM Error if the text has not been set by `.setText()`.
+---Returns `nil` if the text has not been set by `.setPos()`.
 function Nameplate.getText() end
-
----Sets the color of the nameplate.
----@param vec3 VectorColor
-function Nameplate.setColor(vec3) end
 
 ---Does nothing...  
 ---For a version that does something, check the ENTITY nameplate.
 ---@param bool boolean
 function Nameplate.setEnabled(bool) end
-
----Sets the formatting of the nameplate.
----@param format FormatTable
-function Nameplate.setFormatting(format) end
 
 ---Does nothing...  
 ---For a version that does something, check the ENTITY nameplate.
@@ -73,6 +53,7 @@ function Nameplate.setScale(vec3) end
 
 ---Sets the text of the nameplate.  
 ---All text is placed to the left of the Figura mark.
+---Uses JSON Formatting.
 ---@param str string
 function Nameplate.setText(str) end
 
