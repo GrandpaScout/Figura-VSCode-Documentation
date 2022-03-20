@@ -255,7 +255,7 @@ function CustomModelPart.getOpacity() end
 function CustomModelPart.getOverlay() end
 
 ---Returns the parent type of the part.
----@return ParentType ParentType
+---@return ParentType
 function CustomModelPart.getParentType() end
 
 ---Returns the position offset of the part's pivot point.
@@ -277,8 +277,12 @@ function CustomModelPart.getRenderTask(name) end
 function CustomModelPart.getRot() end
 
 ---Returns the shader of the part.
----@return Shader Shader
+---@return Shader
 function CustomModelPart.getShader() end
+
+---Returns the type of texture that the part uses
+---@return TextureType
+function CustomModelPart.getTexture() end
 
 ---Returns the size of the part's texture.
 ---@return Vector2
