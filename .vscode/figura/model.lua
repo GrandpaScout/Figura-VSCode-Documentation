@@ -190,10 +190,17 @@ local CustomModelPart = {}
 ---@param pos? VectorPos
 ---@param rot? VectorAng
 ---@param scale? Vector3
----@param renderLayer? string #The name of a RenderLayer you have made.
+---@param renderLayer? string
 ---@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
 ---@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
 function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
+
+---Remove ALL render tasks from this part.
+function CustomModelPart.clearAllRenderTasks() end
+
+---Returns a table containing this part children tables.
+---@return CustomModelPart[]
+function CustomModelPart.getChilderen() end
 
 ---Returns the current color of the part.
 ---The default color is `0,0,0`.
@@ -231,6 +238,12 @@ function CustomModelPart.getParentType() end
 ---Returns the position offset of the part's pivot point.
 ---@return VectorPos
 function CustomModelPart.getPivot() end
+
+---Returns a render task table of the given name, if any
+---@todo make render task table class
+---@param name string
+---@return table
+function CustomModelPart.getRenderTask(name) end
 
 ---*This function uses the `CustomModelPart` definition.*
 ---***
@@ -282,6 +295,10 @@ function CustomModelPart.partToWorldDir(dir) end
 ---@param pos VectorPos
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
+
+---Removes a render task from this part.
+---@param name string
+function CustomModelPart.removeRenderTask(name) end
 
 ---Sets the color of the model.
 ---
