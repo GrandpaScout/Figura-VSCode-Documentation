@@ -11,7 +11,7 @@ function data.deleteFile() end
 
 ---Gets the name of the file you are currently saving to.
 ---@return string
-function getName() end
+function data.getName() end
 
 ---Returns a LuaValue of the key, or nil if not found.
 ---@param key string
@@ -33,4 +33,4 @@ function data.save(key, value) end
 
 ---Change the file you are currently saving to.
 ---@param name string
-function setName(name) end
+function data.setName(name) end
