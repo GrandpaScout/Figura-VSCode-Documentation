@@ -1105,6 +1105,12 @@
 ---| '"minecraft:zombie_villager_spawn_egg"' #Zombie Villager Spawn Egg
 ---| '"minecraft:zombified_piglin_spawn_egg"' #Zombified Piglin Spawn Egg
 
+---@alias ItemRarity
+---|'"COMMON"'
+---|'"UNCOMMON"'
+---|'"RARE"'
+---|'"EPIC"'
+
 ---An Item Stack.
 ---
 ---See `item_stack.createItem` for more info.
@@ -1135,6 +1141,32 @@ function ItemStack.getItem() end
 ---@return string[]
 function ItemStack.getItemTags() end
 
+---Returns the amount of times the item has been put through the anvil (excluding renames).
+---@return number
+function ItemStack.getRepairCost() end
+
+---Returns the max stack size of this item type.
+---@return number
+function ItemStack.getMaxCount() end
+
+---Returns the maximum durability of the item.
+---@return number
+function ItemStack.getMaxDamage() end
+
+---Returns the amount of time needed to spend before the item is used.
+---Think food.
+---@return number
+function ItemStack.getMaxUseTime() end
+
+---Returns the item name.
+---@return string
+function ItemStack.getName() end
+
+---Returns the rarity of the item.
+---Vanilla currently only uses "COMMON","UNCOMMON","RARE", and "EPIC"
+---@return ItemRarity
+function ItemStack.getRarity() end
+
 ---Returns the item's NBT tag as a Lua `table`, returns `nil` if there is no tag.  
 ---All keys are in lowercase.
 ---@return table|nil
@@ -1152,9 +1184,23 @@ function ItemStack.hasGlint() end
 ---@return boolean
 function ItemStack.isBlockItem() end
 
+---Returns if the item can take durability damage.
+---@return boolean
+function ItemStack.isDamageable() end
+
+---Returns if the item is enchantable.
+---If the item can be enchanted via enchanting table or have enchants added to it via anvil then it is enchantable.
+---Enchanted books aren't enchantable though. Unenchanted books are.
+---@return boolean
+function ItemStack.isEnchantable() end
+
 ---Returns if the item is edible
 ---@return boolean
 function ItemStack.isFood() end
+
+---Returns if the item can have a stack size greater than 1.
+---@return boolean
+function ItemStack.isStackable() end
 
 ---Sets the amount of items in the stack.
 ---@param x number
@@ -1170,6 +1216,9 @@ function ItemStack.setDamage(x) end
 ---@param snbt string
 function ItemStack.setTag(snbt) end
 
+---Returns the ItemStack as a string formatted as a vanilla item.
+---@return string
+function ItemStack.toStackString() end
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--
