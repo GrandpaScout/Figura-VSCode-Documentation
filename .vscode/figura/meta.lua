@@ -6,6 +6,10 @@
 ---current count of certain things.
 meta = {}
 
+---Returns the animation limit in this client's instance of the script
+---@return number
+function meta.getAnimationLimit() end
+
 ---Returns a number based on the current status of the Backend
 ---1 - white, 2 - red, 3 - yellow, 4 - green
 ---@return number
@@ -26,10 +30,6 @@ function meta.getCanModifyNameplate() end
 ---This is affected by the "Vanilla Avatar Changes" trust setting.
 ---@return boolean
 function meta.getCanModifyVanilla() end
-
----Returns the animation limit in this client's instance of the script
----@return number
-function meta.getAnimationLimit() end
 
 ---Returns the complexity limit in this client's instance of the script.
 ---
