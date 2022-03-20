@@ -10,6 +10,7 @@
 ---| '"WEST"'
 ---| '"UP"'
 ---| '"DOWN"'
+---| '"ALL"'
 
 ---A parent type that the part will rotate with.
 ---@alias ParentType
