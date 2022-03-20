@@ -6,12 +6,20 @@
 ---It uses the avatar name as file name
 data = {}
 
+---Sets your player-tracking preference (default TRUE).
+---@param bool boolean
+function data.allowTracking(bool) end
+
 ---Completely removes the file from existence.
 function data.deleteFile() end
 
 ---Gets the name of the file you are currently saving to.
 ---@return string
 function data.getName() end
+
+---Returns if you can be tracked.
+---@return boolean
+function data.hasTracking() end
 
 ---Returns a LuaValue of the key, or nil if not found.
 ---@param key string
