@@ -32,6 +32,10 @@ function renderer.getCameraRot() end
 ---@return boolean
 function renderer.getRenderFire() end
 
+---Returns if your player head shows your figura HEAD/SKULL (true) or your vanilla head (false).
+---@return boolean
+function renderer.getRenderPlayerHead() end
+
 ---Returns the radius of the player's shadow.  
 ---Returns `nil` if the size has not been set by `.setShadowSize()`.
 ---@return number|nil
@@ -79,6 +83,10 @@ function renderer.setMountShadowEnabled(boolean) end
 ---Toggle the rendering of fire on your avatar
 ---@param boolean boolean
 function renderer.setRenderFire(boolean) end
+
+---Toggle whether your playerhead renders your avatar's HEAD/SKULL or your vanilla skin.
+---@param boolean boolean
+function renderer.setRenderPlayerHead(boolean) end
 
 ---Sets the radius of the player's shadow.  
 ---Set the radius to `nil` to reset the shadow.
