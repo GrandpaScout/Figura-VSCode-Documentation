@@ -48,6 +48,10 @@ function Animation.getLoopMode() end
 ---@return string
 function Animation.getName() end
 
+---Returns if vanilla rotations are locked.
+---@return boolean
+function Animation.getReplace() end
+
 ---Returns the current state of the animation.
 ---@return PlayState
 function Animation.getPlayState() end
@@ -102,6 +106,11 @@ function Animation.setLoopDelay(delay) end
 ---Sets the loop mode of the animation.
 ---@param loopMode LoopMode
 function Animation.setLoopMode(loopMode) end
+
+---With replace enabled, vanilla animations will no longer be able to rotate. They will still be able to move.
+---Similar to how mimic parts work, but instead of only rotations, it is only for positions
+---@param boolean boolean
+function Animation.setReplace(boolean) end
 
 ---Sets the playstate of the animation.
 ---@param playstate PlayState
