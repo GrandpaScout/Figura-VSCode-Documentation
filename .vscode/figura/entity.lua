@@ -352,7 +352,7 @@ function Entity.isSilent() end
 ---@return boolean
 function Entity.isSneaking() end
 
----Returns if this entity is sneaking.
+---Returns if this entity is sneaky.
 ---@return boolean
 function Entity.isSneaky() end
 
