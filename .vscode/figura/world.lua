@@ -82,21 +82,24 @@ function World.getRainGradient(delta) end
 ---This does *not* return the redstone power the block is sending.
 ---
 ---Note: Returns `0` if the block position is not loaded.
+---@param pos VectorPos
 ---@return RedstonePower number
-function World.getRedstonePower() end
+function World.getRedstonePower(pos) end
 
 ---Returns the sky-light level of the given block position.
 ---
 ---Note: Returns `15` if the block position is not loaded.
+---@param pos VectorPos
 ---@return LightLevel number
-function World.getSkyLightLevel() end
+function World.getSkyLightLevel(pos) end
 
 ---Returns the strong redstone power of the block position is receiving.  
 ---This does *not* return the redstone power the block is sending.  
 ---This *only* checks for direct connections, redstone power sent through non-redstone blocks are
 ---ignored.
+---@param pos VectorPos
 ---@return RedstonePower number
-function World.getStrongRedstonePower() end
+function World.getStrongRedstonePower(pos) end
 
 ---Returns the total amount of ticks the server has run for.
 ---@return number
