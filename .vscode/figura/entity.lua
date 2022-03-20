@@ -229,7 +229,7 @@ function Entity.getAirPercentage() end
 function Entity.getAnimation() end
 
 ---Returns the size of this entity's bounding box in blocks.
----@return VectorPos
+---@return Vector3
 function Entity.getBoundingBox() end
 
 ---Returns the item in this entity's given equipment slot.
