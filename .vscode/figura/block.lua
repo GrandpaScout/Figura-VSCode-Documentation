@@ -1399,6 +1399,11 @@ function BlockState.getCollisionShape() end
 ---@return NibbleInt
 function BlockState.getComparatorOutput() end
 
+---Returns the tile entity data if it exists.
+---@todo Aliases for tile entity data
+---@return table
+function BlockState.getEntityData() end
+
 ---@return number
 function BlockState.getHardness() end
 
