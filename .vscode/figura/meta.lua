@@ -11,6 +11,10 @@ meta = {}
 ---@return number
 function meta.getBackendStatus() end
 
+---Returns if the player can use custom render layers (shaders).
+---@return boolean
+function meta.getCanHaveCustomRenderLayer() end
+
 ---Returns if the nameplate can be modified in this client's instance of the script.
 ---
 ---This is affected by the "Nameplate/Chat Name Changes" trust setting.
@@ -68,10 +72,6 @@ function meta.getDoesRenderOffscreen() end
 ---Returns the current version of Figura in this client's instance of the script.
 ---@return string
 function meta.getFiguraVersion() end
-
----Returns if the player can use custom render layers (shaders).
----@return boolean
-function meta.getCanHaveCustomRenderLayer() end
 
 ---Returns the init instruction limit in this client's instance of the script.
 ---
