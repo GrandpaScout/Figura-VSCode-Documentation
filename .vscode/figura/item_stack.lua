@@ -1111,6 +1111,16 @@
 ---|'"RARE"'
 ---|'"EPIC"'
 
+---@alias ItemUseAction
+---|'"NONE"'
+---|'"EAT"'
+---|'"DRINK"' #includes splash potions
+---|'"BOW"'
+---|'"CROSSBOW"'
+---|'"BLOCK"' #shield
+---|'"SPEAR"'
+---|'"SPYGLASS"'
+
 ---An Item Stack.
 ---
 ---See `item_stack.createItem` for more info.
@@ -1175,6 +1185,10 @@ function ItemStack.getTag() end
 ---Returns the item's ID.
 ---@return string
 function ItemStack.getType() end
+
+---Returns the type of action using this item will cause.
+---@return ItemUseAction
+function ItemStack.getUseAction() end
 
 ---Returns if the item has an enchantment glint.
 ---@return boolean
