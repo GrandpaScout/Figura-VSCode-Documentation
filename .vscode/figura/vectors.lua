@@ -41,6 +41,11 @@
 ---@field volume number
 local Vector = {}
 
+---Converts a Vector to a table.  
+---The table is created with numeric indexes.
+---@return number[]
+function Vector.asTable() end
+
 ---Gets the distance between this `Vector` and the given `Vector`.
 ---@param vec Vector
 ---@return number
@@ -277,11 +282,11 @@ function Vector.toRad() end
 ---Contains functions for creating and modifying `Vector`s.
 vectors = {}
 
----Converts a Vector to a table.  
----The table is created with numeric indexes.
----@param vec Vector
----@return number[]
-function vectors.asTable(vec) end
+---Returns an XYZ Euler representation of the rotation around (axis) by (angle) degrees.
+---@param axis Vector3
+---@param angle number
+---@return VectorAng
+function vectors.axisAngleToEuler(axis, angle) end
 
 ---Returns the XYZ Euler rotation from the given quaternion
 ---@param quaternion Vector4
@@ -334,6 +339,13 @@ function vectors.rgbToHSV(vec) end
 ---@param vec VectorColor
 ---@return number
 function vectors.rgbToINT(vec) end
+
+---Return a vector after it has been rotated around the given axis by `angle` degrees.
+---@param vector Vector
+---@param axis Vector
+---@param angle number
+---@return Vector
+function vectors.rotateAroundAxis(vector, axis, angle) end
 
 ---Rotate a vector, by the rotation, using quaternions.
 ---@param init Vector3
