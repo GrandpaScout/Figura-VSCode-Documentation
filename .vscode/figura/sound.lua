@@ -6,8 +6,10 @@
 sound = {}
 
 ---Returns a table of all currently playing custom sounds.
----@param boolean?boolean If true, also returns the UUIDs of the players creating the sounds.
----@return table
+---If second parameter is true, also returns the UUIDs of the players creating the sounds.
+---Table will alternate name and player UUIDs
+---@param boolean?boolean
+---@return string[]
 function sound.getCustomSounds(boolean) end
 
 ---Returns a table of each custom sound your avatar has
