@@ -198,6 +198,18 @@ function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive,
 ---Remove ALL render tasks from this part.
 function CustomModelPart.clearAllRenderTasks() end
 
+---Returns the sum of all position keyframes at this time.
+---@return VectorPos
+function CustomModelPart.getAnimPos() end
+
+---Returns the sum of all rotation keyfrmaes at this time.
+---@return VectorAng
+function CustomModelPart.getAnimRot() end
+
+---Returns the sum of all scale keyframes at this time.
+---@return Vector3
+function CustomModelPart.getAnimScale() end
+
 ---Returns a table containing this part children tables.
 ---@return CustomModelPart[]
 function CustomModelPart.getChilderen() end
