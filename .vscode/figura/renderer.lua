@@ -24,6 +24,10 @@ renderer = {}
 ---@return VectorPos
 function renderer.getCameraPos() end
 
+---Returns the camera rotation.
+---@return VectorAng
+function renderer.getCameraRot() end
+
 ---Returns if fire can be rendered on the avatar
 ---@return boolean
 function renderer.getRenderFire() end
