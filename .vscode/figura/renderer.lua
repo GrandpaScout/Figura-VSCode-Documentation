@@ -86,4 +86,4 @@ function renderer.setShadowSize(radius) end
 ---@param layer string
 ---@param uniform string
 ---@param value number|table
-function setUniform(layer, uniform, value) end
+function renderer.setUniform(layer, uniform, value) end
