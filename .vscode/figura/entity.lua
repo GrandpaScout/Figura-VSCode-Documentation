@@ -442,6 +442,10 @@ function Player.getSaturation() end
 ---@return any
 function Player.getStoredValue(key) end
 
+---Returns the vanilla model type, either "default" or "slim".
+---@return '"default"'|'"slim"'
+function Player.getModelType() end
+
 ---Returns the last source of damage this entity has taken.
 ---@return DamageSource string
 function Player.lastDamageSource() end
