@@ -328,10 +328,6 @@ function Entity.hasAvatar() end
 ---@return boolean
 function Entity.isGlowing() end
 
----Returns if this entity is standing on solid ground.
----@return boolean
-function Entity.isOnGround() end
-
 ---Returns if the entity is touching lava.
 ---@return boolean
 function Entity.isInLava() end
@@ -343,6 +339,10 @@ function Entity.isInRain() end
 ---Returns if the entity is invisible.
 ---@return boolean
 function Entity.isInvisible() end
+
+---Returns if this entity is standing on solid ground.
+---@return boolean
+function Entity.isOnGround() end
 
 ---Returns if the entity has the silent nbt tag.
 ---@return boolean
