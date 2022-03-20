@@ -482,6 +482,10 @@ function Player.getGamemode() end
 ---@return ItemStack
 function Player.getHeldItem(slot) end
 
+---Returns the vanilla model type, either "default" or "slim".
+---@return '"default"'|'"slim"'
+function Player.getModelType() end
+
 ---Returns the amount of saturation this entity has.
 ---@return number
 function Player.getSaturation() end
@@ -490,10 +494,6 @@ function Player.getSaturation() end
 ---@param key string
 ---@return any
 function Player.getStoredValue(key) end
-
----Returns the vanilla model type, either "default" or "slim".
----@return '"default"'|'"slim"'
-function Player.getModelType() end
 
 ---Returns if the player is flying via creative flight.
 ---@return boolean
