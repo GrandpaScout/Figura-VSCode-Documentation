@@ -3,8 +3,10 @@
 --================================================================================================--
 
 ---Logs a value to Minecraft's chat and log output.
+---If `jsonEncode` is true, it will try to encode the log into json text.
 ---@param value any
-function log(value) end
+---@param jsonEncode? boolean
+function log(value,jsonEncode) end
 
 ---Logs a value to Minecraft's chat and log output.
 ---
