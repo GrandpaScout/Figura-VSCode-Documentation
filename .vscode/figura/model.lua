@@ -38,6 +38,24 @@
 ---| '"GROUP"'
 ---| '"MESH"'
 
+---Render task modes for items
+---@alias RenderMode
+---|'"NONE"'
+---|'"THIRD_PERSON_LEFT_HAND"'
+---|'"THIRD_PERSON_RIGHT_HAND"'
+---|'"FIRST_PERSON_LEFT_HAND"'
+---|'"FIRST_PERSON_RIGHT_HAND"'
+---|'"HEAD"'
+---|'"GUI"'
+---|'"GROUND"'
+---|'"FIXED"
+
+---Render task types
+---@alias RenderTaskType
+---|'"ITEM"'
+---|'"BLOCK"'
+---|'"TEXT"'
+
 ---@alias Shader
 ---| '"None"' #Do not use a shader.
 ---| '"EndPortal"' #Use the end portal shader.
@@ -162,6 +180,20 @@ local CustomModelPartProxy = {}
 ---Note: Despite the list saying so, a `function` cannot be a `CustomModelPart`! It simply looks
 ---like that to allow any key to become a `CustomModelPart` if needed.
 local CustomModelPart = {}
+
+---A function that adds a new render task to this model part, with the provided parameters.
+---@param type RenderTaskType
+---@param name string
+---@param itemID string
+---@param renderMode RenderMode
+---@param emmisive? boolean
+---@param pos? VectorPos
+---@param rot? VectorAng
+---@param scale? Vector3
+---@param renderLayer? string #The name of a RenderLayer you have made.
+---@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
+---@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
+function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
 
 ---Returns the current color of the part.
 ---The default color is `0,0,0`.
