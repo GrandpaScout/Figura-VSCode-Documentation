@@ -347,10 +347,13 @@ function vectors.rgbToINT(vec) end
 ---@return Vector
 function vectors.rotateAroundAxis(vector, axis, angle) end
 
----Rotate a vector, by the rotation, using quaternions.
----@param init Vector3
----@param rotation Vector3
-function vectors.quaternionRotation(init, rotation) end
+---Returns a vector after it is rotated by the given quaternion.
+---***`vector` MUST BE IN RADIANS. USE <vec<these extra brackets are necessary>>.toRad() FIRST.***
+---Output will also be in radians. Use <vec<>>.toDeg() to turn back into a rotation usable by Minecraft.
+---@param vector VectorAng
+---@param quaternion Vector4
+---@return VectorAng
+function vectors.rotateWithQuaternion(vector, quaternion) end
 
 ---Returns a quaternion from the given XYZ Euler rotation
 ---@param vector Vector3
