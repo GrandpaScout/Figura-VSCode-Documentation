@@ -12,10 +12,6 @@
 ---|'"SOURCE_ONLY"'
 ---|'"ANY"'
 
----@class RaycastBlockResult
----@field state BlockState
----@field pos VectorPos
-
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
@@ -57,7 +53,7 @@ function renderer.isFirstPerson() end
 ---@param shapeHandling RaycastShapeHandling
 ---@param fluidHandling RaycastFluidHandling
 ---@param predicate? fun(blockState:BlockState|string,pos:VectorPos):boolean
----@return RaycastBlockResult
+---@return {state:BlockState, pos:VectorPos}
 function renderer.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
 
 ---Casts a ray from startPos to endPos, returning the first entity it sees on the way.
@@ -65,7 +61,7 @@ function renderer.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, 
 ---@param startPos VectorPos
 ---@param endPos VectorPos
 ---@param predicate? fun(entity:Entity|LivingEntity|Player):boolean
----@return Entity|LivingEntity|Player
+---@return {entity:Entity|LivingEntity|Player, pos:VectorPos}
 function renderer.raycastEntities(startPos, endPos, predicate) end
 
 ---Toggle the render of the entity youre riding
