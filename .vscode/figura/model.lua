@@ -230,6 +230,11 @@ function CustomModelPart.getCullEnabled() end
 ---@return boolean
 function CustomModelPart.getHidden() end
 
+---Returns the light value set by setLight.
+---Returns `nil` if it hasn't been set yet.
+---@return Vector2|nil
+function CustomModelPart.getLight() end
+
 ---Returns if the part is only mimicing its parent part instead of having its origin connected to
 ---the parent part's origin.
 ---@return boolean
@@ -244,6 +249,11 @@ function CustomModelPart.getName() end
 ---Note: Opacity is a value from 0 to 1.
 ---@return number
 function CustomModelPart.getOpacity() end
+
+---Returns the overlay value set by setOverlay.
+---Returns `nil` if it hasn't been set yet.
+---@return Vector2|nil
+function CustomModelPart.getOverlay() end
 
 ---Returns the parent type of the part.
 ---@return ParentType ParentType
@@ -328,6 +338,12 @@ function CustomModelPart.setCullEnabled(boolean) end
 ---@param boolean boolean
 function CustomModelPart.setExtraTexEnabled(boolean) end
 
+---Overrides the light level the part is rendered at.
+---Any value below 0 or above 15 will render the part invisible.
+---`nil` returns the part to normal.
+---@param vector? Vector2 {block, sky}
+function CustomModelPart.setLight(vector) end
+
 ---Sets the mimic mode of the model.  
 ---If true, the model will *mimic* its parent as set by `.setParentType()` instead of having its
 ---origin connected to the parent part's origin.
@@ -339,6 +355,12 @@ function CustomModelPart.setMimicMode(state) end
 ---Note: Opacity is a value from 0 to 1.
 ---@param num number
 function CustomModelPart.setOpacity(num) end
+
+---Overrides the overlay level the part is rendered at.
+---Any value below 0 or above 15 will render the part black.
+---`nil` returns the part to normal.
+---@param vector? Vector2 {white, hurt}
+function CustomModelPart.setOverlay(vector) end
 
 ---Sets the parent type of the part.
 ---@param parent ParentType
