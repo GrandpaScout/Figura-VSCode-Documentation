@@ -80,8 +80,10 @@ function ActionWheelSlot.getUV() end
 function ActionWheelSlot.setColor(col) end
 
 ---Sets the function to run when the slot is clicked.
+---Second parameter gets fed into the given function.
 ---@param func function
-function ActionWheelSlot.setFunction(func) end
+---@param parameter? any
+function ActionWheelSlot.setFunction(func,parameter) end
 
 ---Sets the color that the slot should be when hovered over.
 ---@param col VectorColor
