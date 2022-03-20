@@ -379,12 +379,6 @@ function Entity.isWet() end
 ---@class LivingEntity : Entity
 local LivingEntity = {}
 
----Returns the total armor value of this entity.
----
----Note: Some entities have natural armor that is added on top of the armor they are wearing.
----@return number
-function LivingEntity.getArmor() end
-
 ---Returns which hand is active.
 ---Active hand is determined by the last hand to use an item.
 ---Returns nil if no item has been used.
@@ -394,6 +388,12 @@ function LivingEntity.getActiveHand() end
 ---Returns the item that is currently being used.
 ---@return ItemStack
 function LivingEntity.getActiveItem() end
+
+---Returns the total armor value of this entity.
+---
+---Note: Some entities have natural armor that is added on top of the armor they are wearing.
+---@return number
+function LivingEntity.getArmor() end
 
 ---Returns the yaw of this entity's body.
 ---@param delta number
