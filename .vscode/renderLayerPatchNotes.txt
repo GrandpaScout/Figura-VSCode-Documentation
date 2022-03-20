@@ -120,3 +120,10 @@ _
 → setBlock() - block tasks
 → setItemMode() and setItem() - item tasks
 → setRenderLayer() - block and item tasks
+
+# Render Task Table
+* can now be enabled / disabled, no need to remove the render task to stop showing it
+
+* added setEnabled(boolean) - toggle the enabled state
+* added getEnabled() - get the enabled state
+* added getEmissive() - get the emissive state
