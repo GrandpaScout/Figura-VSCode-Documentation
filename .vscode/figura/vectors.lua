@@ -41,15 +41,30 @@
 ---@field volume number
 local Vector = {}
 
+---Returns the (smallest) angle between this `Vector` and the given `Vector` in radians.
+---@param vec Vector
+---@return number
+function Vector.angleTo(vec) end
+
 ---Converts a Vector to a table.  
 ---The table is created with numeric indexes.
 ---@return number[]
 function Vector.asTable() end
 
+---Returns the cross product of this `Vector` and the given `Vector`.
+---@param vec Vector
+---@return Vector
+function Vector.cross(vec) end
+
 ---Gets the distance between this `Vector` and the given `Vector`.
 ---@param vec Vector
 ---@return number
 function Vector.distanceTo(vec) end
+
+---Returns the dot product of this `Vector` and the given `Vector`.
+---@param vec Vector
+---@return number
+function Vector.dot(vec) end
 
 ---Gets the distance between `{0,0,0,0,0,0}` and this `Vector`.
 ---@return number
@@ -58,21 +73,6 @@ function Vector.getLength() end
 ---Returns a `Vector` which is a copy of this `Vector` but resized to have a length of 1.
 ---@return Vector
 function Vector.normalized() end
-
----Returns the dot product of this `Vector` and the given `Vector`.
----@param vec Vector
----@return number
-function Vector.dot(vec) end
-
----Returns the cross product of this `Vector` and the given `Vector`.
----@param vec Vector
----@return Vector
-function Vector.cross(vec) end
-
----Returns the (smallest) angle between this `Vector` and the given `Vector` in radians.
----@param vec Vector
----@return number
-function Vector.angleTo(vec) end
 
 ---Returns the vector converted into degrees.
 ---@return Vector
