@@ -158,7 +158,7 @@ function World.getBlockTags(pos) end
 
 ---Returns all other players on the server using Figura.
 ---@return Player[]
-function World.getFiguraPlayers() end
+function World.getPlayers() end
 
 ---Returns the combined light level at the given block position.
 ---
