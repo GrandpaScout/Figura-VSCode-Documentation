@@ -225,6 +225,10 @@ function CustomModelPart.getColor() end
 ---@return boolean
 function CustomModelPart.getCullEnabled() end
 
+---Returns if extra textures are rendered. (emmisive textures)
+---@return boolean
+function CustomModelPart.getExtraTexEnabled() end
+
 ---Returns the light value set by setLight.
 ---Returns `nil` if it hasn't been set yet.
 ---@return Vector2|nil
