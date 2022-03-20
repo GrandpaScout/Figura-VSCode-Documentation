@@ -9,17 +9,30 @@
 function log(value,jsonEncode) end
 
 ---Logs a value to Minecraft's chat and log output.
+---If `jsonEncode` is true, it will try to encode the log into json text.
 ---
 ---Alias of `log`.
 ---@param value any
-function print(value) end
+---@param jsonEncode? boolean
+function print(value,jsonEncode) end
 
 ---Logs the contents of the given `table` to Minecraft's chat and log output.
 ---Attempting to log anything other than a pure `table` will log nothing.
+---If the second parameter is true, the contents of nested tables will also be outputed.
 ---
 ---Note: A `Vector` will only log if they are a pure `table`.
 ---@param tbl table
-function logTableContent(tbl) end
+---@param showNested? boolean
+function logTableContent(tbl,showNested) end
+
+---Logs the contents of the given `table` to Minecraft's chat and log output.
+---Attempting to log anything other than a pure `table` will log nothing.
+---If the second parameter is true, the contents of nested tables will also be outputed.
+---
+---Alias of `logTableContent`
+---@param tbl table
+---@param showNested? boolean
+function logTable(tbl,showNested) end
 
 
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
