@@ -2,6 +2,74 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
+---@class Biome
+local Biome = {}
+
+---Returns the category the biome belongs to.
+---@return BiomeCategory
+function Biome.getCategory() end
+
+---Returns how wet the biome is, eg: jungle is 0.9 and desert is 0.
+---@return number
+function Biome.getDownFall() end
+
+---Returns the biome fog color.
+---@return BiomeCategory
+function Biome.getFogColor() end
+
+---Returns the biome color used on leaves and grass.
+---@return VectorColor
+function Biome.getFoliageColor() end
+
+---Returns the ID of the biome.
+---@return BiomeID
+function Biome.getID() end
+
+---Returns the rain type of the biome.
+---@return BiomePrecipitationType
+function Biome.getPrecipitation() end
+
+---Returns the biome sky color as a vector.
+---@return VectorColor
+function Biome.getSkyColor() end
+
+---Returns the temperature of the biome.
+---@return number
+function Biome.getTemperature() end
+
+---Returns the biome water color.
+---@return VectorColor
+function Biome.getWaterColor() end
+
+---Returns the biome underwater fog color.
+---@return VectorColor
+function Biome.getWaterFogColor() end
+
+---Returns true if the temperature is less than 0.15.
+---@return boolean
+function Biome.isCold() end
+
+---Returns true if the temperature is greather than 1.
+---@return boolean
+function Biome.isHot() end
+
+---@alias BiomeCategory
+---|'"forest"'
+---|'"beach"'
+---|'"plains"'
+---|'"desert"'
+---|'"savana"'
+---|'"river"'
+---|'"jungle"'
+---|'"mesa"'
+---|'"icy"'
+---|'"taiga"'
+---|'"mountain"'
+---|'"underground"'
+---|'"swamp"'
+---|'"extreme_hills"'
+
+
 ---A Minecraft biome identifier.
 ---
 ---Only the default Minecraft biomes are auto-completed.  
@@ -90,9 +158,9 @@
 ---| '"minecraft:the_void"' #The Void
 
 ---@alias BiomePrecipitationType
----| '"NONE"'
----| '"RAIN"'
----| '"SNOW"'
+---| '"none"'
+---| '"rain"'
+---| '"snow"'
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--
@@ -100,3 +168,5 @@
 
 ---Functions relating to biomes
 biome = {}
+
+---Returns a biome table of the biome id. 
