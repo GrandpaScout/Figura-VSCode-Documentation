@@ -91,3 +91,7 @@ function renderer.setShadowSize(radius) end
 ---@param uniform string
 ---@param value number|table
 function renderer.setUniform(layer, uniform, value) end
+
+---Shows the animation of you swinging your arm.
+---@param offhand boolean #true to swing offhand instead of mainhand.
+function renderer.swingArm(offhand) end
