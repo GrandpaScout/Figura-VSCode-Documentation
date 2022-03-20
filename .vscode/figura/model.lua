@@ -225,11 +225,6 @@ function CustomModelPart.getColor() end
 ---@return boolean
 function CustomModelPart.getCullEnabled() end
 
----Returns if the part is hidden in blockbench.  
----A part that is hidden in blockbench cannot be unhidden.
----@return boolean
-function CustomModelPart.getHidden() end
-
 ---Returns the light value set by setLight.
 ---Returns `nil` if it hasn't been set yet.
 ---@return Vector2|nil
