@@ -54,6 +54,14 @@ function renderer.isCameraBackwards() end
 ---@return boolean
 function renderer.isFirstPerson() end
 
+---Returns if your mount is enabled.
+---@return boolean
+function renderer.isMountEnabled() end
+
+---Returns if your mount's shadow is enabled.
+---@return boolean
+function renderer.isMountShadowEnabled() end
+
 ---Casts a ray from startPos to endPos, looking at the blocks on the way.
 ---If the ray never hits anything, then the function returns nil.
 ---@param startPos VectorPos
