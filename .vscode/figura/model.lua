@@ -537,3 +537,12 @@ parrot_model = {
   ---@type BasicModelPart
   RIGHT_PARROT = {}
 }
+
+---A `table` containing the first person models.
+first_person_model = {
+	---@type BasicModelPart
+	MAIN_HAND = {},
+
+	---@type BasicModelPart
+	OFF_HAND = {}
+}
