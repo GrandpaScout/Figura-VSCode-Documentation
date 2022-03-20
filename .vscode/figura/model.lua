@@ -375,7 +375,7 @@ function CustomModelPart.setPivot(vector) end
 
 ---Sets the render layer (custom shader) of the part.
 ---@param string string
-function CustomModelPart.setRenderLayers(string) end
+function CustomModelPart.setRenderLayer(string) end
 
 ---*This function uses the `CustomModelPart` definition.*
 ---***
