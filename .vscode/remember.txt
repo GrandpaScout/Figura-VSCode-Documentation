@@ -99,3 +99,15 @@ _
 ### Renderlayer API ###
 * added renderlayers.restoreDefaults(), which resets the rendering to default state
 * can now access the emissive texture in setTexture() using the key "MY_TEXTURE_EMISSIVE"
+
+## Render Task Table ##
+* function table used for changing render tasks data, which contains:
+* setText(text) - only for text tasks
+* setItem(item) - only for item tasks
+* setBlock(block) - only for block tasks
+* setItemMode(mode) - only item tasks, modes described above
+* setRenderLayer(custom render layer) - only when it is NOT a text task
+* setEmissive(boolean)
+* set/getPos()
+* set/getRot()
+* set/getScale()
