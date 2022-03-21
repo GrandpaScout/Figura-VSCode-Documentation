@@ -39,24 +39,6 @@
 ---| '"GROUP"'
 ---| '"MESH"'
 
----Render task modes for items
----@alias RenderMode
----|'"NONE"'
----|'"THIRD_PERSON_LEFT_HAND"'
----|'"THIRD_PERSON_RIGHT_HAND"'
----|'"FIRST_PERSON_LEFT_HAND"'
----|'"FIRST_PERSON_RIGHT_HAND"'
----|'"HEAD"'
----|'"GUI"'
----|'"GROUND"'
----|'"FIXED"
-
----Render task types
----@alias RenderTaskType
----|'"ITEM"'
----|'"BLOCK"'
----|'"TEXT"'
-
 ---@alias Shader
 ---| '"None"' #Do not use a shader.
 ---| '"EndPortal"' #Use the end portal shader.
@@ -183,6 +165,9 @@ local CustomModelPartProxy = {}
 local CustomModelPart = {}
 
 ---A function that adds a new render task to this model part, with the provided parameters.
+---
+---Note: Unlike what the patch notes say, this function does not return a renderTask table.
+---Use \<CustomModelPart\>.getRenderTask() instead.
 ---@param type RenderTaskType
 ---@param name string
 ---@param itemID string
@@ -194,8 +179,6 @@ local CustomModelPart = {}
 ---@param renderLayer? string
 ---@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
 ---@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
----@return table
----@todo Figure out what this function outputs, cause I'm only getting empty tables in testing.
 function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
 
 ---Remove ALL render tasks from this part.
