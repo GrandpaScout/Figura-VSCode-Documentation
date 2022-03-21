@@ -313,7 +313,7 @@ function Entity.getUUID() end
 function Entity.getVehicle() end
 
 ---Returns the velocity of this entity.
----@returns VectorPos
+---@return VectorPos
 function Entity.getVelocity() end
 
 ---Returns the dimension identifier of the world this entity is in.
