@@ -247,9 +247,8 @@ function CustomModelPart.getParentType() end
 function CustomModelPart.getPivot() end
 
 ---Returns a render task table of the given name, if any
----@todo make render task table class
 ---@param name string
----@return table
+---@return BlockTaskTable|ItemTaskTable|TextTaskTable
 function CustomModelPart.getRenderTask(name) end
 
 ---*This function uses the `CustomModelPart` definition.*
