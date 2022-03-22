@@ -259,7 +259,7 @@ function Entity.getFireTicks() end
 function Entity.getFrozenTicks() end
 
 ---Returns the normalized direction that this entity is looking in.
----@return VectorPos
+---@return VectorAng
 function Entity.getLookDir() end
 
 ---Returns the maximum air this entity can have.
