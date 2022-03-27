@@ -15,7 +15,7 @@
 ---|'"PAUSED"'
 ---|'"ENDED"'
 ---|'"STOPPING"'
----|'"START"'
+---|'"STARTING"'
 
 ---A BlockBench animation
 ---@class Animation
