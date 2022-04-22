@@ -1105,6 +1105,22 @@
 ---| '"minecraft:zombie_villager_spawn_egg"' #Zombie Villager Spawn Egg
 ---| '"minecraft:zombified_piglin_spawn_egg"' #Zombified Piglin Spawn Egg
 
+---@alias ItemRarity
+---|'"COMMON"'
+---|'"UNCOMMON"'
+---|'"RARE"'
+---|'"EPIC"'
+
+---@alias ItemUseAction
+---|'"NONE"'
+---|'"EAT"'
+---|'"DRINK"' #includes splash potions
+---|'"BOW"'
+---|'"CROSSBOW"'
+---|'"BLOCK"' #shield
+---|'"SPEAR"'
+---|'"SPYGLASS"'
+
 ---An Item Stack.
 ---
 ---See `item_stack.createItem` for more info.
@@ -1114,54 +1130,109 @@
 ---@field stack userdata
 local ItemStack = {}
 
----Sets the NBT tag of an `ItemStack`.
----
----Note: NBT is in [SNBT format](https://minecraft.fandom.com/wiki/NBT_format#SNBT_format).
----@param snbt string
-function ItemStack.setTag(snbt) end
+---Returns the item's cooldown.
+---@return number
+function ItemStack.getCooldown() end
+
+---Returns the amount of items in the stack.
+---@return number
+function ItemStack.getCount() end
+
+---Returns the damage value of the item.
+---@return number
+function ItemStack.getDamage() end
+
+---Does nothing except cause a VM Error.
+---@deprecated
+function ItemStack.getItem() end
 
 ---Returns a list of item tags that contain this item.  
 ---Item tags are assigned by datapacks.
 ---@return string[]
 function ItemStack.getItemTags() end
 
+---Returns the amount of times the item has been put through the anvil (excluding renames).
+---@return number
+function ItemStack.getRepairCost() end
+
+---Returns the max stack size of this item type.
+---@return number
+function ItemStack.getMaxCount() end
+
+---Returns the maximum durability of the item.
+---@return number
+function ItemStack.getMaxDamage() end
+
+---Returns the amount of time needed to spend before the item is used.
+---Think food.
+---@return number
+function ItemStack.getMaxUseTime() end
+
+---Returns the item name.
+---@return string
+function ItemStack.getName() end
+
+---Returns the rarity of the item.
+---Vanilla currently only uses "COMMON","UNCOMMON","RARE", and "EPIC"
+---@return ItemRarity
+function ItemStack.getRarity() end
+
 ---Returns the item's NBT tag as a Lua `table`, returns `nil` if there is no tag.  
 ---All keys are in lowercase.
 ---@return table|nil
 function ItemStack.getTag() end
 
----Returns the amount of items in the stack.
----@return number
-function ItemStack.getCount() end
+---Returns the item's ID.
+---@return string
+function ItemStack.getType() end
+
+---Returns the type of action using this item will cause.
+---@return ItemUseAction
+function ItemStack.getUseAction() end
 
 ---Returns if the item has an enchantment glint.
 ---@return boolean
 function ItemStack.hasGlint() end
 
----Sets the damage value of the item.
----@param x number
-function ItemStack.setDamage(x) end
+---Returns if the item has a block form.
+---@return boolean
+function ItemStack.isBlockItem() end
 
----Returns the item's ID.
----@return string
-function ItemStack.getType() end
+---Returns if the item can take durability damage.
+---@return boolean
+function ItemStack.isDamageable() end
 
----Returns the item's cooldown.
----@return number
-function ItemStack.getCooldown() end
+---Returns if the item is enchantable.
+---If the item can be enchanted via enchanting table or have enchants added to it via anvil then it is enchantable.
+---Enchanted books aren't enchantable though. Unenchanted books are.
+---@return boolean
+function ItemStack.isEnchantable() end
 
----Does nothing except cause a VM Error.
----@deprecated
-function ItemStack.getItem() end
+---Returns if the item is edible
+---@return boolean
+function ItemStack.isFood() end
+
+---Returns if the item can have a stack size greater than 1.
+---@return boolean
+function ItemStack.isStackable() end
 
 ---Sets the amount of items in the stack.
 ---@param x number
 function ItemStack.setCount(x) end
 
----Returns the damage value of the item.
----@return number
-function ItemStack.getDamage() end
+---Sets the damage value of the item.
+---@param x number
+function ItemStack.setDamage(x) end
 
+---Sets the NBT tag of an `ItemStack`.
+---
+---Note: NBT is in [SNBT format](https://minecraft.fandom.com/wiki/NBT_format#SNBT_format).
+---@param snbt string
+function ItemStack.setTag(snbt) end
+
+---Returns the ItemStack as a string formatted as a vanilla item.
+---@return string
+function ItemStack.toStackString() end
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--

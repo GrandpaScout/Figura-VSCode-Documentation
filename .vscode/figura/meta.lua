@@ -6,6 +6,19 @@
 ---current count of certain things.
 meta = {}
 
+---Returns the animation limit in this client's instance of the script
+---@return number
+function meta.getAnimationLimit() end
+
+---Returns a number based on the current status of the Backend
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getBackendStatus() end
+
+---Returns if the player can use custom render layers (shaders).
+---@return boolean
+function meta.getCanHaveCustomRenderLayer() end
+
 ---Returns if the nameplate can be modified in this client's instance of the script.
 ---
 ---This is affected by the "Nameplate/Chat Name Changes" trust setting.
@@ -23,6 +36,10 @@ function meta.getCanModifyVanilla() end
 ---This is affected by the "Max Complexity" trust setting.
 ---@return number
 function meta.getComplexityLimit() end
+
+---Returns the current animation complexity.
+---@return number
+function meta.getCurrentAnimationCount() end
 
 ---Returns the current complexity of the avatar in this client's instance of the script.
 ---
@@ -70,6 +87,11 @@ function meta.getFiguraVersion() end
 ---@return number
 function meta.getInitLimit() end
 
+---Returns a number based on the current status of the Model
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getModelStatus() end
+
 ---Returns the particles-per-second limit in this client's instance of the script.
 ---
 ---This is affected by the "Maximum Particles Per Second" trust setting.
@@ -82,11 +104,21 @@ function meta.getParticleLimit() end
 ---@return number
 function meta.getRenderLimit() end
 
+---Returns a number based on the current status of the Script
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getScriptStatus() end
+
 ---Returns the sounds-per-second limit in this client's instance of the script.
 ---
 ---This is affected by the "Maximum Sounds Per Second" trust setting.
 ---@return number
 function meta.getSoundLimit() end
+
+---Returns a number based on the current status of the Texture
+---1 - white, 2 - red, 3 - yellow, 4 - green
+---@return number
+function meta.getTextureStatus() end
 
 ---Returns the tick instruction limit in this client's instance of the script.
 ---

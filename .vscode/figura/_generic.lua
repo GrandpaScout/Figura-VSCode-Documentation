@@ -3,21 +3,36 @@
 --================================================================================================--
 
 ---Logs a value to Minecraft's chat and log output.
+---If `jsonEncode` is true, it will try to encode the log into json text.
 ---@param value any
-function log(value) end
+---@param jsonEncode? boolean
+function log(value,jsonEncode) end
 
 ---Logs a value to Minecraft's chat and log output.
+---If `jsonEncode` is true, it will try to encode the log into json text.
 ---
 ---Alias of `log`.
 ---@param value any
-function print(value) end
+---@param jsonEncode? boolean
+function print(value,jsonEncode) end
 
 ---Logs the contents of the given `table` to Minecraft's chat and log output.
 ---Attempting to log anything other than a pure `table` will log nothing.
+---If the second parameter is true, the contents of nested tables will also be outputed.
 ---
 ---Note: A `Vector` will only log if they are a pure `table`.
 ---@param tbl table
-function logTableContent(tbl) end
+---@param showNested? boolean
+function logTableContent(tbl,showNested) end
+
+---Logs the contents of the given `table` to Minecraft's chat and log output.
+---Attempting to log anything other than a pure `table` will log nothing.
+---If the second parameter is true, the contents of nested tables will also be outputed.
+---
+---Alias of `logTableContent`
+---@param tbl table
+---@param showNested? boolean
+function logTable(tbl,showNested) end
 
 
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
@@ -93,6 +108,20 @@ function render(delta) end
 ---
 ---Use the below code to create this function:
 ---```
+---function world_render()
+---  --code here
+---end
+---```
+---***
+---This function runs every render tick, but will continue to run even if your model is not rendering.
+---@param delta number
+function world_render(delta) end
+
+---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
+---You should not run this function, Figura will run it for you.
+---
+---Use the below code to create this function:
+---```
 ---function player_init()
 ---  --code here
 ---end
@@ -132,3 +161,18 @@ function player_init() end
 ---different scripts easier.
 ---@param cmd string
 function onCommand(cmd) end
+
+---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
+---You should not run this function, Figura will run it for you.
+---
+---Use the below code to create this function:
+---```
+---function onDamage(amount)
+---  --code here
+---end
+---```
+---***
+---Runs every time you take damage.
+---@param amount number The amount of damage you would have taken before armor/resistance calculations.
+---@param source string
+function onDamage(amount, source) end

@@ -2,6 +2,16 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
+---The sides of a cube.
+---@alias CubeSide
+---| '"NORTH"'
+---| '"SOUTH"'
+---| '"EAST"'
+---| '"WEST"'
+---| '"UP"'
+---| '"DOWN"'
+---| '"ALL"'
+
 ---A parent type that the part will rotate with.
 ---@alias ParentType
 ---| '"None"' #Rotate with the origin of the player.
@@ -21,11 +31,25 @@
 ---| '"RightParrotOrigin"' #Rotate with the player's right parrot spot.
 ---| '"LeftElytra"' #Rotate with the player's left elytra wing.
 ---| '"RightElytra"' #Rotate with the player's right elytra wing.
+---| '"Camera"' #Rotate to always face the camera.
+
+---The possible types of a CustomModelPart
+---@alias CustomModelPartType
+---| '"CUBE"'
+---| '"GROUP"'
+---| '"MESH"'
 
 ---@alias Shader
 ---| '"None"' #Do not use a shader.
 ---| '"EndPortal"' #Use the end portal shader.
 ---| '"Glint"' #Use the enchantment glint.
+
+---@alias TextureType
+---| '"Custom"' #The custom texture suplied with the avatar.
+---| '"Skin"' #Your Minecraft skin.
+---| '"Cape"' #Your cape, or Steve if you dont have a cape.
+---| '"Elytra"' #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
+---| '"Resource"' #Any loaded texture including resource packs! or missing texture if not found.
 
 ---A basic model part with very few options for modifying it.
 ---@class BasicModelPart
@@ -50,6 +74,10 @@ function BasicModelPart.getPos() end
 ---@return VectorAng|nil
 function BasicModelPart.getRot() end
 
+---Returns the scale of the part set by `.setScale()`.
+---@return VectorPos
+function BasicModelPart.getScale() end
+
 ---Sets the visibility of the part.
 ---@param state boolean
 function BasicModelPart.setEnabled(state) end
@@ -61,6 +89,10 @@ function BasicModelPart.setPos(pos) end
 ---Sets the rotation offset of the part.
 ---@param ang VectorAng
 function BasicModelPart.setRot(ang) end
+
+---Sets the scale of the part.
+---@param pos VectorPos
+function BasicModelPart.setScale(pos) end
 
 
 ---VanillaModelPart ⇐ BasicModelPart
@@ -132,20 +164,68 @@ local CustomModelPartProxy = {}
 ---like that to allow any key to become a `CustomModelPart` if needed.
 local CustomModelPart = {}
 
+---A function that adds a new render task to this model part, with the provided parameters.
+---
+---Note: Unlike what the patch notes say, this function does not return a renderTask table.
+---Use \<CustomModelPart\>.getRenderTask() instead.
+---@param type RenderTaskType
+---@param name string
+---@param itemID string
+---@param renderMode RenderMode
+---@param emmisive? boolean
+---@param pos? VectorPos
+---@param rot? VectorAng
+---@param scale? Vector3
+---@param renderLayer? string
+---@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
+---@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
+function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
+
+---Remove ALL render tasks from this part.
+function CustomModelPart.clearAllRenderTasks() end
+
+---Returns the sum of all position keyframes at this time.
+---@return VectorPos
+function CustomModelPart.getAnimPos() end
+
+---Returns the sum of all rotation keyfrmaes at this time.
+---@return VectorAng
+function CustomModelPart.getAnimRot() end
+
+---Returns the sum of all scale keyframes at this time.
+---@return Vector3
+function CustomModelPart.getAnimScale() end
+
+---Returns a table containing this part children tables.
+---@return CustomModelPart[]
+function CustomModelPart.getChilderen() end
+
 ---Returns the current color of the part.
 ---The default color is `0,0,0`.
 ---@return VectorColor
 function CustomModelPart.getColor() end
 
----Returns if the part is hidden in blockbench.  
----A part that is hidden in blockbench cannot be unhidden.
+---Returns if culling is enabled on the part.
 ---@return boolean
-function CustomModelPart.getHidden() end
+function CustomModelPart.getCullEnabled() end
+
+---Returns if extra textures are rendered. (emmisive textures)
+---@return boolean
+function CustomModelPart.getExtraTexEnabled() end
+
+---Returns the light value set by setLight.
+---Returns `nil` if it hasn't been set yet.
+---@return Vector2|nil
+function CustomModelPart.getLight() end
 
 ---Returns if the part is only mimicing its parent part instead of having its origin connected to
 ---the parent part's origin.
 ---@return boolean
 function CustomModelPart.getMimicMode() end
+
+---Returns the name assigned in BlockBench of this part.
+---@return string
+function CustomModelPart.getName() end
 
 ---Returns the opacity of a part.
 ---
@@ -153,13 +233,23 @@ function CustomModelPart.getMimicMode() end
 ---@return number
 function CustomModelPart.getOpacity() end
 
+---Returns the overlay value set by setOverlay.
+---Returns `nil` if it hasn't been set yet.
+---@return Vector2|nil
+function CustomModelPart.getOverlay() end
+
 ---Returns the parent type of the part.
----@return ParentType ParentType
+---@return ParentType
 function CustomModelPart.getParentType() end
 
 ---Returns the position offset of the part's pivot point.
 ---@return VectorPos
 function CustomModelPart.getPivot() end
+
+---Returns a render task table of the given name, if any
+---@param name string
+---@return BlockTaskTable|ItemTaskTable|TextTaskTable
+function CustomModelPart.getRenderTask(name) end
 
 ---*This function uses the `CustomModelPart` definition.*
 ---***
@@ -169,19 +259,32 @@ function CustomModelPart.getPivot() end
 ---@return VectorAng
 function CustomModelPart.getRot() end
 
----Returns the scale of the part set by `.setScale()`.
----@return VectorPos
-function CustomModelPart.getScale() end
-
 ---Returns the shader of the part.
----@return Shader Shader
+---@return Shader
 function CustomModelPart.getShader() end
+
+---Returns the type of texture that the part uses
+---@return TextureType
+function CustomModelPart.getTexture() end
+
+---Returns the size of the part's texture.
+---@return Vector2
+function CustomModelPart.getTextureSize() end
+
+---Returns the type of the part.
+---@return CustomModelPartType
+function CustomModelPart.getType() end
 
 ---Returns the UV offset of the part.
 ---
 ---Note: This does *not* return the actual UV of the part.
 ---@return VectorUV
 function CustomModelPart.getUV() end
+
+---Returns the UV data of the specified face.
+---@param face CubeSide
+---@return Vector4
+function CustomModelPart.getUVData(face) end
 
 ---Takes a `Vector` with a direction relative to the part and returns a `Vector` with the direction
 ---in world-space.
@@ -203,11 +306,29 @@ function CustomModelPart.partToWorldDir(dir) end
 ---@return VectorPos
 function CustomModelPart.partToWorldPos(pos) end
 
+---Removes a render task from this part.
+---@param name string
+function CustomModelPart.removeRenderTask(name) end
+
 ---Sets the color of the model.
 ---
 ---Note: The color is set by *tinting* the model, use grayscale textures for best results.
 ---@param col VectorColor
 function CustomModelPart.setColor(col) end
+
+---Enable/disable culling.
+---@param boolean boolean
+function CustomModelPart.setCullEnabled(boolean) end
+
+---Enable/disable extra texture rendering (ie emissive textures)
+---@param boolean boolean
+function CustomModelPart.setExtraTexEnabled(boolean) end
+
+---Overrides the light level the part is rendered at.
+---Any value below 0 or above 15 will render the part invisible.
+---`nil` returns the part to normal.
+---@param vector? Vector2 {block, sky}
+function CustomModelPart.setLight(vector) end
 
 ---Sets the mimic mode of the model.  
 ---If true, the model will *mimic* its parent as set by `.setParentType()` instead of having its
@@ -221,9 +342,23 @@ function CustomModelPart.setMimicMode(state) end
 ---@param num number
 function CustomModelPart.setOpacity(num) end
 
+---Overrides the overlay level the part is rendered at.
+---Any value below 0 or above 15 will render the part black.
+---`nil` returns the part to normal.
+---@param vector? Vector2 {white, hurt}
+function CustomModelPart.setOverlay(vector) end
+
 ---Sets the parent type of the part.
 ---@param parent ParentType
 function CustomModelPart.setParentType(parent) end
+
+---Sets the part's pivot point.
+---@param vector VectorPos
+function CustomModelPart.setPivot(vector) end
+
+---Sets the render layer (custom shader) of the part.
+---@param string string
+function CustomModelPart.setRenderLayer(string) end
 
 ---*This function uses the `CustomModelPart` definition.*
 ---***
@@ -233,19 +368,31 @@ function CustomModelPart.setParentType(parent) end
 ---@param ang VectorAng
 function CustomModelPart.setRot(ang) end
 
----Sets the scale of the part.
----@param pos VectorPos
-function CustomModelPart.setScale(pos) end
-
 ---Sets the shader of the part.
 ---@param shader Shader
 function CustomModelPart.setShader(shader) end
+
+---Changes which texture is applied to the part.
+---ID is only needed with "Resource" type.
+---@param textureType TextureType
+---@param ID? string ex: "minecraft:textures/item/apple.png"
+function CustomModelPart.setTexture(textureType, ID) end
+
+---Set the size of the part's texture.
+---@param vector Vector2
+function CustomModelPart.setTextureSize(vector) end
 
 ---Sets the UV offset of the part.
 ---
 ---Note: This does *not* set the actual UV of the part.
 ---@param uv VectorUV
 function CustomModelPart.setUV(uv) end
+
+---Sets the UV data of the given side.
+---UV's must be in BlockBench format.
+---@param face CubeSide
+---@param vector Vector4
+function CustomModelPart.setUVData(face, vector) end
 
 ---Takes a `Vector` with a direction in world-space and
 ---returns a `Vector` with the direction relative to the part.
@@ -284,8 +431,7 @@ function CustomModelPart.worldToPartPos(pos) end
 ---[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
 ---If you use the above extension, guessed parts will have a different icon from parts found in the
 ---model.
----@type CustomModelPartContainer
----model file.
+---@type table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart>>>>>>>>>
 model = {}
 
 ---A `table` containing the vanilla playermodel.
@@ -295,6 +441,9 @@ vanilla_model = {
 
   ---@type VanillaModelPart
   HAT = {},
+
+  ---@type VanillaModelPart
+  CAPE = {},
 
   ---@type VanillaModelPart
   TORSO = {},
@@ -324,7 +473,13 @@ vanilla_model = {
   RIGHT_LEG = {},
 
   ---@type VanillaModelPart
-  RIGHT_PANTS_LEG = {}
+  RIGHT_PANTS_LEG = {},
+
+  ---@type VanillaModelPart
+  LEFT_EAR = {},
+
+  ---@type VanillaModelPart
+  RIGHT_EAR = {}
 }
 
 ---A `table` containing the armor model.
@@ -370,4 +525,13 @@ parrot_model = {
 
   ---@type BasicModelPart
   RIGHT_PARROT = {}
+}
+
+---A `table` containing the first person models.
+first_person_model = {
+	---@type BasicModelPart
+	MAIN_HAND = {},
+
+	---@type BasicModelPart
+	OFF_HAND = {}
 }
