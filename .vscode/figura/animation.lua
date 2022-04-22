@@ -149,6 +149,7 @@ function Animation.stop() end
 --================================================================================================--
 
 ---A `table` containing functions relating to animations and the avatars animations
+---@type table<string,Animation>
 animation = {}
 
 ---A function that stops ALL animations (without blending).
