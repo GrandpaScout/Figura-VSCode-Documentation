@@ -431,8 +431,7 @@ function CustomModelPart.worldToPartPos(pos) end
 ---[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
 ---If you use the above extension, guessed parts will have a different icon from parts found in the
 ---model.
----@type CustomModelPartContainer
----model file.
+---@type table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart>>>>>>>>>
 model = {}
 
 ---A `table` containing the vanilla playermodel.
