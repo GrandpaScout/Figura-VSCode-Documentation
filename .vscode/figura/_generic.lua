@@ -2,37 +2,45 @@
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
 
----Logs a value to Minecraft's chat and log output.
+---Logs a value to Minecraft's chat and log output.  
 ---If `jsonEncode` is true, it will try to encode the log into json text.
 ---@param value any
 ---@param jsonEncode? boolean
-function log(value,jsonEncode) end
+function log(value, jsonEncode) end
 
----Logs a value to Minecraft's chat and log output.
+---Logs a value to Minecraft's chat and log output.  
 ---If `jsonEncode` is true, it will try to encode the log into json text.
 ---
 ---Alias of `log`.
 ---@param value any
 ---@param jsonEncode? boolean
-function print(value,jsonEncode) end
+function print(value, jsonEncode) end
 
----Logs the contents of the given `table` to Minecraft's chat and log output.
----Attempting to log anything other than a pure `table` will log nothing.
+---Logs the contents of the given `table` to Minecraft's chat and log output.  
+---Attempting to log anything other than a pure `table` will log nothing.  
 ---If the second parameter is true, the contents of nested tables will also be outputed.
 ---
----Note: A `Vector` will only log if they are a pure `table`.
+---Note: This will not log a `Vector`, use `log` instead.
 ---@param tbl table
 ---@param showNested? boolean
-function logTableContent(tbl,showNested) end
+function logTableContent(tbl, showNested) end
 
----Logs the contents of the given `table` to Minecraft's chat and log output.
----Attempting to log anything other than a pure `table` will log nothing.
+---Logs the contents of the given `table` to Minecraft's chat and log output.  
+---Attempting to log anything other than a pure `table` will log nothing.  
 ---If the second parameter is true, the contents of nested tables will also be outputed.
 ---
 ---Alias of `logTableContent`
 ---@param tbl table
 ---@param showNested? boolean
-function logTable(tbl,showNested) end
+function logTable(tbl, showNested) end
+
+
+---Converts a string into a Lua function where the contents of the string become the function's body.
+---
+---Returns a string containing any compile errors if conversion failed.
+---@param body string
+---@return string|fun():any
+function loadstring(body) end
 
 
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
@@ -103,17 +111,28 @@ function tick() end
 ---@param delta number
 function render(delta) end
 
+---`delta`:  
+---&emsp; The distance between the last tick and next tick this frame sits on.  
+---&emsp; This is a value `0..1`.
+---***
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
 ---You should not run this function, Figura will run it for you.
 ---
 ---Use the below code to create this function:
 ---```
----function world_render()
+---function world_render(delta)
 ---  --code here
 ---end
 ---```
 ---***
----This function runs every render tick, but will continue to run even if your model is not rendering.
+---This function runs its contents every frame, but will continue to run even if your model is not rendering.
+---
+---Notes:
+---* This function *can* be defined multiple times. This is unlike vanilla Lua where redefining
+---a function will overwrite it.
+---* Figura will run the contents of every instance of this function.
+---* Try to define this function as few times as possible, this feature only exists to make combining
+---different scripts easier.
 ---@param delta number
 function world_render(delta) end
 
@@ -137,7 +156,7 @@ function world_render(delta) end
 ---different scripts easier.
 function player_init() end
 
----`delta`:  
+---`cmd`:  
 ---&emsp; Contains the *full* message (including the prefix) used to trigger this function.  
 ---***
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  
@@ -167,12 +186,19 @@ function onCommand(cmd) end
 ---
 ---Use the below code to create this function:
 ---```
----function onDamage(amount)
+---function onDamage(amount, source)
 ---  --code here
 ---end
 ---```
 ---***
 ---Runs every time you take damage.
+---
+---Notes:
+---* This function *can* be defined multiple times. This is unlike vanilla Lua where redefining
+---a function will overwrite it.
+---* Figura will run the contents of every instance of this function.
+---* Try to define this function as few times as possible, this feature only exists to make combining
+---different scripts easier.
 ---@param amount number The amount of damage you would have taken before armor/resistance calculations.
 ---@param source string
 function onDamage(amount, source) end

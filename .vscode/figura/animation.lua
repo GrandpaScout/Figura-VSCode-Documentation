@@ -86,8 +86,8 @@ function Animation.pause() end
 ---Starts/restarts the animation.
 function Animation.play() end
 
----A function that sets the blend time of the animation, (The blending time is in seconds), for starting/ending animations, 
----for example, if I put "2" as the value, the animation will spend 2 seconds blending into the next animation, you must put this value yourself.
+---Sets the blend time of the animation in seconds.  
+---Blending is done when an animation is starting or ending.
 ---@param number number
 function Animation.setBlendTime(number) end
 
@@ -107,7 +107,7 @@ function Animation.setLoopDelay(delay) end
 ---@param loopMode LoopMode
 function Animation.setLoopMode(loopMode) end
 
----With replace enabled, vanilla animations will no longer be able to rotate. They will still be able to move.
+---With replace enabled, vanilla animations will no longer be able to rotate. They will still be able to move.  
 ---Similar to how mimic parts work, but instead of only rotations, it is only for positions
 ---@param boolean boolean
 function Animation.setReplace(boolean) end
@@ -120,7 +120,7 @@ function Animation.setPlayState(playstate) end
 ---@param bool boolean
 function Animation.setOverride(bool) end
 
----A function that sets the priority of an animation over the others, you must put this value yourself.
+---Sets the priority of an animation over the others, you must put this value yourself.
 ---
 ---The priority of an animation can determine whether the animations are blended (if the priorities are equal), or if the animation is ignored over another animation (lower priority).
 ---@param int number
@@ -152,12 +152,12 @@ function Animation.stop() end
 ---@type table<string,Animation>
 animation = {}
 
----A function that stops ALL animations (without blending).
+---Stops ALL animations (without blending).
 function animation.ceaseAll() end
 
----A function that returns a table with each animation you have.
+---Returns a table with each animation you have.
 ---@return string[]
 function animation.listAnimations() end
 
----A function that stops ALL animations (with blending).
+---Stops ALL animations (with blending).
 function animation.stopAll() end

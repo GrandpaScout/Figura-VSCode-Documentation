@@ -173,4 +173,8 @@ function Biome.isHot() end
 ---Functions relating to biomes
 biome = {}
 
----Returns a biome table of the biome id. 
+---Returns a biome table of the biome id.
+---@param biome BiomeID
+---@param pos? VectorPos
+---@return Biome
+function biome.getBiome(biome, pos) end

@@ -2,18 +2,15 @@
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
 
----Contains functions added to the math library by figura.
----Functions contained in the base mathlib are not included here.
-math = {}
-
----Interpolates values/vectors between a and b.
----Will not accept a raw table as input.
+---Interpolates numbers or vectors between a and b.  
+---Will not accept a raw table as input.  
 ---Use vectors.of() to convert from raw table to vector table.
----@param a number | Vector
----@param b number | Vector
+---@generic T : number|Vector
+---@param a T
+---@param b T
 ---@param delta number
----@return number | Vector
-function math.lerp(a,b,delta) end
+---@return T
+function math.lerp(a, b, delta) end
 
 ---Returns a value that never goes below min or above max.
 ---@param val number

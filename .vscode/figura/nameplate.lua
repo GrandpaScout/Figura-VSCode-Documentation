@@ -15,7 +15,7 @@
 ---@class Nameplate
 local Nameplate = {}
 
----Returns if the nameplate is visible.
+---Returns if the nameplate is visible.  
 ---Returns `nil` if it has not been set by `.setEnabled()`.
 ---@return boolean
 function Nameplate.getEnabled() end
@@ -23,7 +23,7 @@ function Nameplate.getEnabled() end
 ---Returns the position offset of the nameplate in blocks.  
 ---Returns `nil` if the position offset has not been set by `.setPos()`.
 ---
----Note: This value is not accurate if the player's entity is scaled.
+---Note: This value might not be accurate if the player's entity is scaled.
 ---@return VectorPos|nil
 function Nameplate.getPos() end
 
@@ -32,7 +32,7 @@ function Nameplate.getPos() end
 ---@return VectorPos|nil
 function Nameplate.getScale() end
 
----Returns the text in the nameplate.
+---Returns the text in the nameplate.  
 ---Returns `nil` if the text has not been set by `.setPos()`.
 function Nameplate.getText() end
 
@@ -52,7 +52,7 @@ function Nameplate.setPos(vec3) end
 function Nameplate.setScale(vec3) end
 
 ---Sets the text of the nameplate.  
----All text is placed to the left of the Figura mark.
+---All text is placed to the left of the Figura mark.  
 ---Uses JSON Formatting.
 ---@param str string
 function Nameplate.setText(str) end

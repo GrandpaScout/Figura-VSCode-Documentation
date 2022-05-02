@@ -279,6 +279,6 @@ particle = {}
 ---> minecraft:wax_on (Possibly acts like minecraft:composter?)
 ---@param name ParticleID
 ---@param pos_vel Vector6
----@param extra1 Vector3 | Vector4 | string
----@param extra2 Vector3 | Vector4
+---@param extra1? Vector3 | Vector4 | string
+---@param extra2? Vector3 | Vector4
 function particle.addParticle(name, pos_vel, extra1, extra2) end

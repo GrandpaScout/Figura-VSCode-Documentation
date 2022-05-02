@@ -10,7 +10,7 @@ meta = {}
 ---@return number
 function meta.getAnimationLimit() end
 
----Returns a number based on the current status of the Backend
+---Returns a number based on the current status of the Backend  
 ---1 - white, 2 - red, 3 - yellow, 4 - green
 ---@return number
 function meta.getBackendStatus() end
@@ -87,7 +87,7 @@ function meta.getFiguraVersion() end
 ---@return number
 function meta.getInitLimit() end
 
----Returns a number based on the current status of the Model
+---Returns a number based on the current status of the Model  
 ---1 - white, 2 - red, 3 - yellow, 4 - green
 ---@return number
 function meta.getModelStatus() end
@@ -104,7 +104,7 @@ function meta.getParticleLimit() end
 ---@return number
 function meta.getRenderLimit() end
 
----Returns a number based on the current status of the Script
+---Returns a number based on the current status of the Script  
 ---1 - white, 2 - red, 3 - yellow, 4 - green
 ---@return number
 function meta.getScriptStatus() end
@@ -115,7 +115,7 @@ function meta.getScriptStatus() end
 ---@return number
 function meta.getSoundLimit() end
 
----Returns a number based on the current status of the Texture
+---Returns a number based on the current status of the Texture  
 ---1 - white, 2 - red, 3 - yellow, 4 - green
 ---@return number
 function meta.getTextureStatus() end

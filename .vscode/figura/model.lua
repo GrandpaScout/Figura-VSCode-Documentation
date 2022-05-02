@@ -120,38 +120,10 @@ function VanillaModelPart.getOriginRot() end
 ---@return boolean|nil
 function VanillaModelPart.isOptionEnabled() end
 
----The proxy for the `CustomModelPartConatiner` class.  
----This only exists to fix inheritance of `CustomModelPart`s inside `CustomModelPartContainer`s.
----@class CustomModelPartContainerProxy
----@type table<string, CustomModelPart>|CustomModelPart[]
-local CustomModelPartContainerProxy = {}
-
----The `table` containing the parts and folders from your blockbench model.
----
----If you want to get the Top hat on your model's head in this example...
----```
----Player
----├ Head
----│ └ TopHat
----└ Body
----  └ Belt
----```
----...then you need to use `CustomModelPartContainer.Player.Head.TopHat` to access it.  
----(Where `CustomModelPartContainer` is the name of this variable.)
----
----Note: Auto-completion does not know what folders and parts you have in your model at first, but
----will learn based on what folders and parts you access yourself.  
----If you want autocompletion for model paths, use
----[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
----If you use the above extension, guessed parts will have a different icon from parts found in the
----model.
----@class CustomModelPartContainer : CustomModelPartContainerProxy
-local CustomModelPartContainer = {}
-
 ---The proxy for the `CustomModelPart` class.  
 ---This only exists to fix inheritance of `CustomModelPart`s inside `CustomModelPart`s.
----@type table<string, CustomModelPart>|CustomModelPart[]
 ---@class CustomModelPartProxy : BasicModelPart
+---@field [string] CustomModelPart
 local CustomModelPartProxy = {}
 
 ---@class CustomModelPart : CustomModelPartProxy
@@ -200,7 +172,7 @@ function CustomModelPart.getAnimScale() end
 ---@return CustomModelPart[]
 function CustomModelPart.getChilderen() end
 
----Returns the current color of the part.
+---Returns the current color of the part.  
 ---The default color is `0,0,0`.
 ---@return VectorColor
 function CustomModelPart.getColor() end
@@ -213,7 +185,7 @@ function CustomModelPart.getCullEnabled() end
 ---@return boolean
 function CustomModelPart.getExtraTexEnabled() end
 
----Returns the light value set by setLight.
+---Returns the light value set by setLight.  
 ---Returns `nil` if it hasn't been set yet.
 ---@return Vector2|nil
 function CustomModelPart.getLight() end
@@ -251,8 +223,6 @@ function CustomModelPart.getPivot() end
 ---@return BlockTaskTable|ItemTaskTable|TextTaskTable
 function CustomModelPart.getRenderTask(name) end
 
----*This function uses the `CustomModelPart` definition.*
----***
 ---Returns the *absolute* rotation of the part.
 ---
 ---Note: This does *not* return the rotation offset.
@@ -324,7 +294,7 @@ function CustomModelPart.setCullEnabled(boolean) end
 ---@param boolean boolean
 function CustomModelPart.setExtraTexEnabled(boolean) end
 
----Overrides the light level the part is rendered at.
+---Overrides the light level the part is rendered at.  
 ---Any value below 0 or above 15 will render the part invisible.
 ---`nil` returns the part to normal.
 ---@param vector? Vector2 {block, sky}
@@ -431,7 +401,7 @@ function CustomModelPart.worldToPartPos(pos) end
 ---[*Manuel-Underscore*'s Figura VSCode extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura).  
 ---If you use the above extension, guessed parts will have a different icon from parts found in the
 ---model.
----@type table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart|table<string,CustomModelPart>>>>>>>>>
+---@type table<string, CustomModelPart>
 model = {}
 
 ---A `table` containing the vanilla playermodel.
@@ -534,4 +504,12 @@ first_person_model = {
 
 	---@type BasicModelPart
 	OFF_HAND = {}
+}
+
+spyglass_model = {
+  ---@type BasicModelPart
+  LEFT_SPYGLASS = {},
+
+  ---@type BasicModelPart
+  RIGHT_SPYGLASS = {}
 }

@@ -1127,7 +1127,7 @@
 ---@class ItemStack
 ---Meant for internal use. Has no purpose in Lua.
 ---@deprecated
----@field stack userdata
+---@field ["figura$item_stack"] userdata
 local ItemStack = {}
 
 ---Returns the item's cooldown.
@@ -1179,7 +1179,7 @@ function ItemStack.getRarity() end
 
 ---Returns the item's NBT tag as a Lua `table`, returns `nil` if there is no tag.  
 ---All keys are in lowercase.
----@return table|nil
+---@return table?
 function ItemStack.getTag() end
 
 ---Returns the item's ID.
@@ -1202,8 +1202,8 @@ function ItemStack.isBlockItem() end
 ---@return boolean
 function ItemStack.isDamageable() end
 
----Returns if the item is enchantable.
----If the item can be enchanted via enchanting table or have enchants added to it via anvil then it is enchantable.
+---Returns if the item is enchantable.  
+---If the item can be enchanted via enchanting table or have enchants added to it via anvil then it is enchantable.  
 ---Enchanted books aren't enchantable though. Unenchanted books are.
 ---@return boolean
 function ItemStack.isEnchantable() end
@@ -1217,12 +1217,12 @@ function ItemStack.isFood() end
 function ItemStack.isStackable() end
 
 ---Sets the amount of items in the stack.
----@param x number
-function ItemStack.setCount(x) end
+---@param count number
+function ItemStack.setCount(count) end
 
 ---Sets the damage value of the item.
----@param x number
-function ItemStack.setDamage(x) end
+---@param damage number
+function ItemStack.setDamage(damage) end
 
 ---Sets the NBT tag of an `ItemStack`.
 ---

@@ -920,7 +920,7 @@
 ---> | `0..7` | minecraft:carrots, minecraft:melon_stem, minecraft:pumpkin_stem, minecraft:potatoes, minecraft:wheat |
 ---> | `0..15` | minecraft:cactus, minecraft:fire, minecraft:soul_fire, minecraft:sugar_cane |
 ---> | `0..25` | minecraft:kelp |
----@field age  ''"0"''|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'|'"16"'|'"17"'|'"18"'|'"19"'|'"20"'|'"21"'|'"22"'|'"23"'|'"24"'|'"25"'
+---@field age  '"0"'|'"1"'|'"2"'|'"3"'|'"4"'|'"5"'|'"6"'|'"7"'|'"8"'|'"9"'|'"10"'|'"11"'|'"12"'|'"13"'|'"14"'|'"15"'|'"16"'|'"17"'|'"18"'|'"19"'|'"20"'|'"21"'|'"22"'|'"23"'|'"24"'|'"25"'
 ---
 ---Determines if the block is part of a complete tripwire circuit.
 ---***
@@ -1377,6 +1377,9 @@
 
 ---A `table` containing the blockstate of a block.
 ---@class BlockState
+---Meant for internal use. Has no purpose in Lua.
+---@deprecated
+---@field ["figura$block_state"] userdata
 ---@field name BlockID
 ---@field properties BlockStateProperties
 local BlockState = {}
@@ -1399,8 +1402,8 @@ function BlockState.getCollisionShape() end
 ---@return NibbleInt
 function BlockState.getComparatorOutput() end
 
----Returns the tile entity data if it exists.
----@todo Aliases for tile entity data
+---Returns the tile entity data if it exists.  
+---@todo Aliases for tile entity data // GS: You're crazy if you actually do it.
 ---@return table
 function BlockState.getEntityData() end
 
@@ -1418,7 +1421,7 @@ function BlockState.getLuminance() end
 ---@return number
 function BlockState.getMapColor() end
 
----Returns the name of the block material.
+---Returns the name of the block material.  
 ---As of 0.0.8, this doesn't return a human readable string,
 ---but "field_####" with a seemingly random number combination for each material.
 ---@return string
@@ -1481,7 +1484,7 @@ function BlockState.toStateString() end
 block_state = {}
 
 ---Returns a blockstate using /setblock syntax
----@param block_string string
+---@param block string|BlockState
 ---@param pos? VectorPos
 ---@return BlockState
-function block_state.createBlock(block_string, pos) end
+function block_state.createBlock(block, pos) end

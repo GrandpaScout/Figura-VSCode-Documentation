@@ -22,7 +22,7 @@ function chat.sendMessage(str) end
 ---Sets the command prefix to the given string.
 ---
 ---Create a function `onCommand(cmd)` to catch commands typed by you into chat.
----@param str string
+---@param str? string
 function chat.setFiguraCommandPrefix(str) end
 
 ---Returns the text from the message input field, or nil if its empty.

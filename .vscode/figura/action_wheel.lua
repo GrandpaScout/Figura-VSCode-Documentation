@@ -69,8 +69,9 @@ function ActionWheelSlot.getTextureScale() end
 function ActionWheelSlot.getTitle() end
 
 ---Returns the UV used for rendering the texture as well as the texture size.
----First two numbers are the offset
----Next two numbers are the size of the UV
+---
+---First two numbers are the offset  
+---Next two numbers are the size of the UV  
 ---Last two numbers are the size of the texture itself
 ---@return Vector6
 function ActionWheelSlot.getUV() end
@@ -79,7 +80,7 @@ function ActionWheelSlot.getUV() end
 ---@param col VectorColor
 function ActionWheelSlot.setColor(col) end
 
----Sets the function to run when the slot is clicked.
+---Sets the function to run when the slot is clicked.  
 ---Second parameter gets fed into the given function.
 ---@param func function
 ---@param parameter? any
@@ -97,7 +98,7 @@ function ActionWheelSlot.setHoverItem(item) end
 ---@param item ItemStack|string
 function ActionWheelSlot.setItem(item) end
 
----Sets the action wheel custom texture.
+---Sets the action wheel custom texture.  
 ---ID is only needed if type or "Resource"
 ---@param type ActionWheelTextureType
 ---@param ID string

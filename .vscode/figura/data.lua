@@ -2,8 +2,8 @@
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
 
----Contains functions involving saving and loading data to and from files.
----It uses the avatar name as file name
+---Contains functions involving saving and loading data to and from files.  
+---It uses the avatar name as the default file name.
 data = {}
 
 ---Sets your player-tracking preference (default TRUE).
@@ -23,7 +23,7 @@ function data.hasTracking() end
 
 ---Returns a LuaValue of the key, or nil if not found.
 ---@param key string
----@return any
+---@return string|table|Vector
 function data.load(key) end
 
 ---Returns a LuaTable of all the saved variables.

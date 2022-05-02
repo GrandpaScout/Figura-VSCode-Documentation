@@ -62,7 +62,7 @@ function renderer.isMountEnabled() end
 ---@return boolean
 function renderer.isMountShadowEnabled() end
 
----Casts a ray from startPos to endPos, looking at the blocks on the way.
+---Casts a ray from startPos to endPos, looking at the blocks on the way.  
 ---If the ray never hits anything, then the function returns nil.
 ---@param startPos VectorPos
 ---@param endPos VectorPos
@@ -72,7 +72,7 @@ function renderer.isMountShadowEnabled() end
 ---@return {state:BlockState, pos:VectorPos}
 function renderer.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
 
----Casts a ray from startPos to endPos, returning the first entity it sees on the way.
+---Casts a ray from startPos to endPos, returning the first entity it sees on the way.  
 ---If the ray never hits anything, then the function returns nil.
 ---@param startPos VectorPos
 ---@param endPos VectorPos
@@ -102,5 +102,5 @@ function renderer.setRenderPlayerHead(boolean) end
 function renderer.setShadowSize(radius) end
 
 ---Shows the animation of you swinging your arm.
----@param offhand boolean #true to swing offhand instead of mainhand.
+---@param offhand? boolean #true to swing offhand instead of mainhand.
 function renderer.swingArm(offhand) end

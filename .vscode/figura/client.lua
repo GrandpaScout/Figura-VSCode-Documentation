@@ -7,10 +7,10 @@
 ---For all other players running your script, it will return nil. (except for isHost())
 client={}
 
----Returns whether the first given version is ahead or behind the second given version. 
---- -1 if ver1<ver2
----  0 if ver1==ver2
----  1 if ver1>ver2
+---Returns whether the first given version is ahead or behind the second given version.
+---* `-1` if `ver1 < ver2`
+---* `0` if `ver1 == ver2`
+---* `1` if `ver1 > ver2`
 ---@param ver1 string
 ---@param ver2 string
 ---@return number
@@ -95,7 +95,7 @@ function client.getParticleCount() end
 ---@return number
 function client.getScaleFactor() end
 
----Returns... something. Its a Vector2, thats all I know.
+---Returns the size of the window scaled by the GUI scale.
 ---@return Vector2
 function client.getScaledWindowSize() end
 

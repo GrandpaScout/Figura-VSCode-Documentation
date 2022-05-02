@@ -259,7 +259,7 @@ function Entity.getFireTicks() end
 function Entity.getFrozenTicks() end
 
 ---Returns the normalized direction that this entity is looking in.
----@return VectorAng
+---@return VectorPos
 function Entity.getLookDir() end
 
 ---Returns the maximum air this entity can have.
@@ -278,11 +278,11 @@ function Entity.getName() end
 ---`Byte`, `Short`, `Int`, `Long`, `Float`, and `Double` tags return a `number`.  
 ---`String` tags return a `string`.
 ---@param nbtpath string
----@return any
+---@return string|number|table
 function Entity.getNbtValue(nbtpath) end
 
 ---Returns the position of this entity.
----@param delta number
+---@param delta? number
 ---@return VectorPos
 function Entity.getPos(delta) end
 
@@ -290,7 +290,7 @@ function Entity.getPos(delta) end
 ---
 ---Note: When used on the local player, the yaw will build up past the normal limits when in first
 ---person.
----@param delta number
+---@param delta? number
 ---@return VectorAng
 function Entity.getRot(delta) end
 
@@ -328,11 +328,9 @@ function Entity.hasAvatar() end
 ---@return boolean
 function Entity.isGlowing() end
 
----Returns if the entity is a hamburger???. I don't know what this is.
----It's in the Entity tables. Thats all I know.
----@return ".something idk"|"probably a boolean?"|boolean
----@todo HAMBURGER
-function Entity.isHamburger() end
+---Returns if the entity is a Hamburger.
+---@return boolean
+---function Entity.isHamburger() end
 
 ---Returns if the entity is touching lava.
 ---@return boolean
@@ -402,7 +400,7 @@ function LivingEntity.getActiveItem() end
 function LivingEntity.getArmor() end
 
 ---Returns the yaw of this entity's body.
----@param delta number
+---@param delta? number
 ---@return number
 function LivingEntity.getBodyYaw(delta) end
 

@@ -5,12 +5,12 @@
 ---Contains functions relating to sounds.
 sound = {}
 
----Returns a table of all currently playing custom sounds.
----If second parameter is true, also returns the UUIDs of the players creating the sounds.
+---Returns a table of all currently playing custom sounds.  
+---If second parameter is true, also returns the UUIDs of the players creating the sounds.  
 ---Table will alternate name and player UUIDs
----@param boolean?boolean
+---@param getOwners? boolean
 ---@return string[]
-function sound.getCustomSounds(boolean) end
+function sound.getCustomSounds(getOwners) end
 
 ---Returns a table of each custom sound your avatar has
 ---@return table
@@ -34,17 +34,15 @@ function sound.playCustomSound(name, pos, volPitch) end
 ---`pos: VectorPos`  
 ---&emsp;Three numbers that represent a position in the world.
 ---
----`vol: number[]`  
+---`vol_pitch: Vector2`  
 ---&emsp;Two numbers that represent the volume and pitch of the sound.
 ---***
----Plays a sound event for this client.  
+---Plays a sound event.  
 ---Sounds are played on the `player` channel.
----
----Note: This function does not support vector `vol`s.
 ---@param name string
 ---@param pos VectorPos
----@param vol number[]
-function sound.playSound(name, pos, vol) end
+---@param vol_pitch Vector2
+function sound.playSound(name, pos, vol_pitch) end
 
 ---Adds a new custom sound to your model, using data from either a table of bytes, OR a base64-encoded string
 ---@param name string
