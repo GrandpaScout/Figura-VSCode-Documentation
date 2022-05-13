@@ -902,6 +902,55 @@
 ---| "minecraft:zombie_head" #Zombie Head
 ---| "minecraft:zombie_wall_head" #Zombie Wall Head
 
+---@alias BlockMaterial
+---| "field_15913" #Cobwebs (`COBWEB`)
+---| "field_15914" #Stone-like (`STONE`)
+---| "field_15915" #Bubble Column (`BUBBLE_COLUMN`)
+---| "field_15916" #Sand-like (`AGGREGATE`)
+---| "field_15917" #Sponge (`SPONGE`)
+---| "field_15918" #Lamp (`REDSTONE_LAMP`)
+---| "field_15919" #Portal (`PORTAL`)
+---| "field_15920" #Water (`WATER`)
+---| "field_15921" #Moss Block (`MOSS_BLOCK`)
+---| "field_15922" #Lava (`LAVA`)
+---| "field_15923" #Leafy (`LEAVES`)
+---| "field_15924" #Small Decoration (`DECORATION`)
+---| "field_15925" #Cactus (`CACTUS`)
+---| "field_15926" #Replacable Underwater Plant (`REPLACEABLE_UNDERWATER_PLANT`)
+---| "field_15927" #Structure Void (`STRUCTURE_VOID`)
+---| "field_15928" #Dense Ice (`DENSE_ICE`)
+---| "field_15930" #Egg (`EGG`)
+---| "field_15931" #Wooly (`WOOL`)
+---| "field_15932" #Wooden (`WOOD`)
+---| "field_15933" #Piston (`PISTON`)
+---| "field_15934" #Snow Block (`SNOW_BLOCK`)
+---| "field_15935" #Plant (`PLANT`)
+---| "field_15936" #Organic / Infested (`ORGANIC_PRODUCT`)
+---| "field_15937" #Cake (`CAKE`)
+---| "field_15938" #Bamboo Sapling (`BAMBOO_SAPLING`)
+---| "field_15941" #Dirt (`SOIL`)
+---| "field_15942" #Glass (`GLASS`)
+---| "field_15943" #Fire (`FIRE`)
+---| "field_15945" #Plant Block (`SOLID_ORGANIC`)
+---| "field_15946" #Bamboo (`BAMBOO`)
+---| "field_15947" #Small Coral (`UNDERWATER_PLANT`)
+---| "field_15948" #Small Snow (`SNOW_LAYER`)
+---| "field_15949" #Metallic Misc (`REPAIR_STATION`)
+---| "field_15952" #Barrier (`BARRIER`)
+---| "field_15953" #Metallic (`METAL`)
+---| "field_15954" #Gourd (`GOURD`)
+---| "field_15955" #Explosives (`TNT`)
+---| "field_15956" #Misc Plants (`REPLACEABLE_PLANT`)
+---| "field_15957" #Carpet (`CARPET`)
+---| "field_15958" #Weak Ice (`ICE`)
+---| "field_15959" #Air (`AIR`)
+---| "field_17008" #Skuler (`SHULKER_BOX`)
+---| "field_22223" #Nether Wooden (`NETHER_WOOD`)
+---| "field_26708" #Nether Plants (`NETHER_SHOOTS`)
+---| "field_27340" #Amethyst (`AMETHYST`)
+---| "field_27890" #Powder Snow (`POWDER_SNOW`)
+---| "field_28242" #Sculk (`SCULK`)
+
 
 ---A `table` containing blockstate properties.
 ---
@@ -1372,7 +1421,7 @@ local BlockStateProperties = {
   ---***
   ---> | State | Valid Blocks |
   ---> | :---- | :----------- |
-  ---> | `"0"` `"1"` | `minecraft:acacia_sapling`, `minecraft:bamboo`, `minecraft:bamboo_sapling`, `minecraft:birch_sapling`, `minecraft:dark_oak_sapling`, `minecraft:jungle_sapling`, `minecraft:oak_sapling`, `minecraft:spruce_sapling` |
+  ---> | `"0".."1"` | `minecraft:acacia_sapling`, `minecraft:bamboo`, `minecraft:bamboo_sapling`, `minecraft:birch_sapling`, `minecraft:dark_oak_sapling`, `minecraft:jungle_sapling`, `minecraft:oak_sapling`, `minecraft:spruce_sapling` |
   ---@type "0"|"1"
   stage = nil,
 
@@ -1494,9 +1543,10 @@ function BlockState.getLuminance() end
 function BlockState.getMapColor() end
 
 ---Returns the name of the block material.  
----As of 0.0.8, this doesn't return a human readable string,
----but `"field_####"` with a seemingly random number combination for each material.
----@return string
+---This does not return a readable string, instead it returns a field id for the material.
+---
+---Material IDs are auto-completed and come with a description of what they are.
+---@return BlockMaterial
 function BlockState.getMaterial() end
 
 ---Returns how much light is blocked by this block.

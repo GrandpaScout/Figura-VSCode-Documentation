@@ -126,15 +126,15 @@ action_wheel = {
 }
 
 ---Returns the amount of slots on the left side of the action wheel.
----@return SlotSideNumber number
+---@return SlotSideNumber
 function action_wheel.getLeftSize() end
 
 ---Returns the amount of slots on the right side of the action wheel.
----@return SlotSideNumber number
+---@return SlotSideNumber
 function action_wheel.getRightSize() end
 
 ---Returns the slot that is currently being hovered over.
----@return SlotNumber number
+---@return SlotNumber
 function action_wheel.getSelectedSlot() end
 
 ---Executes the function of the hovered over action wheel slot.

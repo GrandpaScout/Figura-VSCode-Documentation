@@ -203,7 +203,7 @@ function client.setCrosshairPos(offset) end
 
 ---Sets if the mouse is forced to be unlocked during normal gameplay.
 ---
----Cannot remove the mouse in GUIs.
+---Locking the mouse in some GUIs closes them.
 ---@param bool boolean
 function client.setMouseUnlocked(bool) end
 

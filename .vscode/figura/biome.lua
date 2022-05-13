@@ -15,7 +15,7 @@ function Biome.getCategory() end
 function Biome.getDownfall() end
 
 ---Returns the biome fog color.
----@return BiomeCategory
+---@return VectorColor
 function Biome.getFogColor() end
 
 ---Returns the biome color used on leaves.

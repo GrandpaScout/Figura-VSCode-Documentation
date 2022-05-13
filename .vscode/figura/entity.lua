@@ -7,195 +7,195 @@
 ---Only the default Minecraft dimensions are auto-completed.  
 ---You can use any dimension from any mod, even if it does not auto-complete.
 ---@alias DimensionID
----| '"minecraft:overworld"'
----| '"minecraft:the_nether"'
----| '"minecraft:the_end"'
+---| "minecraft:overworld"
+---| "minecraft:the_nether"
+---| "minecraft:the_end"
 
 ---An equipment slot.
 ---@alias EquipmentSlot
----| "1" #Main Hand
----| "2" #Off Hand
----| "3" #Feet
----| "4" #Legs
----| "5" #Chest
----| "6" #Head
+---| 1 #Main Hand
+---| 2 #Off Hand
+---| 3 #Feet
+---| 4 #Legs
+---| 5 #Chest
+---| 6 #Head
 
 ---A Minecraft entity identifier.
 ---
 ---Only the default Minecraft entities are auto-completed.  
 ---You can use any entity from any mod, even if it does not auto-complete.
 ---@alias EntityID
----| '"minecraft:axolotl"' #Axolotl
----| '"minecraft:bat"' #Bat
----| '"minecraft:bee"' #Bee
----| '"minecraft:blaze"' #Blaze
----| '"minecraft:cat"' #Cat
----| '"minecraft:cave_spider"' #Cave Spider
----| '"minecraft:chicken"' #Chicken
----| '"minecraft:cod"' #Cod
----| '"minecraft:cow"' #Cow
----| '"minecraft:creeper"' #Creeper
----| '"minecraft:dolphin"' #Dolphin
----| '"minecraft:donkey"' #Donkey
----| '"minecraft:drowned"' #Drowned
----| '"minecraft:elder_guardian"' #Elder Guardian
----| '"minecraft:ender_dragon"' #Ender Dragon
----| '"minecraft:enderman"' #Enderman
----| '"minecraft:endermite"' #Endermite
----| '"minecraft:evoker"' #Evoker
----| '"minecraft:fox"' #Fox
----| '"minecraft:ghast"' #Ghast
----| '"minecraft:giant"' #Giant
----| '"minecraft:glow_squid"' #Glow Squid
----| '"minecraft:goat"' #Goat
----| '"minecraft:guardian"' #Guardian
----| '"minecraft:hoglin"' #Hoglin
----| '"minecraft:horse"' #Horse
----| '"minecraft:husk"' #Husk
----| '"minecraft:illusioner"' #Illusioner
----| '"minecraft:iron_golem"' #Iron Golem
----| '"minecraft:llama"' #Llama
----| '"minecraft:magma_cube"' #Magma Cube
----| '"minecraft:mooshroom"' #Mooshroom
----| '"minecraft:mule"' #Mule
----| '"minecraft:ocelot"' #Ocelot
----| '"minecraft:panda"' #Panda
----| '"minecraft:parrot"' #Parrot
----| '"minecraft:phantom"' #Phantom
----| '"minecraft:pig"' #Pig
----| '"minecraft:piglin_brute"' #Piglin Brute
----| '"minecraft:piglin"' #Piglin
----| '"minecraft:pillager"' #Pillager
----| '"minecraft:polar_bear"' #Polar Bear
----| '"minecraft:pufferfish"' #Pufferfish
----| '"minecraft:rabbit"' #Rabbit
----| '"minecraft:ravager"' #Ravager
----| '"minecraft:salmon"' #Salmon
----| '"minecraft:sheep"' #Sheep
----| '"minecraft:shulker"' #Shulker
----| '"minecraft:silverfish"' #Silverfish
----| '"minecraft:skeleton_horse"' #Skeleton Horse
----| '"minecraft:skeleton"' #Skeleton
----| '"minecraft:slime"' #Slime
----| '"minecraft:snow_golem"' #Snow Golem
----| '"minecraft:spider"' #Spider
----| '"minecraft:squid"' #Squid
----| '"minecraft:stray"' #Stray
----| '"minecraft:strider"' #Strider
----| '"minecraft:trader_llama"' #Trader Llama
----| '"minecraft:tropical_fish"' #Tropical Fish
----| '"minecraft:turtle"' #Turtle
----| '"minecraft:vex"' #Vex
----| '"minecraft:villager"' #Villager
----| '"minecraft:vindicator"' #Vindicator
----| '"minecraft:wandering_trader"' #Wandering Trader
----| '"minecraft:witch"' #Witch
----| '"minecraft:wither_skeleton"' #Wither Skeleton
----| '"minecraft:wither"' #Wither
----| '"minecraft:wolf"' #Wolf
----| '"minecraft:zoglin"' #Zoglin
----| '"minecraft:zombie_horse"' #Zombie Horse
----| '"minecraft:zombie_villager"' #Zombie Villager
----| '"minecraft:zombie"' #Zombie
----| '"minecraft:zombified_piglin"' #Zombified Piglin
+---| "minecraft:axolotl" #Axolotl
+---| "minecraft:bat" #Bat
+---| "minecraft:bee" #Bee
+---| "minecraft:blaze" #Blaze
+---| "minecraft:cat" #Cat
+---| "minecraft:cave_spider" #Cave Spider
+---| "minecraft:chicken" #Chicken
+---| "minecraft:cod" #Cod
+---| "minecraft:cow" #Cow
+---| "minecraft:creeper" #Creeper
+---| "minecraft:dolphin" #Dolphin
+---| "minecraft:donkey" #Donkey
+---| "minecraft:drowned" #Drowned
+---| "minecraft:elder_guardian" #Elder Guardian
+---| "minecraft:ender_dragon" #Ender Dragon
+---| "minecraft:enderman" #Enderman
+---| "minecraft:endermite" #Endermite
+---| "minecraft:evoker" #Evoker
+---| "minecraft:fox" #Fox
+---| "minecraft:ghast" #Ghast
+---| "minecraft:giant" #Giant
+---| "minecraft:glow_squid" #Glow Squid
+---| "minecraft:goat" #Goat
+---| "minecraft:guardian" #Guardian
+---| "minecraft:hoglin" #Hoglin
+---| "minecraft:horse" #Horse
+---| "minecraft:husk" #Husk
+---| "minecraft:illusioner" #Illusioner
+---| "minecraft:iron_golem" #Iron Golem
+---| "minecraft:llama" #Llama
+---| "minecraft:magma_cube" #Magma Cube
+---| "minecraft:mooshroom" #Mooshroom
+---| "minecraft:mule" #Mule
+---| "minecraft:ocelot" #Ocelot
+---| "minecraft:panda" #Panda
+---| "minecraft:parrot" #Parrot
+---| "minecraft:phantom" #Phantom
+---| "minecraft:pig" #Pig
+---| "minecraft:piglin_brute" #Piglin Brute
+---| "minecraft:piglin" #Piglin
+---| "minecraft:pillager" #Pillager
+---| "minecraft:polar_bear" #Polar Bear
+---| "minecraft:pufferfish" #Pufferfish
+---| "minecraft:rabbit" #Rabbit
+---| "minecraft:ravager" #Ravager
+---| "minecraft:salmon" #Salmon
+---| "minecraft:sheep" #Sheep
+---| "minecraft:shulker" #Shulker
+---| "minecraft:silverfish" #Silverfish
+---| "minecraft:skeleton_horse" #Skeleton Horse
+---| "minecraft:skeleton" #Skeleton
+---| "minecraft:slime" #Slime
+---| "minecraft:snow_golem" #Snow Golem
+---| "minecraft:spider" #Spider
+---| "minecraft:squid" #Squid
+---| "minecraft:stray" #Stray
+---| "minecraft:strider" #Strider
+---| "minecraft:trader_llama" #Trader Llama
+---| "minecraft:tropical_fish" #Tropical Fish
+---| "minecraft:turtle" #Turtle
+---| "minecraft:vex" #Vex
+---| "minecraft:villager" #Villager
+---| "minecraft:vindicator" #Vindicator
+---| "minecraft:wandering_trader" #Wandering Trader
+---| "minecraft:witch" #Witch
+---| "minecraft:wither_skeleton" #Wither Skeleton
+---| "minecraft:wither" #Wither
+---| "minecraft:wolf" #Wolf
+---| "minecraft:zoglin" #Zoglin
+---| "minecraft:zombie_horse" #Zombie Horse
+---| "minecraft:zombie_villager" #Zombie Villager
+---| "minecraft:zombie" #Zombie
+---| "minecraft:zombified_piglin" #Zombified Piglin
 
 ---An entity animation.
 ---@alias EntityAnimation
----| '"STANDING"' #All: Default animation.
----| '"FALL_FLYING"' #Player: Using elytra.
----| '"SLEEPING"' #Player: Is sleeping in a bed.
----| '"SWIMMING"' #Player: Sprint swimming.
----| '"SPIN_ATTACK"' #Player: Flying with trident.
----| '"CROUCHING"' #Player: Sneaking.
----| '"DYING"' #Player: Falling over death animation.
+---| "STANDING" #All: Default animation.
+---| "FALL_FLYING" #Player: Using elytra.
+---| "SLEEPING" #Player: Is sleeping in a bed.
+---| "SWIMMING" #Player: Sprint swimming.
+---| "SPIN_ATTACK" #Player: Flying with trident.
+---| "CROUCHING" #Player: Sneaking.
+---| "DYING" #Player: Falling over death animation.
 
 ---A damage source name.
 ---
 ---Only the default Minecraft damage sources are auto-completed.  
 ---You can use any damage source, even if it does not auto-complete.
 ---@alias DamageSource
----| '"anvil"' #Anvil
----| '"arrow"' #Arrow
----| '"badRespawnPoint"' #Exploding bed or respawn
----| '"cactus"' #Contact with cactus
----| '"cramming"' #Entity cramming
----| '"dragonBreath"' #Dragon Breath (Unused, the dragon breath attack does magic damage.)
----| '"drown"' #Drowning
----| '"dryout"' #Squid air suffocation
----| '"even_more_magic"' #Unused
----| '"explosion"' #Explosion
----| '"explosion.player"' #Explosion caused by something else
----| '"fall"' #Falling
----| '"fallingBlock"' #Hit by falling block
----| '"fallingStalactite"' #Hit by a falling stalactite
----| '"fireworks"' #Firework explosion
----| '"flyIntoWall"' #Elytra gliding too fast into a wall
----| '"freeze"' #Freezing in powder snow
----| '"generic"' #Unknown damage
----| '"hotFloor"' #Magma block
----| '"indirectMagic"' #Indirectly hit with magic
----| '"inFire"' #Standing in a fire block
----| '"inWall"' #Suffocation
----| '"lava"' #Swimming in lava
----| '"lightingBolt"' #Struck by lightning
----| '"magic"' #Directly hit with magic
----| '"mob"' #Attacked by an entity
----| '"onFire"' #Burning
----| '"outOfWorld"' #Void or /kill
----| '"player"' #Attacked by a player
----| '"stalagmite"' #Falling on a stalagmite
----| '"starve"' #Starvation
----| '"sting"' #Bee Sting
----| '"sweetBerryBush"' #Contact with sweet berry bush
----| '"thorns"' #Thorns enchantment
----| '"thrown"' #Thrown projectile
----| '"trident"' #Trident
----| '"wither"' #Wither effect
----| '"witherSkull"' #Wither skull projectile
+---| "anvil" #Anvil
+---| "arrow" #Arrow
+---| "badRespawnPoint" #Exploding bed or respawn
+---| "cactus" #Contact with cactus
+---| "cramming" #Entity cramming
+---| "dragonBreath" #Dragon Breath (Unused, the dragon breath attack does magic damage.)
+---| "drown" #Drowning
+---| "dryout" #Squid air suffocation
+---| "even_more_magic" #Unused
+---| "explosion" #Explosion
+---| "explosion.player" #Explosion caused by something else
+---| "fall" #Falling
+---| "fallingBlock" #Hit by falling block
+---| "fallingStalactite" #Hit by a falling stalactite
+---| "fireworks" #Firework explosion
+---| "flyIntoWall" #Elytra gliding too fast into a wall
+---| "freeze" #Freezing in powder snow
+---| "generic" #Unknown damage
+---| "hotFloor" #Magma block
+---| "indirectMagic" #Indirectly hit with magic
+---| "inFire" #Standing in a fire block
+---| "inWall" #Suffocation
+---| "lava" #Swimming in lava
+---| "lightingBolt" #Struck by lightning
+---| "magic" #Directly hit with magic
+---| "mob" #Attacked by an entity
+---| "onFire" #Burning
+---| "outOfWorld" #Void or /kill
+---| "player" #Attacked by a player
+---| "stalagmite" #Falling on a stalagmite
+---| "starve" #Starvation
+---| "sting" #Bee Sting
+---| "sweetBerryBush" #Contact with sweet berry bush
+---| "thorns" #Thorns enchantment
+---| "thrown" #Thrown projectile
+---| "trident" #Trident
+---| "wither" #Wither effect
+---| "witherSkull" #Wither skull projectile
 
 ---A Minecraft status effect identifier.
 ---
 ---Only the default Minecraft status effects are auto-completed.  
 ---You can use any status effect from any mod, even if it does not auto-complete.
 ---@alias StatusEffectID
----| '"minecraft:absorption"' #Absorption
----| '"minecraft:bad_omen"' #Bad Omen
----| '"minecraft:blindness"' #Blindness
----| '"minecraft:conduit_power"' #Conduit Power
----| '"minecraft:dolphins_grace"' #Dolphin's Grace
----| '"minecraft:fire_resistance"' #Fire Resistance
----| '"minecraft:glowing"' #Glowing
----| '"minecraft:haste"' #Haste
----| '"minecraft:health_boost"' #Health Boost
----| '"minecraft:hero_of_the_village"' #Hero of the Village
----| '"minecraft:hunger"' #Hunger
----| '"minecraft:instant_health"' #Instant Health
----| '"minecraft:instant_damage"' #Instant Damage
----| '"minecraft:invisibility"' #Invisibility
----| '"minecraft:jump_boost"' #Jump Boost
----| '"minecraft:levitation"' #Levitation
----| '"minecraft:luck"' #Luck
----| '"minecraft:mining_fatigue"' #Mining Fatigue
----| '"minecraft:nausea"' #Nausea
----| '"minecraft:night_vision"' #Night Vision
----| '"minecraft:poison"' #Poison
----| '"minecraft:regeneration"' #Regeneration
----| '"minecraft:resistance"' #Resistance
----| '"minecraft:saturation"' #Saturation
----| '"minecraft:slow_falling"' #Slow Falling
----| '"minecraft:slowness"' #Slowness
----| '"minecraft:speed"' #Speed
----| '"minecraft:strength"' #Strength
----| '"minecraft:unluck"' #Bad Luck
----| '"minecraft:water_breathing"' #Water Breathing
----| '"minecraft:weakness"' #Weakness
----| '"minecraft:wither"' #Wither
+---| "minecraft:absorption" #Absorption
+---| "minecraft:bad_omen" #Bad Omen
+---| "minecraft:blindness" #Blindness
+---| "minecraft:conduit_power" #Conduit Power
+---| "minecraft:dolphins_grace" #Dolphin's Grace
+---| "minecraft:fire_resistance" #Fire Resistance
+---| "minecraft:glowing" #Glowing
+---| "minecraft:haste" #Haste
+---| "minecraft:health_boost" #Health Boost
+---| "minecraft:hero_of_the_village" #Hero of the Village
+---| "minecraft:hunger" #Hunger
+---| "minecraft:instant_health" #Instant Health
+---| "minecraft:instant_damage" #Instant Damage
+---| "minecraft:invisibility" #Invisibility
+---| "minecraft:jump_boost" #Jump Boost
+---| "minecraft:levitation" #Levitation
+---| "minecraft:luck" #Luck
+---| "minecraft:mining_fatigue" #Mining Fatigue
+---| "minecraft:nausea" #Nausea
+---| "minecraft:night_vision" #Night Vision
+---| "minecraft:poison" #Poison
+---| "minecraft:regeneration" #Regeneration
+---| "minecraft:resistance" #Resistance
+---| "minecraft:saturation" #Saturation
+---| "minecraft:slow_falling" #Slow Falling
+---| "minecraft:slowness" #Slowness
+---| "minecraft:speed" #Speed
+---| "minecraft:strength" #Strength
+---| "minecraft:unluck" #Bad Luck
+---| "minecraft:water_breathing" #Water Breathing
+---| "minecraft:weakness" #Weakness
+---| "minecraft:wither" #Wither
 
 ---@alias PlayerGamemode
----|'"SURVIVAL"'
----|'"CREATIVE"'
----|'"ADVENTURE"'
----|'"SPECTATOR"'
+---| "SURVIVAL"
+---| "CREATIVE"
+---| "ADVENTURE"
+---| "SPECTATOR"
 
 ---A `table` containing the duration and amplifier of a status effect.
 ---@class StatusEffect
@@ -204,8 +204,8 @@
 
 ---A hand slot.
 ---@alias HandSlot
----| "1" #Main Hand
----| "2" #Off Hand
+---| 1 #Main Hand
+---| 2 #Off Hand
 
 ---String literal of Hand
 ---@alias HandString
@@ -297,7 +297,7 @@ function Entity.getRot(delta) end
 ---Returns the position of the block this entity is looking at.  
 ---Returns `nil` if not looking at any blocks.
 ---@param targetLiquid boolean
----@return VectorPos|nil
+---@return VectorPos?
 function Entity.getTargetedBlockPos(targetLiquid) end
 
 ---Returns the entity identifier of this entity.
@@ -309,7 +309,7 @@ function Entity.getType() end
 function Entity.getUUID() end
 
 ---Returns the entity that this entity is riding.
----@return Entity|LivingEntity|Player|nil
+---@return (Entity|LivingEntity|Player)?
 function Entity.getVehicle() end
 
 ---Returns the velocity of this entity.
@@ -320,7 +320,7 @@ function Entity.getVelocity() end
 ---@return DimensionID string
 function Entity.getWorldName() end
 
----Returns if the entity has an avatar.
+---Returns if the entity has a Figura avatar.
 ---@return boolean
 function Entity.hasAvatar() end
 
@@ -348,7 +348,7 @@ function Entity.isInvisible() end
 ---@return boolean
 function Entity.isOnGround() end
 
----Returns if the entity has the silent nbt tag.
+---Returns if the entity has the silent NBT tag.
 ---@return boolean
 function Entity.isSilent() end
 
@@ -383,10 +383,10 @@ function Entity.isWet() end
 ---@class LivingEntity : Entity
 local LivingEntity = {}
 
----Returns which hand is active.
----Active hand is determined by the last hand to use an item.
+---Returns which hand is active.  
+---Active hand is determined by the last hand to use an item.  
 ---Returns nil if no item has been used.
----@return HandString | nil
+---@return HandString?
 function LivingEntity.getActiveHand() end
 
 ---Returns the item that is currently being used.
@@ -477,11 +477,11 @@ function Player.getGamemode() end
 ---Returns an item held in this entity's hands.
 ---Returns `nil` if the slot is empty.
 ---@param slot HandSlot
----@return ItemStack
+---@return ItemStack?
 function Player.getHeldItem(slot) end
 
 ---Returns the vanilla model type, either "default" or "slim".
----@return '"default"'|'"slim"'
+---@return "default"|"slim"
 function Player.getModelType() end
 
 ---Returns the amount of saturation this entity has.
@@ -494,7 +494,9 @@ function Player.getSaturation() end
 function Player.getStoredValue(key) end
 
 ---Returns the table of the entity under the crosshair.
----@return Entity|LivingEntity|Player
+---
+---Note: This only works if the `Player` is the player running the current instance of the script.
+---@return (Entity|LivingEntity|Player)?
 function Player.getTargetedEntity() end
 
 ---Returns if the player is flying via creative flight.
@@ -502,6 +504,8 @@ function Player.getTargetedEntity() end
 function Player.isFlying() end
 
 ---Returns the last source of damage this entity has taken.
+---
+---Note: Does not work unless the server is running Figura. (LAN or Integrated server.)
 ---@return DamageSource string
 function Player.lastDamageSource() end
 

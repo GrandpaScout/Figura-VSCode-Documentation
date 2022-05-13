@@ -59,7 +59,7 @@ function Animation.getReplace() end
 function Animation.getPlayState() end
 
 ---Returns the priority of the animation.
----@return number
+---@return integer
 function Animation.getPriority() end
 
 ---Returns whether the animation overrides in blockbench or not.
@@ -132,7 +132,7 @@ function Animation.setOverride(bool) end
 ---Priority determines how animations interact.  
 ---Animations with the same priority will blend together while animations of lower priority will not
 ---run at all if higher priority animation is running.
----@param priority number
+---@param priority integer
 function Animation.setPriority(priority) end
 
 ---Sets the speed of the animation. (1 = 100%)
