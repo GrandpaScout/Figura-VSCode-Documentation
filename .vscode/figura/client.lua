@@ -7,31 +7,40 @@
 ---For all other players running your script, it will return nil. (except for isHost())
 client={}
 
----Returns whether the first given version is ahead or behind the second given version.
----* `-1` if `ver1 < ver2`
----* `0` if `ver1 == ver2`
----* `1` if `ver1 > ver2`
----@param ver1 string
----@param ver2 string
+---Returns whether the first given version is ahead or behind the second given version.  
+---Both parameters must be valid semantic versions.
+---* `-1` if `version < compareTo`
+---* `0` if `version == compareTo`
+---* `1` if `version > compareTo`
+---@param version string
+---@param compareTo string
 ---@return number
-function client.checkVersion(ver1,ver2) end
+function client.checkVersion(version, compareTo) end
 
 ---Clears the title and subtitle text.
 function client.clearTitle() end
 
----Returns the most recently shown actionbar text. These persist through worlds. Crashes lua if the action bar was never shown.
+---Returns the most recently shown actionbar text.  
+---This persists through worlds.
+---
+---Note: This will cause a VM error if no action bar text has been shown since the game started.
 ---@return string
 function client.getActionBar() end
 
----Returns the namespace of the currently active shader. Returns nil none are applied. ex: "minecraft:shaders/post/creeper.json"
+---Returns the namespaced ID of the currently active shader.  
+---Returns nil if no shader is active.
 ---@return string
 function client.getActiveShader() end
 
----Returns the currently allocated memory in bytes
+---Returns the currently allocated memory in bytes.
 ---@return number
 function client.getAllocatedMemory() end
 
----Returns 5th line of the left side debug screen (in singleplayer world). ex: "C: 497/15000 (s) D: 12, pC: 000, pU: 00, aB: 12"
+---Returns the chunk count debug line from the debug screen.
+---
+---Note: This is not actually the count, this is the entire debug line containing that information
+---and may look similar to the example below.  
+---`"C: 497/15000 (s) D: 12, pC: 000, pU: 00, aB: 12"`
 ---@return string
 function client.getChunksCount() end
 
@@ -39,11 +48,16 @@ function client.getChunksCount() end
 ---@return boolean
 function client.getCrosshairEnabled() end
 
----Returns the offset of the crosshair. Returns nil if it hasn't been set yet.
+---Returns the offset of the crosshair.  
+---Returns nil if it hasn't been set yet.
 ---@return Vector2
 function client.getCrosshairPos() end
 
----Returns 5th line of the left side debug screen (in singleplayer world). ex: "E: 17/83, B: 0, SD: 12"
+---Returns the entity count debug line from the debug screen.
+---
+---Note: This is not actually the count, this is the entire debug line containing that information
+---and may look similar to the example below.  
+---`"E: 17/83, B: 0, SD: 12"`
 ---@return string
 function client.getEntityCount() end
 
@@ -51,19 +65,24 @@ function client.getEntityCount() end
 ---@return number
 function client.getFOV() end
 
----Returns 2nd line of the left side debug screen (in singleplayer world). ex: "67 fps T: 120 vsyncfancy fancy-clouds B: 2"
+---Returns the frame count debug line from the debug screen.
+---
+---Note: This is not actually the FPS, this is the entire debug line containing that information
+---and may look similar to the example below.  
+---`"67 fps T: 120 vsyncfancy fancy-clouds B: 2"`
 ---@return string
 function client.getFPS() end
 
----Like getScaleFactor but always returns what is stated in settings. Auto is 0.
+---Returns the GUI scale as set in Minecraft's settings.  
+---Auto is `0`.
 ---@return number
 function client.getGUIScale() end
 
----Returns if there are any Iris Shaders active. Spectator mob shaders do not count.
+---Returns if there are any Iris Shaders active.
 ---@return boolean
 function client.getIrisShadersEnabled() end
 
----Returns the version of Java currently running
+---Returns the version of Java currently running.
 ---@return string
 function client.getJavaVersion() end
 
@@ -79,11 +98,18 @@ function client.getMemoryInUse() end
 ---@return Vector2
 function client.getMousePos() end
 
----Returns the amount of notches the mousewheel has scrolled this tick. Scroll up is positive, scroll down is negative.
+---Returns the most recent direction the scroll wheel has scrolled.  
+---Calling this function resets the scroll wheel's direction back to neutral.
+---* Neutral: `0`
+---* Up: `1`
+---* Down: `-1`
 ---@return number
 function client.getMouseScroll() end
 
----Returns the name of the currently open GUI. This is not the GUI ID, but the name which with certain containers can be changed.
+---Returns the name of the currently open GUI.
+---
+---Note: This is *not* the ID of the GUI, it is the display name. This can be changed on certain
+---blocks by renaming them in an anvil.
 ---@return string
 function client.getOpenScreen() end
 
@@ -92,6 +118,8 @@ function client.getOpenScreen() end
 function client.getParticleCount() end
 
 ---Returns the GUI scale.
+---This might not be the same as the GUI scale set in Minecraft's settings due to a small window or
+---the GUI scale being set to `Auto`.
 ---@return number
 function client.getScaleFactor() end
 
@@ -99,15 +127,22 @@ function client.getScaleFactor() end
 ---@return Vector2
 function client.getScaledWindowSize() end
 
----Returns the brand of the server. ex: "Integrated","vanilla","Fabric","Paper"
+---Returns the brand of the server.
 ---@return string
 function client.getServerBrand() end
 
----Returns the 23rd line of the left side debug screen (in singleplayer world) without Mood. ex: "Sounds: 1/247 + 0/8"
+---Returns the sound count debug line from the debug screen.
+---
+---Note: This is not actually the count, this is (almost) the entire debug line containing that
+---information and may look similar to the example below.  
+---`"Sounds: 1/247 + 0/8"`
 ---@return string
 function client.getSoundCount() end
 
----Returns the most recently shown subtitle. If no subtitle has been previously set, the script will crash when trying to execute this.
+---Returns the most recently shown subtitle.  
+---
+---Note: This will cause a VM error if no subtitle has been shown since the game started or since
+---`.clearTitle()` was last called.
 ---@return string
 function client.getSubtitle() end
 
@@ -115,7 +150,10 @@ function client.getSubtitle() end
 ---@return number
 function client.getSystemTime() end
 
----Returns the last shown title overlay message.
+---Returns the most recently shown title.  
+---
+---Note: This will cause a VM error if no title has been shown since the game started or since
+---`.clearTitle()` was last called.
 ---@return string
 function client.getTitle() end
 
@@ -123,7 +161,8 @@ function client.getTitle() end
 ---@return string
 function client.getVersion() end
 
----Returns the "type" of Minecraft currently running. Figura only runs on Fabric atm so "Fabric" will be the only output.
+---Returns the "type" of Minecraft currently running.  
+---This is usually the currently running mod loader.
 ---@return string
 function client.getVersionType() end
 
@@ -139,7 +178,8 @@ function client.isHost() end
 ---@return boolean
 function client.isHudEnabled() end
 
----Returns if the singleplayer world is paused. Always returns false in multiplayer.
+---Returns if the singleplayer world is paused.  
+---Multiplayer games cannot be paused.
 ---@return boolean
 function client.isPaused() end
 
@@ -151,15 +191,19 @@ function client.isWindowFocused() end
 ---@param text string
 function client.setActionbar(text) end
 
----Setting to false will force the crosshair to stop rendering, similar to spectator mode.
+---Sets the visibility of the crosshair.
 ---@param bool boolean
 function client.setCrosshairEnabled(bool) end
 
----Moves the crosshair by the given offset. Change is only visual, does not effect place/break location.
+---Moves the crosshair by the given offset.
+---
+---This does not change the player's aim direction.
 ---@param offset Vector2
 function client.setCrosshairPos(offset) end
 
----Setting to true will force the mouse to be unlocked in the normal game camera. Has no effect on GUIs.
+---Sets if the mouse is forced to be unlocked during normal gameplay.
+---
+---Cannot remove the mouse in GUIs.
 ---@param bool boolean
 function client.setMouseUnlocked(bool) end
 
@@ -167,12 +211,12 @@ function client.setMouseUnlocked(bool) end
 ---@param text string
 function client.setSubtitle(text) end
 
----Set the text of the title, and then show the title and subtitle.
+---Set the text of the title and shows the title and subtitle.
 ---@param text string
 function client.setTitle(text) end
 
 ---Sets the fade durations for the title/subtitle.
----@param fadeInDur number
----@param holdDur number
----@param fadeOutDur number
-function client.setTitleTimes(fadeInDur,holdDur,fadeOutDur) end
+---@param fadeIn number
+---@param hold number
+---@param fadeOut number
+function client.setTitleTimes(fadeIn, hold, fadeOut) end

@@ -39,8 +39,21 @@ function logTable(tbl, showNested) end
 ---
 ---Returns a string containing any compile errors if conversion failed.
 ---@param body string
----@return string|fun():any
+---@return string|function
 function loadstring(body) end
+
+
+---@alias Type type
+---| '"vector"'
+
+---Returns the type of its only argument, coded as a string. The possible results of this function
+---are `"nil"` (a string, not the value `nil`), `"number"`, `"string"`, `"boolean"`, `"table"`,
+---`"function"`, `"thread"`, `"userdata"`, and `"vector"`.
+---
+---[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-type"])
+---@param v any
+---@return Type type
+function type(v) end
 
 
 ---**THIS FUNCTION DOES NOT EXIST UNTIL YOU CREATE IT!**  

@@ -3,22 +3,10 @@
 --================================================================================================--
 
 ---A side slot number.
----@alias SlotSideNumber
----| "1"
----| "2"
----| "3"
----| "4"
+---@alias SlotSideNumber 1|2|3|4
 
 ---A wheel slot number.
----@alias SlotNumber
----| "1"
----| "2"
----| "3"
----| "4"
----| "5"
----| "6"
----| "7"
----| "8"
+---@alias SlotNumber 1|2|3|4|5|6|7|8
 
 ---@alias ActionWheelTextureType TextureType
 ---| '"None"' #Nothing, uses an item instead.
@@ -32,27 +20,27 @@ function ActionWheelSlot.clear() end
 
 ---Returns the current color of the slot.  
 ---Returns `nil` if the color has not been set by `.setColor()`.
----@return VectorColor|nil
+---@return VectorColor?
 function ActionWheelSlot.getColor() end
 
 ---Returns the current function of the slot.  
 ---Returns `nil` if the function has not been set by `.setFunction()`.
----@return function|nil
+---@return function?
 function ActionWheelSlot.getFunction() end
 
 ---Returns the current hover color of the slot.  
 ---Returns `nil` if the hover color has not been set by `.setHoverColor()`.
----@return VectorColor|nil
+---@return VectorColor?
 function ActionWheelSlot.getHoverColor() end
 
 ---Returns the current hover item of the slot.  
 ---Returns `nil` if the hover item has not been set by `.setHoverItem()`.
----@return ItemStack|nil
+---@return ItemStack?
 function ActionWheelSlot.getHoverItem() end
 
 ---Returns the current item icon of the slot.  
 ---Returns `nil` if the item has not been set by `.setItem()`.
----@return ItemStack|nil
+---@return ItemStack?
 function ActionWheelSlot.getItem() end
 
 ---Returns the type of texture used.
@@ -64,8 +52,8 @@ function ActionWheelSlot.getTexture() end
 function ActionWheelSlot.getTextureScale() end
 
 ---Returns the current title of the slot.
----
----Note: Causes a VM Error if the title has not been set by `.setTitle()`.
+---Returns `nil` if the title has not been set by `.setTitle()`.
+---@return string?
 function ActionWheelSlot.getTitle() end
 
 ---Returns the UV used for rendering the texture as well as the texture size.
@@ -77,14 +65,15 @@ function ActionWheelSlot.getTitle() end
 function ActionWheelSlot.getUV() end
 
 ---Sets the color that the slot should be when idle.
----@param col VectorColor
-function ActionWheelSlot.setColor(col) end
+---@param color VectorColor
+function ActionWheelSlot.setColor(color) end
 
 ---Sets the function to run when the slot is clicked.  
----Second parameter gets fed into the given function.
+---If a `parameter` is given, the *current value* is saved as soon as the function is set and then
+---used every time the slot is activated.
 ---@param func function
 ---@param parameter? any
-function ActionWheelSlot.setFunction(func,parameter) end
+function ActionWheelSlot.setFunction(func, parameter) end
 
 ---Sets the color that the slot should be when hovered over.
 ---@param col VectorColor
@@ -99,10 +88,10 @@ function ActionWheelSlot.setHoverItem(item) end
 function ActionWheelSlot.setItem(item) end
 
 ---Sets the action wheel custom texture.  
----ID is only needed if type or "Resource"
+---`resourceID` is only needed if the texture type is set to "Resource"
 ---@param type ActionWheelTextureType
----@param ID string
-function ActionWheelSlot.setTexture(type, ID) end
+---@param resource? string
+function ActionWheelSlot.setTexture(type, resource) end
 
 ---Sets the scale of the texture.
 ---@param vector Vector2
@@ -124,7 +113,7 @@ function ActionWheelSlot.setUV(uvOffset, uvSize, textureSize) end
 --================================================================================================--
 
 ---The action wheel. This has up to 8 slots that can be customized to do whatever you want.  
----Hold the `Miscellaneous: Figura Action Wheel` keybind to use the action wheel.
+---Hold the `Figura: Action Wheel key` keybind to use the action wheel.
 action_wheel = {
   SLOT_1 = ActionWheelSlot,
   SLOT_2 = ActionWheelSlot,
@@ -148,7 +137,7 @@ function action_wheel.getRightSize() end
 ---@return SlotNumber number
 function action_wheel.getSelectedSlot() end
 
----Executes the function of the hovered over actionwheel
+---Executes the function of the hovered over action wheel slot.
 function action_wheel.runAction() end
 
 ---Sets the amount of slots on the left side of the action wheel.
@@ -159,6 +148,6 @@ function action_wheel.setLeftSize(size) end
 ---@param size SlotSideNumber
 function action_wheel.setRightSize(size) end
 
----Returns if the action wheel is currently open or not
+---Returns if the action wheel is currently open or not.
 ---@return boolean
 function action_wheel.isOpen() end
