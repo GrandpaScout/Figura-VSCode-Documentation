@@ -8,8 +8,9 @@
 ---A wheel slot number.
 ---@alias SlotNumber 1|2|3|4|5|6|7|8
 
----@alias ActionWheelTextureType TextureType
----| '"None"' #Nothing, uses an item instead.
+---@alias ActionWheelTextureType
+---| "None" #Nothing, uses an item instead.
+---| TextureType
 
 ---A slot on the action wheel.
 ---@class ActionWheelSlot
@@ -88,7 +89,7 @@ function ActionWheelSlot.setHoverItem(item) end
 function ActionWheelSlot.setItem(item) end
 
 ---Sets the action wheel custom texture.  
----`resourceID` is only needed if the texture type is set to "Resource"
+---`resource` is only needed if the texture type is set to `"Resource"`.
 ---@param type ActionWheelTextureType
 ---@param resource? string
 function ActionWheelSlot.setTexture(type, resource) end

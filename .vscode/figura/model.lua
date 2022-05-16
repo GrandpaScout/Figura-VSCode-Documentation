@@ -4,52 +4,52 @@
 
 ---The sides of a cube.
 ---@alias CubeSide
----| '"NORTH"'
----| '"SOUTH"'
----| '"EAST"'
----| '"WEST"'
----| '"UP"'
----| '"DOWN"'
----| '"ALL"'
+---| "NORTH"
+---| "SOUTH"
+---| "EAST"
+---| "WEST"
+---| "UP"
+---| "DOWN"
+---| "ALL"
 
 ---A parent type that the part will rotate with.
 ---@alias ParentType
----| '"None"' #Rotate with the origin of the player.
----| '"WORLD"' #Rotate with the world.
----| '"Model"' #Rotate with the entire model.
----| '"Head"' #Rotate with the player's head.
----| '"Torso"' #Rotate with the player's body.
----| '"LeftArm"' #Rotate with the player's left arm.
----| '"RightArm"' #Rotate with the player's right arm.
----| '"LeftLeg"' #Rotate with the player's left leg.
----| '"RightLeg"' #Rotate with the player's right leg.
----| '"LeftItemOrigin"' #Rotate with the player's left held item.
----| '"RightItemOrigin"' #Rotate with the player's right held item.
----| '"LeftElytraOrigin"' #Rotate with the player's left elytra wing's origin.
----| '"RightElytraOrigin"' #Rotate with the player's right elytra wing's origin.
----| '"LeftParrotOrigin"' #Rotate with the player's left parrot spot.
----| '"RightParrotOrigin"' #Rotate with the player's right parrot spot.
----| '"LeftElytra"' #Rotate with the player's left elytra wing.
----| '"RightElytra"' #Rotate with the player's right elytra wing.
----| '"Camera"' #Rotate to always face the camera.
+---| "None" #Rotate with the origin of the player.
+---| "WORLD" #Rotate with the world.
+---| "Model" #Rotate with the entire model.
+---| "Head" #Rotate with the player's head.
+---| "Torso" #Rotate with the player's body.
+---| "LeftArm" #Rotate with the player's left arm.
+---| "RightArm" #Rotate with the player's right arm.
+---| "LeftLeg" #Rotate with the player's left leg.
+---| "RightLeg" #Rotate with the player's right leg.
+---| "LeftItemOrigin" #Rotate with the player's left held item.
+---| "RightItemOrigin" #Rotate with the player's right held item.
+---| "LeftElytraOrigin" #Rotate with the player's left elytra wing's origin.
+---| "RightElytraOrigin" #Rotate with the player's right elytra wing's origin.
+---| "LeftParrotOrigin" #Rotate with the player's left parrot spot.
+---| "RightParrotOrigin" #Rotate with the player's right parrot spot.
+---| "LeftElytra" #Rotate with the player's left elytra wing.
+---| "RightElytra" #Rotate with the player's right elytra wing.
+---| "Camera" #Rotate to always face the camera.
 
 ---The possible types of a CustomModelPart
 ---@alias CustomModelPartType
----| '"CUBE"'
----| '"GROUP"'
----| '"MESH"'
+---| "CUBE"
+---| "GROUP"
+---| "MESH"
 
 ---@alias Shader
----| '"None"' #Do not use a shader.
----| '"EndPortal"' #Use the end portal shader.
----| '"Glint"' #Use the enchantment glint.
+---| "None" #Do not use a shader.
+---| "EndPortal" #Use the end portal shader.
+---| "Glint" #Use the enchantment glint.
 
 ---@alias TextureType
----| '"Custom"' #The custom texture suplied with the avatar.
----| '"Skin"' #Your Minecraft skin.
----| '"Cape"' #Your cape, or Steve if you dont have a cape.
----| '"Elytra"' #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
----| '"Resource"' #Any loaded texture including resource packs! or missing texture if not found.
+---| "Custom" #The custom texture suplied with the avatar.
+---| "Skin" #Your Minecraft skin.
+---| "Cape" #Your cape, or Steve if you dont have a cape.
+---| "Elytra" #Your elytra texture (NOT the cape-provided elytra!) (vanilla probably dont even use it at all)
+---| "Resource" #Any loaded texture including resource packs! or missing texture if not found.
 
 ---A basic model part with very few options for modifying it.
 ---@class BasicModelPart
@@ -59,23 +59,23 @@ local BasicModelPart = {}
 ---Returns `nil` if the part has not been toggled with `.setEnabled()` yet.
 ---
 ---If the function returns `nil` assume the part is enabled.
----@return boolean|nil
+---@return boolean?
 function BasicModelPart.getEnabled() end
 
 ---Returns the position offset of the part.  
 ---Returns `nil` if the part has not been moved with `.setPos()` yet.
 ---
 ---If the function returns `nil` assume the part is at `0,0,0`
----@return VectorPos|nil
+---@return VectorPos?
 function BasicModelPart.getPos() end
 
 ---Returns the rotation offset of the part.  
 ---Returns `nil` if the part has not been moved with `.setRot()` yet.
----@return VectorAng|nil
+---@return VectorAng?
 function BasicModelPart.getRot() end
 
 ---Returns the scale of the part set by `.setScale()`.
----@return VectorPos
+---@return VectorPos?
 function BasicModelPart.getScale() end
 
 ---Sets the visibility of the part.
@@ -111,13 +111,13 @@ function VanillaModelPart.getOriginEnabled() end
 function VanillaModelPart.getOriginPos() end
 
 ---Returns the part's original angle *in radians*.  
----If you want the angle in degrees, use `math.deg()`.
+---If you want the angle in degrees, use `math.deg()` or `<Vector>.toDeg()`.
 ---@return VectorAng
 function VanillaModelPart.getOriginRot() end
 
 ---Returns if the part's skin customization setting is enabled.  
 ---Returns `nil` if the part does not have a setting.
----@return boolean|nil
+---@return boolean?
 function VanillaModelPart.isOptionEnabled() end
 
 ---The proxy for the `CustomModelPart` class.  
@@ -136,22 +136,56 @@ local CustomModelPartProxy = {}
 ---like that to allow any key to become a `CustomModelPart` if needed.
 local CustomModelPart = {}
 
----A function that adds a new render task to this model part, with the provided parameters.
+---Sumneko's EmmyLua overloads kinda suck, this gives a much better overview for the overloads.
+---@diagnostic disable: duplicate-set-field
+
+---Adds a new item render task attached to this model part.
 ---
----Note: Unlike what the patch notes say, this function does not return a renderTask table.
----Use \<CustomModelPart\>.getRenderTask() instead.
----@param type RenderTaskType
+---Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
+---instead.
+---@param type string
 ---@param name string
----@param itemID string
+---@param itemID ItemStack|ItemID
 ---@param renderMode RenderMode
----@param emmisive? boolean
+---@param emissive? boolean
 ---@param pos? VectorPos
 ---@param rot? VectorAng
 ---@param scale? Vector3
 ---@param renderLayer? string
----@overload fun(type:'"BLOCK"',name:string,blockID:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
----@overload fun(type:'"TEXT"',name:string,text:string,emmisive?:boolean,pos?:VectorPos,rot?:VectorAng,scale?:Vector3)
-function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emmisive, pos, rot, scale, renderLayer) end
+---@return ItemTaskTable
+function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emissive, pos, rot, scale, renderLayer) end
+
+---Adds a new block render task attached to this model part.
+---
+---Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
+---instead.
+---@param type "BLOCK"
+---@param name string
+---@param blockID BlockState|BlockID
+---@param emissive boolean?
+---@param pos VectorPos?
+---@param rot VectorAng?
+---@param scale Vector3?
+---@param renderLayer string?
+---@return BlockTaskTable
+function CustomModelPart.addRenderTask(type, name, blockID, emissive, pos, rot, scale, renderLayer) end
+
+---Adds a new text render task attached to this model part.
+---
+---Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
+---instead.
+---@param type "TEXT"
+---@param name string
+---@param text string
+---@param emissive boolean?
+---@param pos VectorPos?
+---@param rot VectorAng?
+---@param scale Vector3?
+---@param renderLayer string?
+---@return TextTaskTable
+function CustomModelPart.addRenderTask(type, name, text, emissive, pos, rot, scale, renderLayer) end
+
+---@diagnostic enable: duplicate-set-field
 
 ---Remove ALL render tasks from this part.
 function CustomModelPart.clearAllRenderTasks() end
@@ -168,12 +202,12 @@ function CustomModelPart.getAnimRot() end
 ---@return Vector3
 function CustomModelPart.getAnimScale() end
 
----Returns a table containing this part children tables.
+---Returns a table containing this part's children.
 ---@return CustomModelPart[]
 function CustomModelPart.getChilderen() end
 
 ---Returns the current color of the part.  
----The default color is `0,0,0`.
+---The default color is `<1,1,1>`.
 ---@return VectorColor
 function CustomModelPart.getColor() end
 
@@ -181,13 +215,13 @@ function CustomModelPart.getColor() end
 ---@return boolean
 function CustomModelPart.getCullEnabled() end
 
----Returns if extra textures are rendered. (emmisive textures)
+---Returns if extra textures such as emissive textures are rendered.
 ---@return boolean
 function CustomModelPart.getExtraTexEnabled() end
 
----Returns the light value set by setLight.  
+---Returns the light value set by `.setLight()`.  
 ---Returns `nil` if it hasn't been set yet.
----@return Vector2|nil
+---@return Vector2?
 function CustomModelPart.getLight() end
 
 ---Returns if the part is only mimicing its parent part instead of having its origin connected to
@@ -195,7 +229,7 @@ function CustomModelPart.getLight() end
 ---@return boolean
 function CustomModelPart.getMimicMode() end
 
----Returns the name assigned in BlockBench of this part.
+---Returns the name assigned in Blockbench of this part.
 ---@return string
 function CustomModelPart.getName() end
 
@@ -205,9 +239,9 @@ function CustomModelPart.getName() end
 ---@return number
 function CustomModelPart.getOpacity() end
 
----Returns the overlay value set by setOverlay.
+---Returns the overlay value set by `.setOverlay()`.
 ---Returns `nil` if it hasn't been set yet.
----@return Vector2|nil
+---@return Vector2?
 function CustomModelPart.getOverlay() end
 
 ---Returns the parent type of the part.
@@ -220,7 +254,7 @@ function CustomModelPart.getPivot() end
 
 ---Returns a render task table of the given name, if any
 ---@param name string
----@return BlockTaskTable|ItemTaskTable|TextTaskTable
+---@return (BlockTaskTable|ItemTaskTable|TextTaskTable)?
 function CustomModelPart.getRenderTask(name) end
 
 ---Returns the *absolute* rotation of the part.
@@ -268,7 +302,7 @@ function CustomModelPart.partToWorldDir(dir) end
 ---Takes a `Vector` with a blockbench position, then:  
 ---* Makes a pivot `x` (which is *not* this part's pivot) at the center of the player's neck.
 ---* Offsets pivot `x` by this part's Lua position offset,
----* Rotates pivot `x`'s position around this part's (Lua position offset + Lua pivot offset),
+---* Rotates pivot `x`'s position around this part's `(Lua position offset + Lua pivot offset)`,
 ---* Adds the given blockbench position to the position of pivot `x`,
 ---* Rotates the new blockbench position around pivot `x` by the absolute rotation of this part.
 ---* Converts to an absolute world position and returns that position.
@@ -286,7 +320,7 @@ function CustomModelPart.removeRenderTask(name) end
 ---@param col VectorColor
 function CustomModelPart.setColor(col) end
 
----Enable/disable culling.
+---Enable/disable the inner faces of the part.
 ---@param boolean boolean
 function CustomModelPart.setCullEnabled(boolean) end
 
@@ -295,9 +329,11 @@ function CustomModelPart.setCullEnabled(boolean) end
 function CustomModelPart.setExtraTexEnabled(boolean) end
 
 ---Overrides the light level the part is rendered at.  
----Any value below 0 or above 15 will render the part invisible.
+---Any value below 0 or above 15 will render the part invisible.  
 ---`nil` returns the part to normal.
----@param vector? Vector2 {block, sky}
+---
+---The first value of the vector controls block light, the second controls sky light.
+---@param vector? Vector2
 function CustomModelPart.setLight(vector) end
 
 ---Sets the mimic mode of the model.  
@@ -312,10 +348,12 @@ function CustomModelPart.setMimicMode(state) end
 ---@param num number
 function CustomModelPart.setOpacity(num) end
 
----Overrides the overlay level the part is rendered at.
----Any value below 0 or above 15 will render the part black.
+---Overrides the overlay level the part is rendered at.  
+---Any value below 0 or above 15 will render the part black.  
 ---`nil` returns the part to normal.
----@param vector? Vector2 {white, hurt}
+---
+---The first value controls a white overlay, the second value controls the hurt overlay.
+---@param vector? Vector2
 function CustomModelPart.setOverlay(vector) end
 
 ---Sets the parent type of the part.
@@ -330,8 +368,6 @@ function CustomModelPart.setPivot(vector) end
 ---@param string string
 function CustomModelPart.setRenderLayer(string) end
 
----*This function uses the `CustomModelPart` definition.*
----***
 ---Sets the *absolute* rotation of the part.
 ---
 ---Note: This does *not* set the rotation offset.
@@ -342,11 +378,11 @@ function CustomModelPart.setRot(ang) end
 ---@param shader Shader
 function CustomModelPart.setShader(shader) end
 
----Changes which texture is applied to the part.
----ID is only needed with "Resource" type.
----@param textureType TextureType
----@param ID? string ex: "minecraft:textures/item/apple.png"
-function CustomModelPart.setTexture(textureType, ID) end
+---Changes which texture is applied to the part.  
+---`resource` is only needed if the texture type is set to `"Resource"`.
+---@param type TextureType
+---@param resource? string
+function CustomModelPart.setTexture(type, resource) end
 
 ---Set the size of the part's texture.
 ---@param vector Vector2
@@ -358,14 +394,14 @@ function CustomModelPart.setTextureSize(vector) end
 ---@param uv VectorUV
 function CustomModelPart.setUV(uv) end
 
----Sets the UV data of the given side.
+---Sets the UV data of the given side.  
 ---UV's must be in BlockBench format.
 ---@param face CubeSide
 ---@param vector Vector4
 function CustomModelPart.setUVData(face, vector) end
 
----Takes a `Vector` with a direction in world-space and
----returns a `Vector` with the direction relative to the part.
+---Takes a `Vector` with a direction in world-space and returns a `Vector` with the direction
+---relative to the part.
 ---
 ---Seems to act similar to `.partToWorldDir()`.
 ---@param dir VectorPos
@@ -506,6 +542,7 @@ first_person_model = {
 	OFF_HAND = {}
 }
 
+---A `table` containing the spyglass models.
 spyglass_model = {
   ---@type BasicModelPart
   LEFT_SPYGLASS = {},

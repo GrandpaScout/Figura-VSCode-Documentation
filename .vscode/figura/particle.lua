@@ -9,94 +9,94 @@
 ---
 ---Note: Modded particles that require an `extra` will not work and will instead error.
 ---@alias ParticleID
----| '"minecraft:ambient_entity_effect"'
----| '"minecraft:angry_villager"'
----| '"minecraft:ash"'
----| '"minecraft:barrier"'
----| '"minecraft:block"'
----| '"minecraft:bubble"'
----| '"minecraft:bubble_column_up"'
----| '"minecraft:bubble_pop"'
----| '"minecraft:campfire_cosy_smoke"'
----| '"minecraft:campfire_signal_smoke"'
----| '"minecraft:cloud"'
----| '"minecraft:composter"'
----| '"minecraft:crimson_spore"'
----| '"minecraft:crit"'
----| '"minecraft:current_down"'
----| '"minecraft:damage_indicator"'
----| '"minecraft:dolphin"'
----| '"minecraft:dragon_breath"'
----| '"minecraft:dripping_dripstone_lava"' #1.17 only.
----| '"minecraft:dripping_dripstone_water"' #1.17 only.
----| '"minecraft:dripping_honey"'
----| '"minecraft:dripping_lava"'
----| '"minecraft:dripping_obsidian_tear"'
----| '"minecraft:dripping_water"'
----| '"minecraft:dust"'
----| '"minecraft:dust_color_transition"'
----| '"minecraft:effect"'
----| '"minecraft:elder_guardian"'
----| '"minecraft:electric_spark"'
----| '"minecraft:enchant"'
----| '"minecraft:enchanted_hit"'
----| '"minecraft:end_rod"'
----| '"minecraft:entity_effect"'
----| '"minecraft:explosion"'
----| '"minecraft:explosion_emitter"'
----| '"minecraft:falling_dripstone_lava"' #1.17 only.
----| '"minecraft:falling_dripstone_water"' #1.17 only.
----| '"minecraft:falling_dust"'
----| '"minecraft:falling_honey"'
----| '"minecraft:falling_lava"'
----| '"minecraft:falling_nectar"'
----| '"minecraft:falling_obsidian_tear"'
----| '"minecraft:falling_spore_blossom"' #1.17 only.
----| '"minecraft:falling_water"'
----| '"minecraft:firework"'
----| '"minecraft:fishing"'
----| '"minecraft:flame"'
----| '"minecraft:flash"'
----| '"minecraft:glow"' #1.17 only.
----| '"minecraft:glow_squid_ink"' #1.17 only.
----| '"minecraft:happy_villager"'
----| '"minecraft:heart"'
----| '"minecraft:instant_effect"'
----| '"minecraft:item"'
----| '"minecraft:item_slime"'
----| '"minecraft:item_snowball"'
----| '"minecraft:landing_honey"'
----| '"minecraft:landing_lava"'
----| '"minecraft:landing_obsidian_tear"'
----| '"minecraft:large_smoke"'
----| '"minecraft:lava"'
----| '"minecraft:light"' #1.17 only.
----| '"minecraft:mycelium"'
----| '"minecraft:nautilus"'
----| '"minecraft:note"'
----| '"minecraft:poof"'
----| '"minecraft:portal"'
----| '"minecraft:rain"'
----| '"minecraft:reverse_portal"'
----| '"minecraft:scrape"' #1.17 only.
----| '"minecraft:smoke"'
----| '"minecraft:sneeze"'
----| '"minecraft:snowflake"' #1.17 only.
----| '"minecraft:soul"'
----| '"minecraft:soul_fire_flame"'
----| '"minecraft:spit"'
----| '"minecraft:spore_blossom_air"' #1.17 only.
----| '"minecraft:splash"'
----| '"minecraft:squid_ink"'
----| '"minecraft:sweep_attack"'
----| '"minecraft:totem_of_undying"'
----| '"minecraft:underwater"'
----| '"minecraft:vibration"' #1.17 only.
----| '"minecraft:warped_spore"'
----| '"minecraft:wax_off"' #1.17 only.
----| '"minecraft:wax_on"' #1.17 only.
----| '"minecraft:white_ash"'
----| '"minecraft:witch"'
+---| "minecraft:ambient_entity_effect"
+---| "minecraft:angry_villager"
+---| "minecraft:ash"
+---| "minecraft:barrier"
+---| "minecraft:block"
+---| "minecraft:bubble"
+---| "minecraft:bubble_column_up"
+---| "minecraft:bubble_pop"
+---| "minecraft:campfire_cosy_smoke"
+---| "minecraft:campfire_signal_smoke"
+---| "minecraft:cloud"
+---| "minecraft:composter"
+---| "minecraft:crimson_spore"
+---| "minecraft:crit"
+---| "minecraft:current_down"
+---| "minecraft:damage_indicator"
+---| "minecraft:dolphin"
+---| "minecraft:dragon_breath"
+---| "minecraft:dripping_dripstone_lava"
+---| "minecraft:dripping_dripstone_water"
+---| "minecraft:dripping_honey"
+---| "minecraft:dripping_lava"
+---| "minecraft:dripping_obsidian_tear"
+---| "minecraft:dripping_water"
+---| "minecraft:dust"
+---| "minecraft:dust_color_transition"
+---| "minecraft:effect"
+---| "minecraft:elder_guardian"
+---| "minecraft:electric_spark"
+---| "minecraft:enchant"
+---| "minecraft:enchanted_hit"
+---| "minecraft:end_rod"
+---| "minecraft:entity_effect"
+---| "minecraft:explosion"
+---| "minecraft:explosion_emitter"
+---| "minecraft:falling_dripstone_lava"
+---| "minecraft:falling_dripstone_water"
+---| "minecraft:falling_dust"
+---| "minecraft:falling_honey"
+---| "minecraft:falling_lava"
+---| "minecraft:falling_nectar"
+---| "minecraft:falling_obsidian_tear"
+---| "minecraft:falling_spore_blossom"
+---| "minecraft:falling_water"
+---| "minecraft:firework"
+---| "minecraft:fishing"
+---| "minecraft:flame"
+---| "minecraft:flash"
+---| "minecraft:glow"
+---| "minecraft:glow_squid_ink"
+---| "minecraft:happy_villager"
+---| "minecraft:heart"
+---| "minecraft:instant_effect"
+---| "minecraft:item"
+---| "minecraft:item_slime"
+---| "minecraft:item_snowball"
+---| "minecraft:landing_honey"
+---| "minecraft:landing_lava"
+---| "minecraft:landing_obsidian_tear"
+---| "minecraft:large_smoke"
+---| "minecraft:lava"
+---| "minecraft:light"
+---| "minecraft:mycelium"
+---| "minecraft:nautilus"
+---| "minecraft:note"
+---| "minecraft:poof"
+---| "minecraft:portal"
+---| "minecraft:rain"
+---| "minecraft:reverse_portal"
+---| "minecraft:scrape"
+---| "minecraft:smoke"
+---| "minecraft:sneeze"
+---| "minecraft:snowflake"
+---| "minecraft:soul"
+---| "minecraft:soul_fire_flame"
+---| "minecraft:spit"
+---| "minecraft:spore_blossom_air"
+---| "minecraft:splash"
+---| "minecraft:squid_ink"
+---| "minecraft:sweep_attack"
+---| "minecraft:totem_of_undying"
+---| "minecraft:underwater"
+---| "minecraft:vibration"
+---| "minecraft:warped_spore"
+---| "minecraft:wax_off"
+---| "minecraft:wax_on"
+---| "minecraft:white_ash"
+---| "minecraft:witch"
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--
@@ -165,8 +165,7 @@ particle = {}
 ---
 ---> **minecraft:dripping_honey** / **minecraft:dripping_lava** /
 ---**minecraft:dripping_obsidian_tear** / **minecraft:dripping_water** /
----**minecraft:dripping_dripstone_lava** *1.17 only* / **minecraft:dripping_dripstone_water**
----*1.17 only*
+---**minecraft:dripping_dripstone_lava** / **minecraft:dripping_dripstone_water**
 --->
 ---> Velocity is completely ignored and always sticks for a while before falling until hitting
 ---something solid.
@@ -180,7 +179,7 @@ particle = {}
 ---> `w` is a number `0..10` for the size of the particle.
 ---> ***
 ---
----> **minecraft:dust_color_transition** *1.17 only!*
+---> **minecraft:dust_color_transition**
 --->
 ---> The last three values of `pos_vel` set the end color of the particle.  
 ---> Each color is a number `0..1`.
@@ -221,13 +220,12 @@ particle = {}
 ---> **minecraft:falling_honey** / **minecraft:falling_lava** / **minecraft:falling_nectar** /
 ---**minecraft:falling_obsidian_tear** / **minecraft:falling_water** / **minecraft:landing_honey** /
 ---**minecraft:landing_lava** / **minecraft:landing_obsidian_tear** /
----**minecraft:falling_dripstone_lava** *1.17 only* / **minecraft:falling_dripstone_water**
----*1.17 only*
+---**minecraft:falling_dripstone_lava** / **minecraft:falling_dripstone_water**
 --->
 ---> Velocity is completely ignored and falls until hitting something solid.
 ---> ***
 ---
----> **minecraft:instant_effect**/**minecraft:witch**
+---> **minecraft:instant_effect** / **minecraft:witch**
 --->
 ---> Velocity is converted into a direction.  
 ---> Any horizontal velocity is applied in all horizontal directions randomly.  

@@ -2,59 +2,48 @@
 --=====  CLASSES  ================================================================================--
 --================================================================================================--
 
----A `table` with formatting keys.  
----The values in this table control what formatting effects are applied to the text.
----@class FormatTable
----@field BOLD? boolean
----@field ITALIC? boolean
----@field UNDERLINE? boolean
----@field OBFUSCATED? boolean
----@field STRIKETHROUGH? boolean
-
 ---A space with the player's name visible in it.
 ---@class Nameplate
 local Nameplate = {}
 
----Returns if the nameplate is visible.  
----Returns `nil` if it has not been set by `.setEnabled()`.
----@return boolean
+---Returns whatever was passed through `.setEnabled()` last.
+---@return boolean?
 function Nameplate.getEnabled() end
 
----Returns the position offset of the nameplate in blocks.  
----Returns `nil` if the position offset has not been set by `.setPos()`.
----
----Note: This value might not be accurate if the player's entity is scaled.
----@return VectorPos|nil
+---Returns whatever was passed through `.setPos()` last.
+---@return VectorPos?
 function Nameplate.getPos() end
 
----Returns the scale of the nameplate.  
----Returns nil if the scale has not been set by `.setScale()`.
----@return VectorPos|nil
+---Returns whatever was passed through `.setScale()` last.
+---@return VectorPos?
 function Nameplate.getScale() end
 
 ---Returns the text in the nameplate.  
----Returns `nil` if the text has not been set by `.setPos()`.
+---Returns `nil` if the text has not been set by `.setText()`.
+---@return string?
 function Nameplate.getText() end
 
 ---Does nothing...  
 ---For a version that does something, check the ENTITY nameplate.
----@param bool boolean
+---@param bool? boolean
 function Nameplate.setEnabled(bool) end
 
 ---Does nothing...  
 ---For a version that does something, check the ENTITY nameplate.
----@param vec3 VectorPos
+---@param vec3? VectorPos
 function Nameplate.setPos(vec3) end
 
 ---Does nothing...  
 ---For a version that does something, check the ENTITY nameplate.
----@param vec3 VectorPos
+---@param vec3? VectorPos
 function Nameplate.setScale(vec3) end
 
 ---Sets the text of the nameplate.  
 ---All text is placed to the left of the Figura mark.  
----Uses JSON Formatting.
----@param str string
+---Set to `nil` to reset to default.
+---
+---Can use [Raw JSON Text](https://minecraft.fandom.com/wiki/Raw_JSON_text_format) formatting.
+---@param str? string
 function Nameplate.setText(str) end
 
 ---EntityNameplate ⇐ Nameplate
@@ -63,24 +52,38 @@ function Nameplate.setText(str) end
 ---@class EntityNameplate : Nameplate
 local EntityNameplate = {}
 
----*This function uses the `EntityNameplate` definition.*
----***
----Sets if the nameplate is visible.
----@param bool boolean
+---Returns if the nameplate is visible.  
+---Returns `nil` if it has not been set by `.setEnabled()`.
+---@return boolean?
+function EntityNameplate.getEnabled() end
+
+---Returns the position offset of the nameplate in blocks.  
+---Returns `nil` if the position offset has not been set by `.setPos()`.
+---
+---Note: This value might not be accurate if the player's entity is scaled.
+---@return VectorPos?
+function EntityNameplate.getPos() end
+
+---Returns the scale of the nameplate.  
+---Returns nil if the scale has not been set by `.setScale()`.
+---@return VectorPos?
+function EntityNameplate.getScale() end
+
+---Sets if the nameplate is visible.  
+---Set to `nil` to reset to default.
+---@param bool? boolean
 function EntityNameplate.setEnabled(bool) end
 
----*This function uses the `EntityNameplate` definition.*
----***
----Sets the position offset of the nameplate in blocks.
+---Sets the position offset of the nameplate in blocks.  
+---Set to `nil` to reset to default.
 ---
 ---Note: This value is not accurate if the player's entity is scaled.
----@param vec3 VectorPos
+---@param vec3? VectorPos
 function EntityNameplate.setPos(vec3) end
 
----*This function uses the `EntityNameplate` definition.*
----***
----Sets the scale of the nameplate.
----@param vec3 VectorPos
+---Sets the scale of the nameplate.  
+---Set to `nil` to reset to default.
+---@param vec3? VectorPos
 function EntityNameplate.setScale(vec3) end
 
 --================================================================================================--

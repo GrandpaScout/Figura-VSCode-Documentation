@@ -28,14 +28,14 @@ I decided to take the documentation one step further and allow it to be read in 
 having to switch to a wiki page every time you want to look at a function or the methods of a class.
 
 # Using This Documentation  
-This documentation uses EmmyLua Annotations to document everything, so you should use a Lua Language
-Server that supports it. (Such as
-[sumneko's Language Server](#sumnekos-language-server).)
+This documentation uses Sumneko-flavored EmmyLua Annotations to document everything.  
+Use [sumneko's Language Server](#sumnekos-language-server) to read it.
 
 **(If you use Manuel_'s
 [Figura Extension](https://marketplace.visualstudio.com/items?itemName=Manuel-Underscore.figura),
-you will not need to manually install it. Just enable the `figura.checkForNewDocumentationVersion`
-and `figura.useLanguageServer` settings to have this documentation downloaded automatically.)**
+you will not need to manually install the documentation. Just enable the
+`figura.checkForNewDocumentationVersion` and `figura.useLanguageServer` settings to have this
+documentation downloaded automatically.)**
 
 The `.vscode` folder supplied should be placed in `<minecraft>\figura\model_files\` and the
 workspace should have the `model_files` folder be the root.  
@@ -121,7 +121,8 @@ take all of the values.
 
   * A variable was declared locally more than once in the same block.
 
-  None of these issues will cause errors, but they will cause the code to not behave properly.
+  None of these issues will cause errors, but they are usually caused by mistakes made by the
+programmer.
 
 * 
   ```json
@@ -152,8 +153,8 @@ This documentation uses
 [sumneko's Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) to
 read over the documentation and convert it to a format usable by VSCode's suggest feature.
 
-While any Language Server that can read EmmyLua Annotations is supported, the `settings.json` will
-only work with sumneko's server.
+The specific flavor of EmmyLua annotations used in this documentation is only supported by Sumneko's
+server.
 
 ## The Manual
 This documentation also contains a manual that allows you to learn about this documentation while

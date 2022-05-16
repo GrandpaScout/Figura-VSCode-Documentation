@@ -3,21 +3,32 @@
 --================================================================================================--
 
 ---@alias RaycastShapeHandling
----|'"COLLIDER"'
----|'"OUTLINE"'
----|'"VISUAL"'
+---| "COLLIDER" #The shape entities collide with
+---| "OUTLINE" #The block outline when looked at
+---| "VISUAL" #What Minecraft believes is the sight-blocking shape
 
 ---@alias RaycastFluidHandling
----|'"NONE"'
----|'"SOURCE_ONLY"'
----|'"ANY"'
+---| "NONE" #Do not raycast fluids
+---| "SOURCE_ONLY" #Only raycast fluid sources
+---| "ANY" #Raycast any fluid
+
+---A predicate that tests for a block.
+---
+---Return `true` to stop raycasting and return the current block.  
+---Return `false` to continue and ignore the current block.
+---@alias BlockPredicate fun(block: BlockState, pos: VectorPos): boolean
+
+---A predicate that tests for an entity.
+---
+---Return `true` to stop raycasting and return the current entity.  
+---Return `false` to continue and ignore the current entity.
+---@alias EntityPredicate fun(entity: Entity|LivingEntity|Player): boolean
 
 --================================================================================================--
 --=====  FUNCTIONS  ==============================================================================--
 --================================================================================================--
 
----Contains generic rendering functions to get and set shadow size and check if the viewer is in
----first person.
+---Contains generic functions related to rendering. Also contains some raycasting.
 renderer = {}
 
 ---Returns the camera position of the player executing the script.
@@ -28,24 +39,26 @@ function renderer.getCameraPos() end
 ---@return VectorAng
 function renderer.getCameraRot() end
 
----Returns if fire can be rendered on the avatar
----@return boolean
+---Returns if fire can be rendered on the avatar.  
+---Returns `nil` if it has not been set by `.setRenderFire()`.
+---@return boolean?
 function renderer.getRenderFire() end
 
----Returns if your player head shows your figura HEAD/SKULL (true) or your vanilla head (false).
+---Returns if your player head shows your Figura HEAD/SKULL (true) or your vanilla head (false).
 ---@return boolean
 function renderer.getRenderPlayerHead() end
 
 ---Returns the radius of the player's shadow.  
 ---Returns `nil` if the size has not been set by `.setShadowSize()`.
----@return number|nil
+---@return number?
 function renderer.getShadowSize() end
 
----Returns the lengh, in pixels, of a text/json
+---Returns the length in pixels of a string or Raw JSON Text.
 ---@param text string
+---@return integer
 function renderer.getTextWidth(text) end
 
----Returns if the camera is in front of or behind the player
+---Returns if the camera is in front of or behind the player.
 ---@return boolean
 function renderer.isCameraBackwards() end
 
@@ -68,39 +81,43 @@ function renderer.isMountShadowEnabled() end
 ---@param endPos VectorPos
 ---@param shapeHandling RaycastShapeHandling
 ---@param fluidHandling RaycastFluidHandling
----@param predicate? fun(blockState:BlockState|string,pos:VectorPos):boolean
----@return {state:BlockState, pos:VectorPos}
+---@param predicate? BlockPredicate
+---@return {state: BlockState, pos: VectorPos}?
 function renderer.raycastBlocks(startPos, endPos, shapeHandling, fluidHandling, predicate) end
 
 ---Casts a ray from startPos to endPos, returning the first entity it sees on the way.  
 ---If the ray never hits anything, then the function returns nil.
 ---@param startPos VectorPos
 ---@param endPos VectorPos
----@param predicate? fun(entity:Entity|LivingEntity|Player):boolean
----@return {entity:Entity|LivingEntity|Player, pos:VectorPos}
+---@param predicate? EntityPredicate
+---@return {entity:Entity|LivingEntity|Player, pos:VectorPos}?
 function renderer.raycastEntities(startPos, endPos, predicate) end
 
----Toggle the render of the entity youre riding
----@param boolean boolean
-function renderer.setMountEnabled(boolean) end
+---Toggle the render of the entity you are riding.
+---@param enabled boolean
+function renderer.setMountEnabled(enabled) end
 
----Toggle the shadow of the entity youre riding
----@param boolean boolean
-function renderer.setMountShadowEnabled(boolean) end
+---Toggle the shadow of the entity you are riding.
+---@param enabled boolean
+function renderer.setMountShadowEnabled(enabled) end
 
----Toggle the rendering of fire on your avatar
----@param boolean boolean
-function renderer.setRenderFire(boolean) end
+---Toggle the rendering of fire on your avatar.  
+---Set to `nil` to reset to default.
+---@param enabled? boolean
+function renderer.setRenderFire(enabled) end
 
 ---Toggle whether your playerhead renders your avatar's HEAD/SKULL or your vanilla skin.
----@param boolean boolean
-function renderer.setRenderPlayerHead(boolean) end
+---@param enabled boolean
+function renderer.setRenderPlayerHead(enabled) end
 
 ---Sets the radius of the player's shadow.  
 ---Set the radius to `nil` to reset the shadow.
----@param radius number|nil
+---@param radius number?
 function renderer.setShadowSize(radius) end
 
----Shows the animation of you swinging your arm.
----@param offhand? boolean #true to swing offhand instead of mainhand.
+---Shows the animation of you swinging your arm.  
+---Set `offhand` to swing the offhand arm instead.
+---
+---Note: This is automatically synced to other players.
+---@param offhand? boolean
 function renderer.swingArm(offhand) end
