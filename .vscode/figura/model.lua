@@ -136,9 +136,6 @@ local CustomModelPartProxy = {}
 ---like that to allow any key to become a `CustomModelPart` if needed.
 local CustomModelPart = {}
 
----Sumneko's EmmyLua overloads kinda suck, this gives a much better overview for the overloads.
----@diagnostic disable: duplicate-set-field
-
 ---Adds a new render task attached to this model part.
 ---
 ---Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
@@ -147,8 +144,6 @@ local CustomModelPart = {}
 ---@overload fun(type: "ITEM", name: string, value: ItemStack|ItemID, renderMode: RenderMode, emissive?: boolean, pos?: VectorPos, rot?: VectorAng, scale?: VectorPos, renderLayer?: string)
 ---@overload fun(type: "BLOCK", name: string, value: BlockState|BlockID, emissive?: boolean, pos?: VectorPos, rot?: VectorAng, scale?: VectorPos, renderLayer?: string)
 function CustomModelPart.addRenderTask(type, name, value, ...) end
-
----@diagnostic enable: duplicate-set-field
 
 ---Remove ALL render tasks from this part.
 function CustomModelPart.clearAllRenderTasks() end
