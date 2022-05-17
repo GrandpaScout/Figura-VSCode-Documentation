@@ -139,51 +139,14 @@ local CustomModelPart = {}
 ---Sumneko's EmmyLua overloads kinda suck, this gives a much better overview for the overloads.
 ---@diagnostic disable: duplicate-set-field
 
----Adds a new item render task attached to this model part.
+---Adds a new render task attached to this model part.
 ---
 ---Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
 ---instead.
----@param type string
----@param name string
----@param itemID ItemStack|ItemID
----@param renderMode RenderMode
----@param emissive? boolean
----@param pos? VectorPos
----@param rot? VectorAng
----@param scale? Vector3
----@param renderLayer? string
----@return ItemTaskTable
-function CustomModelPart.addRenderTask(type, name, itemID, renderMode, emissive, pos, rot, scale, renderLayer) end
-
----Adds a new block render task attached to this model part.
----
----Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
----instead.
----@param type "BLOCK"
----@param name string
----@param blockID BlockState|BlockID
----@param emissive boolean?
----@param pos VectorPos?
----@param rot VectorAng?
----@param scale Vector3?
----@param renderLayer string?
----@return BlockTaskTable
-function CustomModelPart.addRenderTask(type, name, blockID, emissive, pos, rot, scale, renderLayer) end
-
----Adds a new text render task attached to this model part.
----
----Note: This function does not return the render task. Use `<CustomModelPart>.getRenderTask()`
----instead.
----@param type "TEXT"
----@param name string
----@param text string
----@param emissive boolean?
----@param pos VectorPos?
----@param rot VectorAng?
----@param scale Vector3?
----@param renderLayer string?
----@return TextTaskTable
-function CustomModelPart.addRenderTask(type, name, text, emissive, pos, rot, scale, renderLayer) end
+---@overload fun(type: "TEXT", name: string, value: string, emissive?: boolean, pos?: VectorPos, rot?: VectorAng, scale?: VectorPos)
+---@overload fun(type: "ITEM", name: string, value: ItemStack|ItemID, renderMode: RenderMode, emissive?: boolean, pos?: VectorPos, rot?: VectorAng, scale?: VectorPos, renderLayer?: string)
+---@overload fun(type: "BLOCK", name: string, value: BlockState|BlockID, emissive?: boolean, pos?: VectorPos, rot?: VectorAng, scale?: VectorPos, renderLayer?: string)
+function CustomModelPart.addRenderTask(type, name, value, ...) end
 
 ---@diagnostic enable: duplicate-set-field
 
