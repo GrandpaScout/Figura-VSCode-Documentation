@@ -66,7 +66,7 @@ function Vector.distanceTo(vec) end
 ---@return number
 function Vector.dot(vec) end
 
----Gets the distance between `{0,0,0,0,0,0}` and this `Vector`.
+---Gets the distance between `<0,0,0,0,0,0>` and this `Vector`.
 ---@return number
 function Vector.getLength() end
 
@@ -213,10 +213,12 @@ function Vector.toRad() end
 ---***
 ---A color value. Stored in `Red, Green, Blue, Alpha` format.  
 ---Color vectors use numbers between 0 and 1.
----If your numbers are between 0 and 255, divide your numbers by 255.  
----Ex: To change `100,237,76` to fit in a color vector, change it to `100/255,237/255,76/255`.
 ---
----Note: Despite there being an `a` accessor, it is very rarely used. Assume it is not used unless specified.
+---If your numbers are between 0 and 255, divide your numbers by 255.  
+---Ex: To change `<100,237,76>` to fit in a color vector, change it to `<100/255,237/255,76/255>`.
+---
+---Note: Despite there being an `a` accessor, it is very rarely used. Assume it is not used unless
+---otherwise specified.
 ---
 ---The following accessors correspond to the following numbers:
 --->1: r  
@@ -236,11 +238,13 @@ function Vector.toRad() end
 ---***
 ---A color value. Stored in `Hue, Saturation, Value, Alpha` format.  
 ---Color vectors use numbers between 0 and 1.
----If your hue is between 0-360, divide it by 360.  
----If your saturation or value are between 0 and 255, divide them by 255.  
----Ex: To change `290,75,50` to fit in a color vector, change it to `290/360,75/100,50/100`.
 ---
----Note: Despite there being an `a` accessor, it is very rarely used. Assume it is not used unless specified.
+---If your hue is between 0-360, divide it by 360.  
+---If your saturation or value are between 0 and 100, divide them by 100.  
+---Ex: To change `<290,75,50>` to fit in a color vector, change it to `<290/360,75/100,50/100>`.
+---
+---Note: Despite there being an `a` accessor, it is very rarely used. Assume it is not used unless
+---othewise specified.
 ---
 ---The following accessors correspond to the following numbers:
 --->1: r (Hue)  
@@ -260,10 +264,11 @@ function Vector.toRad() end
 ---***
 ---A UV position offset.  
 ---UV vectors use numbers between 0 and 1.  
----Ex: To convert a UV offset of 10 pixels right and 5 pixels down, use `10/image_width,5/image_height`  
+---Ex: To convert a UV offset of 10 pixels right and 5 pixels down, use
+---`10/image_width,5/image_height`  
 ---where `image_width` and `image_height` are the size of your texture in pixels.
 ---
----The following letters correspond to the following numbers:
+---The following accessors correspond to the following numbers:
 --->1: u  
 --->2: v
 ---
@@ -294,7 +299,7 @@ function vectors.axisAngleToEuler(axis, angle) end
 function vectors.fromQuaternion(quaternion) end
 
 ---Creates a Vector with `x` amount of numbers.
----@param x "1"|"2"|"3"|"4"|"5"|"6"
+---@param x 1|2|3|4|5|6
 ---@return Vector
 function vectors.getVector(x) end
 
@@ -308,7 +313,7 @@ function vectors.hsvToRGB(vec) end
 ---Creates a Color Vector from a 24 bit integer.
 ---
 ---Note: The resulting color will not have `a` set.
----@param x number
+---@param x integer
 ---@return VectorColor
 function vectors.intToRGB(x) end
 
@@ -337,7 +342,7 @@ function vectors.rgbToHSV(vec) end
 
 ---Creates a number from a Color Vector.
 ---@param vec VectorColor
----@return number
+---@return integer
 function vectors.rgbToINT(vec) end
 
 ---Return a vector after it has been rotated around the given axis by `angle` degrees.
@@ -347,15 +352,15 @@ function vectors.rgbToINT(vec) end
 ---@return Vector
 function vectors.rotateAroundAxis(vector, axis, angle) end
 
----Returns a vector after it is rotated by the given quaternion.
----***`vector` MUST BE IN RADIANS. USE <vec<these extra brackets are necessary>>.toRad() FIRST.***
----Output will also be in radians. Use <vec<>>.toDeg() to turn back into a rotation usable by Minecraft.
+---Returns a vector after it is rotated by the given quaternion.  
+---The vectors given must be in radians.  
+---The output will also be in radians.
 ---@param vector VectorAng
 ---@param quaternion Vector4
 ---@return VectorAng
 function vectors.rotateWithQuaternion(vector, quaternion) end
 
----Returns a quaternion from the given XYZ Euler rotation
+---Returns a quaternion from the given XYZ Euler rotation.
 ---@param vector Vector3
 ---@return Vector4
 function vectors.toQuaternion(vector) end
@@ -367,11 +372,17 @@ function vectors.toQuaternion(vector) end
 ---@return VectorPos
 function vectors.worldToPart(vec) end
 
----Same as worldToPartPos but tied with the camera instead.
+---Same as `<CustomModelPart>.worldToPartPos()` but tied with the camera instead.
 ---@param offset VectorPos
 ---@return VectorPos
 function vectors.worldToCameraPos(offset) end
 
+---Returns the position on the screen where a given world position is.
+---
+---The first two values are the X and Y position of the coordinate on the screen. (From `-1` to `1`)  
+---The third value is some value that is `>1` when the coordinate is in front of the screen and `<1`
+---when behind the screen.  
+---The fourth value is the distance of the coordinate from the camera.
 ---@param pos VectorPos
 ---@return Vector4
 function vectors.worldToScreenSpace(pos) end
