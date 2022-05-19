@@ -1127,7 +1127,7 @@ local BlockStateProperties = {
 
   ---For most blocks, what direction the block faces.  
   ---  
-  ---For wall-attached [[bell]]s as well as [[cocoa]], the opposite is true.<ref>{{bug|MC-193943}}</ref>
+  ---For wall-attached bells as well as cocoa, the opposite is true.
   ---***
   ---> | State | Valid Blocks |
   ---> | :---- | :----------- |
