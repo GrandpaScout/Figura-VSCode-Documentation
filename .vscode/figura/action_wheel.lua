@@ -59,9 +59,8 @@ function ActionWheelSlot.getTitle() end
 
 ---Returns the UV used for rendering the texture as well as the texture size.
 ---
----First two numbers are the offset  
----Next two numbers are the size of the UV  
----Last two numbers are the size of the texture itself
+---First two numbers are the offset, next two numbers are the size of the UV,  
+---last two numbers are the size of the texture itself.
 ---@return Vector6
 function ActionWheelSlot.getUV() end
 

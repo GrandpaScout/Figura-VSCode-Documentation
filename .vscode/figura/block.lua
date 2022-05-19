@@ -282,6 +282,10 @@
 ---| "minecraft:deepslate_iron_ore" #Deepslate Iron Ore
 ---| "minecraft:deepslate_lapis_ore" #Deepslate Lapis Lazuli Ore
 ---| "minecraft:deepslate_redstone_ore" #Deepslate Redstone Ore
+---| "minecraft:deepslate_tile_slab" #Deepslate Tile Slab
+---| "minecraft:deepslate_tile_stairs" #Deepslate Tile Stairs
+---| "minecraft:deepslate_tile_wall" #Deepslate Tile Wall
+---| "minecraft:deepslate_tiles" #Deepslate Tiles
 ---| "minecraft:detector_rail" #Detector Rail
 ---| "minecraft:diamond_block" #Block of Diamond
 ---| "minecraft:diamond_ore" #Diamond Ore
@@ -358,9 +362,9 @@
 ---| "minecraft:gray_wool" #Gray Wool
 ---| "minecraft:green_banner" #Green Banner
 ---| "minecraft:green_bed" #Green Bed
----| "minecraft:green_carpet" #Green Carpet
 ---| "minecraft:green_candle" #Green Candle
 ---| "minecraft:green_candle_cake" #Cake with Green Candle
+---| "minecraft:green_carpet" #Green Carpet
 ---| "minecraft:green_concrete" #Green Concrete
 ---| "minecraft:green_concrete_powder" #Green Concrete Powder
 ---| "minecraft:green_glazed_terracotta" #Green Glazed Terracotta
@@ -374,9 +378,9 @@
 ---| "minecraft:hanging_roots" #Hanging Roots
 ---| "minecraft:hay_block" #Hay Bale
 ---| "minecraft:heavy_weighted_pressure_plate" #Heavy Weighted Pressure Plate
----| "minecraft:hopper" #Hopper
 ---| "minecraft:honey_block" #Honey Block
 ---| "minecraft:honeycomb_block" #Honeycomb Block
+---| "minecraft:hopper" #Hopper
 ---| "minecraft:horn_coral" #Horn Coral
 ---| "minecraft:horn_coral_block" #Horn Coral Block
 ---| "minecraft:horn_coral_fan" #Horn Coral Fan
@@ -574,8 +578,8 @@
 ---| "minecraft:pink_tulip" #Pink Tulip
 ---| "minecraft:pink_wall_banner" #Pink Wall Banner
 ---| "minecraft:pink_wool" #Pink Wool
----| "minecraft:piston_head" #Piston Head
 ---| "minecraft:piston" #Piston
+---| "minecraft:piston_head" #Piston Head
 ---| "minecraft:player_head" #Player Head
 ---| "minecraft:player_wall_head" #Player Wall Head
 ---| "minecraft:podzol" #Podzol
@@ -866,7 +870,7 @@
 ---| "minecraft:weeping_vines" #Weeping Vines
 ---| "minecraft:weeping_vines_plant" #Weeping Vines Plant
 ---| "minecraft:wet_sponge" #Wet Sponge
----| "minecraft:wheat" #Wheat
+---| "minecraft:wheat" #Wheat Crops
 ---| "minecraft:white_banner" #White Banner
 ---| "minecraft:white_bed" #White Bed
 ---| "minecraft:white_candle" #White Candle
@@ -957,6 +961,7 @@
 ---Only the default Minecraft block state properties are auto-completed.  
 ---You can use any block state property from any mod, even if it does not auto-complete.
 ---@class BlockStateProperties
+---@field [string] string
 local BlockStateProperties = {
   ---Tracks the growth of plants and decay of certain blocks.
   ---***
@@ -1605,7 +1610,7 @@ function BlockState.isTranslucent() end
 ---@param pos VectorPos
 function BlockState.setPos(pos) end
 
----Returns a string of this BlockState with the same syntax as /setblock
+---Returns a string of this BlockState with the same syntax as `/setblock`.
 ---@return string
 function BlockState.toStateString() end
 

@@ -1,2 +1,16 @@
-
 *.zip
+package*
+test.lua
+
+#These are being tested on the owner's local side and should be ignored.
+.vscode/**/*.png
+
+#If you want access to the tools, you can just ask. For now they are ignored because they clutter
+#the repository. The entire repo will need a rework to allow the tools to stay.
+#
+#The tools are mainly for working with massive aliases and types like BlockID, ItemID, and
+#BlockStateProperties.
+tools
+tsconfig.json
+node_modules
+.eslintrc.json
