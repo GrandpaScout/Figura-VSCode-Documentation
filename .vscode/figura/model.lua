@@ -162,7 +162,7 @@ function CustomModelPart.getAnimScale() end
 
 ---Returns a table containing this part's children.
 ---@return CustomModelPart[]
-function CustomModelPart.getChilderen() end
+function CustomModelPart.getChildren() end
 
 ---Returns the current color of the part.  
 ---The default color is `<1,1,1>`.
